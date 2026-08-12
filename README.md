@@ -6,8 +6,10 @@
 
 | Skill | 用途 |
 | --- | --- |
+| `build-telecom-leadership-ppt` | 先生成预览图片，再制作领导汇报、工作总结和电信业务 PPT |
 | `discuss-and-align` | 在执行前讨论问题、检验假设并形成明确共识 |
 | `research-and-apply` | 调研可靠来源和优秀案例，并应用到原始任务 |
+| `sync-personal-codex-skills` | 在个人固定仓库中安全上传、拉取、安装并核验 Skill |
 | `write-project-agents-md` | 创建、更新并审计项目级 `AGENTS.md` |
 | `write-project-handoff` | 创建项目本地交接快照，帮助新任务继续工作 |
 

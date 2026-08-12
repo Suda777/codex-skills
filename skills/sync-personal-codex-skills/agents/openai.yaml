@@ -1,0 +1,4 @@
+interface:
+  display_name: "同步个人 Codex Skills"
+  short_description: "安全上传、拉取、安装并核验个人 Codex Skills 的仓库与链接状态"
+  default_prompt: "Use $sync-personal-codex-skills to safely sync my personal Codex Skills with Suda777/codex-skills."
