@@ -1,0 +1,4 @@
+interface:
+  display_name: "电信领导汇报 PPT"
+  short_description: "先审核内容与预览图片，再交付领导汇报和电信业务 PPT"
+  default_prompt: "Use $build-telecom-leadership-ppt to turn my current materials into page-by-page leadership presentation previews for approval before exporting the PPTX."
