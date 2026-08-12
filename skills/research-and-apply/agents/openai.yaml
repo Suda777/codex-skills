@@ -1,0 +1,7 @@
+interface:
+  display_name: "Research and Apply"
+  short_description: "先检索优秀案例和可靠来源，再把适用规律直接应用到当前任务"
+  default_prompt: "Use $research-and-apply to research strong examples and apply the useful patterns directly to my current task."
+
+policy:
+  allow_implicit_invocation: true

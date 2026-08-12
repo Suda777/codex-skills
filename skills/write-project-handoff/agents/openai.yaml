@@ -1,0 +1,7 @@
+interface:
+  display_name: "Write Project Handoff"
+  short_description: "为项目创建或恢复本地交接文件，并安全衔接下一项工作任务"
+  default_prompt: "Use $write-project-handoff to create a local project handoff and a precise resume prompt for the next task."
+
+policy:
+  allow_implicit_invocation: true

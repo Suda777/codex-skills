@@ -1,0 +1,7 @@
+interface:
+  display_name: "讨论与对齐"
+  short_description: "在复杂任务执行前组织讨论、挑战关键假设并形成可复用的明确共识"
+  default_prompt: "使用 $discuss-and-align 与我讨论这个请求，在需要时挑战假设，并在行动前形成简洁的对齐结论。"
+
+policy:
+  allow_implicit_invocation: true

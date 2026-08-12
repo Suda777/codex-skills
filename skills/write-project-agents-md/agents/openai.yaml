@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Project AGENTS.md"
+  short_description: "Create and maintain project AGENTS.md guides"
+  default_prompt: "Use $write-project-agents-md to create or update the project AGENTS.md from verified project facts."
