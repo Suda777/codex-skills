@@ -1,6 +1,6 @@
 # Personal Codex Skills
 
-这是一个用于多设备共享和版本管理的个人 Codex Skills 仓库，不是 OpenAI 官方项目。
+这是一个用于多设备共享和版本管理的个人 Codex Skills 仓库，包含自建和第三方 Skill，不是 OpenAI 官方项目。
 
 ## Skills
 
@@ -8,6 +8,7 @@
 | --- | --- |
 | `build-telecom-leadership-ppt` | 先生成预览图片，再制作领导汇报、工作总结和电信业务 PPT |
 | `discuss-and-align` | 在执行前讨论问题、检验假设并形成明确共识 |
+| `drawio-skill` | 第三方 Draw.io 专业制图 Skill（Agents365-ai，MIT） |
 | `maintain-personal-codex-skills` | 根据实际对话证据审查并更新一个或全部自建 Skill |
 | `research-and-apply` | 调研可靠来源和优秀案例，并应用到原始任务 |
 | `sync-personal-codex-skills` | 在个人固定仓库中安全上传、拉取、安装并核验 Skill |
