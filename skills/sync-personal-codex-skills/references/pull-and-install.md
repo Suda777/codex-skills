@@ -4,8 +4,8 @@ Use this workflow to update the fixed personal repository and install one or all
 
 ## 1. Locate or clone the repository
 
-- If `~/codex-skills` is absent, clone `https://github.com/Suda777/codex-skills.git` there.
-- If it exists, require it to be a Git repository with the expected `origin`. Stop if the directory contains another repository or unrelated files.
+- Resolve the repository root in this order: the current directory when it is the expected repository; the target of an installed personal-Skill link when it belongs to the expected repository; an existing valid `~/codex-skills`; otherwise clone `https://github.com/Suda777/codex-skills.git` to `~/codex-skills`.
+- Require the selected directory to be a Git repository with the expected `origin`. Stop if the candidate contains another repository or unrelated files.
 - Inspect status, remote, current branch, upstream, and authentication.
 
 ## 2. Update without overwriting local work
@@ -27,7 +27,7 @@ Pulling updates the entire repository even when the user asks for one Skill. Mak
 
 For each requested Skill, inspect `~/.codex/skills/<skill-name>`:
 
-- Missing: create a directory link to `~/codex-skills/skills/<skill-name>` using the platform-appropriate mechanism.
+- Missing: create a directory link to `<repo-root>/skills/<skill-name>` using the platform-appropriate mechanism.
 - Already linked to the exact repository directory: leave unchanged.
 - Real file or directory, broken link, or link to another target: stop for that Skill and report the exact conflict.
 

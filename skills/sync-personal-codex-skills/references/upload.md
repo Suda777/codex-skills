@@ -5,7 +5,7 @@ Use this workflow for one named personal Skill or all personal Skills.
 ## 1. Establish the source of truth
 
 1. Enumerate ordinary child directories under `~/.codex/skills/`, excluding `.system` and plugin-managed paths.
-2. Enumerate directories under `~/codex-skills/skills/`.
+2. Resolve the expected repository root by the main Skill's location rules, then enumerate its `skills/` directory.
 3. Resolve links and Junctions before comparing paths.
 4. Handle each Skill as follows:
    - Correct link to the repository directory: use the repository entity.
