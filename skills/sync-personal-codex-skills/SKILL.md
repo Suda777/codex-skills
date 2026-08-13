@@ -1,11 +1,11 @@
 ---
 name: sync-personal-codex-skills
-description: Safely move the user's personal Codex Skills between devices and the fixed GitHub repository Suda777/codex-skills by uploading, pushing, pulling, installing, linking, and verifying them. Use when the user explicitly asks to upload or push a Skill, pull or download repository changes, install Skills on another device, or synchronize the personal Skill repository. Do not use when "更新", "修改", or "优化" means changing a Skill's instructions or workflow content; use maintain-personal-codex-skills for that. Do not use for third-party repositories, system Skills, plugins, or ordinary source-code repositories.
+description: Safely move all of the user's installed non-system Codex Skills, including self-created and third-party Skills, between devices and the fixed GitHub repository Suda777/codex-skills by uploading, pushing, pulling, installing, linking, and verifying them. Use when the user explicitly asks to upload or push Skills, pull or download repository changes, install Skills on another device, or synchronize the Skill repository. Do not use when "更新", "修改", or "优化" means changing a Skill's instructions or workflow content; use maintain-personal-codex-skills for that. Do not use for system Skills, plugin-managed caches, or ordinary source-code repositories.
 ---
 
 # Sync Personal Codex Skills
 
-Keep one authoritative repository copy of every personal Skill:
+Keep one authoritative repository copy of every managed non-system Skill:
 
 ```text
 <repo-root>/skills/<skill-name>       # real directory and Git source
@@ -15,7 +15,7 @@ Suda777/codex-skills                  # only allowed GitHub repository
 
 Resolve `<repo-root>` instead of assuming one machine-specific location. Prefer, in order: the current expected repository, the target of an installed personal-Skill link, an existing valid `~/codex-skills`, or a fresh clone to `~/codex-skills`.
 
-Treat `~/.codex/skills/.system/` and plugin caches as out of scope. Never upload credentials, private logs, exported user data, or raw conversations.
+Include self-created and third-party Skills installed directly under `~/.codex/skills/`. Treat `~/.codex/skills/.system/` and plugin-managed caches as out of scope. Never upload credentials, private logs, exported user data, or raw conversations.
 
 ## Select the operation
 
@@ -28,6 +28,7 @@ The user has pre-authorized the normal upload and pull workflows for this fixed 
 ## Non-negotiable safety rules
 
 - Confirm the repository root and require `origin` to resolve to `https://github.com/Suda777/codex-skills.git` or its equivalent SSH URL.
+- Before publishing a third-party Skill, identify its upstream source and license, confirm redistribution is allowed, and preserve required copyright, license, and notice files. Stop if the license is missing, unclear, or incompatible with redistribution.
 - Inspect `git status`, `git remote -v`, `git branch -vv`, and authentication before changing anything.
 - Never delete, move, overwrite, force-push, rebase, reset, auto-stash, or auto-resolve a conflict.
 - Never replace an existing real directory or an incorrect link under `~/.codex/skills/`.
@@ -39,7 +40,7 @@ The user has pre-authorized the normal upload and pull workflows for this fixed 
 
 Report success only after verifying all applicable facts:
 
-- every requested personal Skill has a valid `SKILL.md` in the repository;
+- every requested non-system Skill has a valid `SKILL.md` in the repository;
 - each installed Skill path is a link to the matching repository directory;
 - local `HEAD` and the verified remote branch point to the expected commit after upload or pull;
 - no unexpected working-tree changes remain;

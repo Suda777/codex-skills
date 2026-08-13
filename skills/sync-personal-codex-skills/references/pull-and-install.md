@@ -1,6 +1,6 @@
 # Pull and install workflow
 
-Use this workflow to update the fixed personal repository and install one or all of its Skills.
+Use this workflow to update the fixed repository and install one or all of its self-created or third-party non-system Skills.
 
 ## 1. Locate or clone the repository
 

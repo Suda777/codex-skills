@@ -1,10 +1,10 @@
 # Upload workflow
 
-Use this workflow for one named personal Skill or all personal Skills.
+Use this workflow for one named installed non-system Skill or all installed non-system Skills, including self-created and third-party Skills.
 
 ## 1. Establish the source of truth
 
-1. Enumerate ordinary child directories under `~/.codex/skills/`, excluding `.system` and plugin-managed paths.
+1. Enumerate ordinary child directories and links under `~/.codex/skills/`, excluding `.system` and plugin-managed paths. Include third-party Skills installed directly in this directory.
 2. Resolve the expected repository root by the main Skill's location rules, then enumerate its `skills/` directory.
 3. Resolve links and Junctions before comparing paths.
 4. Handle each Skill as follows:
@@ -28,6 +28,7 @@ For every requested Skill:
 2. Review the complete file list, including hidden files and links.
 3. Search the target files for likely secrets, tokens, cookies, passwords, private paths, customer information, logs, exports, and raw chat records. Treat findings as reasons for manual review, not automatic redaction.
 4. Reject links that escape the Skill directory or files that do not belong in a reusable Skill.
+5. For a third-party Skill, identify the upstream project and license, confirm redistribution is permitted, and include every required license, copyright, attribution, and notice file. Stop instead of publishing when the source or license cannot be verified.
 
 ## 4. Commit only the intended change
 
@@ -45,4 +46,4 @@ For every requested Skill:
 4. Confirm local branch tracking and working-tree status.
 5. Create missing Codex links only when the target path is absent. Verify every resulting link target.
 
-When uploading all Skills, list every personal Skill included and separately list system, plugin-managed, conflicting, or skipped entries.
+When uploading all Skills, separately list self-created Skills, third-party Skills, and system, plugin-managed, conflicting, or skipped entries.
