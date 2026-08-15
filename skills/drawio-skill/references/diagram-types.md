@@ -189,10 +189,12 @@ A flowchart split by **who does what** — one lane per role/department. Node vo
 | Pool (process) | `swimlane;html=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;collapsible=0;` | Outer container, label = process name |
 | Lane (role) | `swimlane;html=1;startSize=30;horizontal=0;collapsible=0;fillColor=none;` | Child of pool, one per role/team/system |
 | Steps | Flowchart preset styles (Start/End, Process, Decision, I/O) | Each step's `parent` = its lane id; coordinates relative to the lane |
-| Handoff edge | `edgeStyle=orthogonalEdgeStyle;html=1;rounded=1;` | Edges crossing lanes are the handoffs — the diagram's point |
+| Handoff edge | `edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;` | Edges crossing lanes are the handoffs — use square-corner routing under `flowchart-quality.md` |
 | Layout | LR flow inside horizontal lanes; time flows left → right | Keep each step inside its actor's lane; ≥160px horizontal spacing |
 
 ## Flowchart (enhanced)
+
+Read `flowchart-quality.md` before authoring. The shape vocabulary below is not sufficient by itself; enforce semantic consistency, straight cardinal routing, real return connections, one numbering system, and full-diagram QA.
 
 | Element | Style | Notes |
 |---------|-------|-------|

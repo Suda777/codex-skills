@@ -96,7 +96,7 @@ For architecture diagrams with nested elements, use draw.io's parent-child conta
 **CRITICAL:** Every edge `mxCell` must contain a `<mxGeometry relative="1" as="geometry" />` child element. Self-closing edge cells (`<mxCell ... edge="1" ... />`) are **invalid** and will not render. Always use the expanded form.
 
 ```xml
-<!-- Directed arrow — always include rounded, orthogonalLoop, jettySize for clean routing -->
+<!-- Generic directed arrow. For flowcharts, set rounded=0; flowchart-quality.md overrides this generic example. -->
 <mxCell id="10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2" target="3">
   <mxGeometry relative="1" as="geometry" />
 </mxCell>
@@ -119,7 +119,7 @@ For architecture diagrams with nested elements, use draw.io's parent-child conta
 **Edge style rules:**
 
 - **Animated connectors:** add `flowAnimation=1;` to any edge style to show a moving dot animation along the arrow. Works in SVG export and draw.io desktop — ideal for data-flow and pipeline diagrams. Example: `style="edgeStyle=orthogonalEdgeStyle;flowAnimation=1;rounded=1;..."`
-- **Always** include `rounded=1;orthogonalLoop=1;jettySize=auto` — these enable smart routing that avoids overlaps
+- For general architecture and relationship diagrams, include `rounded=1;orthogonalLoop=1;jettySize=auto` for smooth orthogonal routing. For flowcharts, decision trees, synchronization workflows, and diagrams with return loops, `flowchart-quality.md` takes precedence: use `rounded=0` with straight or square-corner orthogonal routing.
 - Pin `exitX/exitY/entryX/entryY` on every edge when a node has 2+ connections — distributes lines across the shape perimeter. `scripts/edgeports.py <file>` does this for a whole diagram: it picks the side facing each peer and spreads that side's edges over even slots ordered by the far endpoint, so they don't stack or cross at the boundary. It skips ends you pinned by hand and is idempotent
 - Add `<Array as="points">` waypoints when an edge must detour around an intermediate shape
 - **Leave room for arrowheads:** the final straight segment between the last bend and the target shape must be ≥20px long. If too short, the arrowhead overlaps the bend and looks broken. Fix by increasing node spacing or adding explicit waypoints

@@ -132,7 +132,7 @@ These are stable enough to write without searching. Combine with `whiteSpace=wra
 
 | Need | add to style |
 |---|---|
-| Orthogonal routing | `edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;` |
+| Orthogonal routing | `edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;` for general diagrams; use `rounded=0` for flowcharts under `flowchart-quality.md` |
 | Curved | `curved=1;` |
 | No arrowhead | `endArrow=none;` |
 | Open/thin arrow | `endArrow=open;` / `endArrow=classicThin;` |

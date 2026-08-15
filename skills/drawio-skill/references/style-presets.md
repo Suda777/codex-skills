@@ -1,6 +1,6 @@
 # Style Presets — Learn, Apply, Manage
 
-A **style preset** is a named JSON file capturing a user's visual preferences — palette, shape vocabulary, fonts, edge style. When a preset is active, it fully replaces the built-in conventions in SKILL.md's color/shape/edge tables.
+A **style preset** is a named JSON file capturing a user's visual preferences — palette, shape vocabulary, fonts, edge style. When a preset is active, it replaces the built-in visual conventions in SKILL.md's color/shape/edge tables, but it does not override the semantic grammar or mandatory QA gates of a diagram-specific reference.
 
 Read this file when:
 - The user asks to "learn", "save", "remember", or "extract" a style from a file
@@ -23,7 +23,7 @@ Only user presets can have `"default": true`. When the user says *"make `<built-
 
 > **Existing diagrams:** these rules apply at generation time. To re-theme a `.drawio` that already exists, run `python3 scripts/restyle.py diagram.drawio --preset <name>` — it applies the palette (hue-mapped), font, and extras without touching layout or edge routing.
 
-When SKILL.md's Step 0 identified a preset, it fully replaces the built-in palette, shape keywords, edge defaults, and font for this diagram — do not mix values from the built-in color table.
+When SKILL.md's Step 0 identified a preset, it replaces the built-in palette, shape keywords, edge defaults, and font for this diagram — do not mix values from the built-in color table. Diagram-specific rules still take precedence: for example, flowcharts must use the node grammar and square-corner routing required by `flowchart-quality.md` even if a preset contains rounded edges.
 
 **Color lookup.** For each role a shape plays (service / database / queue / gateway / error / external / security), resolve `preset.roles[role]` to a slot name, then `preset.palette[<slot>]` to the `(fillColor, strokeColor)` pair. If `roles[role]` is unset or the resolved slot is `null`, follow this fallback ladder:
 
