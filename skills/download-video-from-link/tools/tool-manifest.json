@@ -1,0 +1,29 @@
+{
+  "douyin-downloader": {
+    "version": "2.0.0",
+    "upstream": "https://github.com/jiji262/douyin-downloader",
+    "upstream_head_observed": "d757c1cfa264462b1e8b2aa87152db474141d471",
+    "source_provenance": "Runtime-only snapshot retrieved from upstream main on 2026-08-15 and previously proven with a public Douyin share link",
+    "vendored_tree_sha256": "e0fe01c5b2c71f4b8d0d11721a49905f4b681849ea55eea6a00e8c39ce7d37e7",
+    "license": "MIT",
+    "local_adjustment": "The cookie fetcher reuses the locally installed Google Chrome instead of downloading a Playwright browser into a global cache"
+  },
+  "yt-dlp": {
+    "version": "2026.7.4",
+    "upstream": "https://github.com/yt-dlp/yt-dlp",
+    "distribution": "yt_dlp-2026.7.4-py3-none-any.whl from PyPI, unpacked into tools/yt-dlp",
+    "distribution_sha256": "f11f2b11d5a8ac4059f9bdf29fa4407dc7c6bb00c5097e95ca22a7a9db518266",
+    "license": "Unlicense",
+    "local_adjustment": "The Shahid extractor is disabled because the upstream distribution embeds service credentials; target support for Douyin, Bilibili, Xiaohongshu, and other credential-free public extractors is unchanged"
+  },
+  "playwright": {
+    "version": "1.62.0",
+    "installation": "Installed on demand into .runtime/venv and configured to reuse system Chrome",
+    "license": "Apache-2.0"
+  },
+  "curl-cffi": {
+    "version": "0.13.0",
+    "installation": "Installed on demand into .runtime/venv for browser-TLS-compatible public API requests",
+    "license": "MIT"
+  }
+}

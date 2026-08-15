@@ -1,4 +1,4 @@
 interface:
   display_name: "Maintain Personal Codex Skills"
-  short_description: "Audit personal Skills and propose changes before editing"
-  default_prompt: "Use $maintain-personal-codex-skills to audit my personal Codex Skills, propose evidence-based changes, and wait for my approval before editing."
+  short_description: "Audit self-created and customized third-party Skills"
+  default_prompt: "Use $maintain-personal-codex-skills to refresh the authoritative repository, audit my self-created and customized third-party Codex Skills, propose evidence-based changes, and wait for my approval before editing."

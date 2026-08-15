@@ -1,4 +1,4 @@
 interface:
   display_name: "同步个人 Codex Skills"
-  short_description: "同步自建和第三方非系统 Skills，并核验仓库、许可与安装状态"
-  default_prompt: "Use $sync-personal-codex-skills to safely sync all my installed non-system Codex Skills, including third-party Skills, with Suda777/codex-skills."
+  short_description: "跨设备同步 Skills，检查冲突并安全整合独立改动"
+  default_prompt: "Use $sync-personal-codex-skills to safely sync all my installed non-system Codex Skills with Suda777/codex-skills, integrate only clearly disjoint remote changes, revalidate, and stop for same-Skill or uncertain conflicts."
