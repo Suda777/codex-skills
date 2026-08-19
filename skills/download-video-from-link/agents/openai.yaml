@@ -1,4 +1,4 @@
 interface:
   display_name: "Download Video from Link"
-  short_description: "识别链接平台，下载、验证并归档公开视频，支持抖音、B站和小红书"
+  short_description: "免登录下载、验证并归档多平台公开视频"
   default_prompt: "Use $download-video-from-link to download and organize the public video from this link."

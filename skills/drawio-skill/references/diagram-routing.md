@@ -24,6 +24,7 @@ Do not expose implementation details such as layout coordinates, colors, shapes,
 | --- | --- | --- | --- |
 | 先做什么、如何判断、失败后回到哪里？ | ordered steps, decisions, loops | Flowchart | Use a swimlane when actor ownership is central |
 | 谁负责哪一步、工作如何交接？ | roles plus handoffs | Cross-functional swimlane | Use BPMN when formal events, gateways, and messages matter |
+| 当前流程与目标流程如何变化，同时谁负责、如何交接？ | matched current/future flows plus roles and handoffs | Paired AS-IS / TO-BE cross-functional flowchart | Use paired basic flowcharts when ownership is secondary; use a regular swimlane when there is no current/future comparison |
 | 系统由什么组成、组件如何连接？ | components and dependencies | Architecture diagram | Use C4 when multiple abstraction levels are needed |
 | 多个系统按什么时间顺序交互？ | participants and messages over time | Sequence diagram | Use a flowchart when internal decision logic matters more than messages |
 | 一个对象如何从一种状态变成另一种状态？ | states, events, transitions | State diagram | Use a flowchart when nodes are actions rather than states |
@@ -49,6 +50,7 @@ Do not expose implementation details such as layout coordinates, colors, shapes,
 - If the user says “你决定”, “用最合适的”, or otherwise delegates the choice, select the primary recommendation and proceed without another confirmation.
 - Offer alternatives only when they create a meaningful communication tradeoff. Never list alternatives merely to appear comprehensive.
 - Do not use a swimlane merely because multiple devices or systems are mentioned. Use it only when responsibility or handoff is the point.
+- Do not route to a paired AS-IS / TO-BE cross-functional flowchart merely because AI, automation, ERP, or another technology is mentioned. Use it only when the viewer must compare a validated current process with a proposed future process **and** responsibility or handoff is central. Read `references/as-is-to-be-cross-functional.md` before recommending or drawing it.
 - Do not use a state diagram when most nodes are actions. Do not mix actions and states in one node vocabulary.
 - Do not use a mind map for ordered decisions or return loops.
 - Do not fabricate values for bar, line, pie, scatter, histogram, box, or Gantt charts. Ask for the missing data or draw a clearly labeled conceptual structure instead.

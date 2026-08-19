@@ -446,13 +446,17 @@ def main() -> int:
     videos_root = (args.output_root or (project_root / "videos")).expanduser().resolve()
     manifest_path = videos_root / "download_manifest.jsonl"
     if args.dry_run:
+        primary_tool = {
+            "douyin": "douyin-downloader",
+            "wechat-channels": "public yt-dlp/generic probe, then safe public GitHub fallback",
+        }.get(platform, "yt-dlp")
         print(
             json.dumps(
                 {
                     "url": url,
                     "platform": platform,
                     "videos_root": str(videos_root),
-                    "primary_tool": "douyin-downloader" if platform == "douyin" else "yt-dlp",
+                    "primary_tool": primary_tool,
                     "runtime_ready": runtime_python().is_file(),
                 },
                 ensure_ascii=False,

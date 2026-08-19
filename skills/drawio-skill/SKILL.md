@@ -53,6 +53,7 @@ When the workflow references one of these, read it on demand — none of them ne
 | --- | --- |
 | `references/diagram-routing.md` | The user describes logic, data, relationships, or material but does not know which diagram type will communicate it best — route by viewer question and information structure before drawing |
 | `references/flowchart-quality.md` | The output is a flowchart, decision tree, phased process, synchronization workflow, or contains decisions and return loops — semantic grammar, straight-line routing, one-source-of-truth, and full-diagram QA rules |
+| `references/as-is-to-be-cross-functional.md` | The viewer must compare a current and future process **and** see role/team/system ownership or handoffs — evidence requirements, paired scope, lane/phase alignment, change semantics, and QA; use `templates/as-is-to-be-cross-functional.drawio` as the editable starting point when appropriate |
 | `references/toolbox.md` | You're **not sure which bundled script fits** a request, or want to chain several — a map of all 31 scripts grouped by use-case (author / import code / import IaC / import API spec / live infra / compare / annotate / reverse-export / utilities) with an "I have X, I want Y → use Z" guide |
 | `references/xml-authoring.md` | You're about to **hand-write `.drawio` XML** (workflow step 3) — file skeleton, shape/edge cells, containers, connection distribution, palette, spacing/grid rules. Not needed when a bundled generator writes the XML |
 | `references/mermaid-authoring.md` | The diagram is a **standard type with no custom styling/icon needs** (flowchart, state, gantt, mindmap, timeline, journey, pie, …) and the CLI is **≥ v30** — author it as Mermaid text and let the CLI convert to native `.drawio` (structure only, layout free). Also documents the CLI's ELK `--layout` pass for XML |
@@ -387,5 +388,6 @@ When the user requests a specific diagram type, read `references/diagram-types.m
 | "BPMN", "business process", "process model", "pool and lanes", "workflow diagram" | BPMN |
 | "network topology", "network diagram", "LAN/WAN", "subnet", "firewall diagram" | Network Topology |
 | "swimlane diagram", "cross-functional flowchart", "who does what", "handoff diagram" | Cross-Functional Flowchart |
+| "AS-IS / TO-BE cross-functional flowchart", "current vs future process with roles", "before/after swimlane" | Paired AS-IS / TO-BE Cross-Functional Flowchart |
 
 The diagram-type preset sets **structural** style keywords. If a user style preset is also active (see `## Style Presets`), keep the structural keywords and layer color/font/edge/extras on top — read `references/style-presets.md` → "Interaction with diagram-type presets" for the merge rules.

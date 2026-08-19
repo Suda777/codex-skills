@@ -1,6 +1,6 @@
 ---
 name: download-video-from-link
-description: Download, verify, and organize public videos from shared URLs or copied share text. Use when the user provides a link from Douyin, Bilibili, Xiaohongshu, YouTube, Weibo, Xigua, TikTok, X/Twitter, Instagram, Vimeo, or another supported video site and asks Codex to download, save, archive, or prepare the video for later analysis. Route each platform to the bundled downloader, use an anonymous browser session only as a fallback, and write a project-local manifest. Do not use to bypass logins, paywalls, DRM, private access, or other authorization controls, or when the user only wants a summary without saving the video.
+description: Download, verify, and organize public videos from shared URLs or copied share text. Use when the user asks Codex to download, save, archive, or prepare a public linked video from Douyin, Bilibili, Xiaohongshu, WeChat Channels, YouTube, Weibo, Xigua, TikTok, X/Twitter, Instagram, Vimeo, or another website. Route known platforms to bundled downloaders; when they fail or the site is unsupported, research maintained public GitHub download methods and continue without logging in. Do not use to bypass paywalls, DRM, private access, or other authorization controls, or when the user only wants a summary without saving the video.
 ---
 
 # Download Video From Link
@@ -38,14 +38,17 @@ Accept a link as the only required user input. Resolve the platform, download th
 - Douyin: use the bundled `douyin-downloader`. Try the public request first, then capture a fresh anonymous Chrome session and retry when risk control blocks it.
 - Bilibili: use the bundled `yt-dlp` Bilibili extractor. If Bilibili returns HTTP 412, use the bundled public `playurl` API adapter and merge the selected video/audio streams inside the Skill runtime.
 - Xiaohongshu: try the bundled `yt-dlp` extractor, including short-link resolution. If extraction fails, retry once with a fresh anonymous Chrome session.
+- WeChat Channels: recognize public `weixin.qq.com/sph/...` and related share links. Try a public extractor without account state first. If it fails, research a maintained public GitHub downloader, but do not install a root certificate, change the system proxy or TUN settings, intercept application traffic, or use authenticated state.
 - Other sites: try the bundled `yt-dlp` extractor and generic extractor. Read [platform-strategies.md](references/platform-strategies.md) when routing or fallback behavior is unclear.
-- If an extractor has genuinely broken, research a currently maintained replacement and finish the user's immediate task when safe. Propose a permanent Skill change separately; do not silently replace bundled tools.
+- If a bundled extractor fails or the platform is unsupported, search GitHub for a currently maintained public downloader or extractor. Inspect its source, maintenance state, license, dependencies, credential behavior, and safety before using it. Continue through safe no-login alternatives until the file is downloaded or a hard authorization or technical blocker is proven. Propose any permanent bundled-tool change separately; do not silently replace the Skill runtime.
 
 ## Browser and account boundaries
 
-- Use a new anonymous browser context by default. Do not read the user's existing browser profile, history, passwords, or cookies.
-- Store temporary cookies only inside `.runtime/jobs/`, set owner-only permissions, never print their values, and delete the job directory after the attempt.
-- Ask before using an authenticated account session. Never bypass a login, paywall, DRM, private post, geographic restriction, or deleted-content restriction.
+- Use only public requests or a new anonymous browser context. Do not read the user's existing browser profile, history, passwords, account cookies, or authenticated application state.
+- Anonymous session cookies may exist only inside `.runtime/jobs/`; set owner-only permissions, never print their values, and delete the job directory after the attempt.
+- Never log in, ask the user to log in, reuse an authenticated session, or route through WeChat, Yuanbao, Chrome, or another signed-in account. Authentication is outside this Skill even if it might make the download easier.
+- Never bypass a paywall, DRM, private post, geographic restriction, deleted-content restriction, or another access control. If every safe public GitHub method still requires authentication or bypassing access control, report the exact blocker instead of claiming success.
+- Do not install or trust a root certificate, alter the system proxy, enable TUN mode, or intercept application traffic as an automatic fallback.
 - Download only content the user is authorized to access. Do not upload downloaded media to another service unless separately requested and authorized.
 - Read [security-and-maintenance.md](references/security-and-maintenance.md) before changing credential handling or bundled tools.
 
@@ -55,7 +58,7 @@ Accept a link as the only required user input. Resolve the platform, download th
 - Keep partial downloads as tool-managed temporary files and report them as failures. Only final media files belong in the manifest.
 - Reuse an existing valid file when the manifest already contains the same platform/video ID or source URL.
 - Do not edit `.gitignore` automatically. If the project uses Git and `videos/` is not ignored, recommend the change and obtain permission before editing it.
-- Do not transcribe, summarize, or analyze the video in this Skill. Hand the validated local path to the next video-analysis workflow.
+- Do not transcribe, summarize, or analyze the video in this Skill. If the original request also asks for analysis, hand the validated local path directly to the next video-analysis workflow without requiring the user to repeat the request.
 
 ## Completion standard
 

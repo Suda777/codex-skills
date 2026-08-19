@@ -192,6 +192,24 @@ A flowchart split by **who does what** — one lane per role/department. Node vo
 | Handoff edge | `edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;` | Edges crossing lanes are the handoffs — use square-corner routing under `flowchart-quality.md` |
 | Layout | LR flow inside horizontal lanes; time flows left → right | Keep each step inside its actor's lane; ≥160px horizontal spacing |
 
+## Paired AS-IS / TO-BE Cross-Functional Flowchart
+
+Use this comparison pattern only when the viewer needs to understand both:
+
+1. how a process changes from its current state to a proposed future state; and
+2. which roles, teams, or systems own the work and handoffs in both states.
+
+This is a composition of AS-IS / TO-BE process mapping and the cross-functional flowchart preset, not a separate BPMN or ISO notation. Read `references/as-is-to-be-cross-functional.md` before drawing it. Start from `templates/as-is-to-be-cross-functional.drawio` when its stacked comparison layout fits the requested output.
+
+| Element | Style | Notes |
+|---------|-------|-------|
+| Comparison frame | Two clearly titled process panels | Default landscape layout stacks AS-IS above TO-BE so matched phases read in the same columns |
+| Lanes | Cross-Functional Flowchart lane styles | One lane per accountable role, team, or system; keep shared lane order stable across both panels |
+| Phase headers | Plain header cells plus vertical separators | Use the same process scope and phase boundaries in both panels where possible |
+| Steps and branches | Flowchart preset styles | Preserve start/end, decisions, branch labels, exceptions, and real return targets in each state |
+| Change overlay | Neutral current-state palette; optional retained/changed/added/removed styles | Colors explain change status only and never imply AI unless the process content itself does |
+| Layout | LR flow inside each panel; AS-IS above TO-BE | Do not force one-to-one step alignment when redesign legitimately adds, removes, merges, or splits work |
+
 ## Flowchart (enhanced)
 
 Read `flowchart-quality.md` before authoring. The shape vocabulary below is not sufficient by itself; enforce semantic consistency, straight cardinal routing, real return connections, one numbering system, and full-diagram QA.

@@ -26,7 +26,8 @@ def extract_url(text: str) -> str:
         return match.group(0).rstrip("，。！？；;、)]}>")
     bare = re.search(
         r"(?<![\w.-])(?:v\.douyin\.com|(?:www\.)?douyin\.com|b23\.tv|"
-        r"(?:www\.)?bilibili\.com|xhslink\.com|(?:www\.)?xiaohongshu\.com)/[^\s<>\"']+",
+        r"(?:www\.)?bilibili\.com|xhslink\.com|(?:www\.)?xiaohongshu\.com|"
+        r"weixin\.qq\.com|channels\.weixin\.qq\.com)/[^\s<>\"']+",
         text,
         re.IGNORECASE,
     )
@@ -43,6 +44,8 @@ def detect_platform(url: str) -> str:
         return "bilibili"
     if host == "xhslink.com" or host == "xiaohongshu.com" or host.endswith(".xiaohongshu.com"):
         return "xiaohongshu"
+    if host == "weixin.qq.com" or host.endswith(".weixin.qq.com"):
+        return "wechat-channels"
     return "other"
 
 

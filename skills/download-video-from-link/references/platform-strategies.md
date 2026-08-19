@@ -7,7 +7,8 @@
 | Douyin | `douyin.com`, `v.douyin.com`, `iesdouyin.com` | Bundled `douyin-downloader` | Fresh Playwright context using system Chrome |
 | Bilibili | `bilibili.com`, `b23.tv` | Bundled `yt-dlp` Bilibili extractor | Fresh browser context, then the bundled public `playurl` API adapter when yt-dlp receives HTTP 412 |
 | Xiaohongshu | `xiaohongshu.com`, `xhslink.com` | Bundled `yt-dlp` XiaoHongShu extractor | Resolve the short link and retry with fresh browser cookies |
-| Other | Any HTTP(S) host | Bundled `yt-dlp` site or generic extractor | Research a maintained site-specific tool after a confirmed extractor failure |
+| WeChat Channels | `weixin.qq.com/sph`, `channels.weixin.qq.com` | Public extractor probe with no account state | Research a maintained public GitHub downloader; reject methods that require authentication, a root certificate, system proxy changes, TUN, or traffic interception |
+| Other | Any HTTP(S) host | Bundled `yt-dlp` site or generic extractor | Research a maintained public GitHub downloader after a confirmed extractor failure |
 
 ## Generic coverage
 
@@ -15,14 +16,20 @@ The bundled `yt-dlp` is the first choice for YouTube, Weibo, Xigua, TikTok, X/Tw
 
 For Xiaohongshu, prefer a freshly copied full share link containing its current `xsec_token`. Tokens expire, and some IPs are redirected to a login/error page even for public posts. Do not describe the platform as verified until a real current link completes on the active device.
 
+## WeChat Channels boundary
+
+Public `weixin.qq.com/sph/...` share links are recognized, but support is conditional because the current bundled `yt-dlp` does not include a dedicated WeChat Channels extractor. Start with a no-cookie public probe. After a confirmed failure, research the current release and safety model of a maintained site-specific project before proposing it.
+
+Some WeChat Channels tools obtain media data by using account-derived cookies, installing a root certificate, changing the system proxy, enabling TUN, or intercepting WeChat traffic. Those methods are outside this Skill and must not be used. Continue looking for a safe public GitHub method; if none works, report the exact blocker.
+
 ## Fallback order
 
 1. Public extractor with no cookies.
 2. Same extractor with a fresh anonymous browser session created by this Skill.
-3. A maintained platform-specific downloader found through current-source research.
-4. Authenticated session only after explicit user authorization.
+3. A maintained public platform-specific downloader found on GitHub after checking its source, license, maintenance state, dependencies, and credential behavior.
+4. Another safe no-login public method when the first researched alternative fails.
 
-Stop when the content is private, paid, DRM-protected, deleted, region-blocked, or otherwise unavailable to the user. Do not interpret a technical workaround as authorization.
+Never use authenticated state in this Skill. Stop only when the content is private, paid, DRM-protected, deleted, region-blocked, requires login, or remains technically unavailable after safe public alternatives have been exhausted. Do not interpret a technical workaround as authorization.
 
 ## Output behavior
 

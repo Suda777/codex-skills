@@ -42,6 +42,8 @@ Before reading Skills for a review, refresh the repository state:
 
 This refresh is part of maintenance preparation. It does not authorize uploading or pushing changes.
 
+Treat repository freshness as a hard gate, not a reporting detail. Never rely on a fetch result from an earlier task, turn, or device session; every maintenance run must establish its own current base.
+
 Build the personally maintained Skill list from repository directories containing `SKILL.md`. Classify each Skill by current ownership, not only its original source:
 
 - **Fully self-created:** created for the user and maintained as personal behavior.
@@ -94,9 +96,24 @@ Require conversation evidence for preference and workflow changes. Use repositor
 
 For every recommended change, preserve a compact evidence trail in the approval proposal. The user must be able to judge both whether the problem is real and whether it belongs in the target Skill.
 
+## Reconfirm freshness after approval
+
+User approval does not make the earlier maintenance base permanently current. Immediately before editing any approved Skill:
+
+1. Inspect the worktree again and verify that the approved target still matches the version the user reviewed.
+2. Fetch the expected remote again and compare its branch tip with the recorded maintenance base.
+3. If the remote tip is unchanged, record that commit as the edit base and continue.
+4. If the remote moved, inspect every remote change since the recorded base before touching the approved Skill:
+   - when the remote changed the same Skill, a shared repository file, or any path that overlaps local uncommitted work, stop and show the relevant differences to the user;
+   - when remote changes are limited to clearly path-disjoint Skill directories, integrate them only with the non-destructive fast-forward rules from `$sync-personal-codex-skills`, then recheck the worktree and target;
+   - when ownership, semantic interaction, or path overlap is uncertain, stop instead of guessing.
+5. Re-read the approved target after any safe integration. Confirm that the approved proposal still applies to the current content; otherwise return to the proposal phase.
+
+Do not edit while the local branch is behind, diverged, based on an unverified remote state, or carrying unclear target-Skill changes. A previous statement that local and GitHub were synchronized is never sufficient evidence for a later edit.
+
 ## Apply approved updates
 
-After the user has reviewed the proposal and explicitly approved changes:
+After the user has reviewed the proposal, explicitly approved changes, and the post-approval freshness gate has passed:
 
 1. Edit only the approved findings with sufficient evidence and clear ownership.
 2. Preserve valid user-authored behavior and keep the smallest effective change.

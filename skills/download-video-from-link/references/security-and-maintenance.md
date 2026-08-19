@@ -6,7 +6,7 @@
 - Write session data only below `.runtime/jobs/<job-id>/` with owner-only permissions.
 - Never display cookie values in command output, final responses, manifests, or Git diffs.
 - Delete the complete job directory after success or failure unless debugging retention was explicitly requested.
-- Never copy browser databases or use `--cookies-from-browser` without explicit permission.
+- Never copy browser databases, use `--cookies-from-browser`, or access any authenticated browser or application session in this Skill.
 
 ## Tool ownership
 

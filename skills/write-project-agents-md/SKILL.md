@@ -15,6 +15,17 @@ Create or maintain the smallest useful project instruction layer. Base it on ver
 4. Inspect the applicable instruction chain: inherited/global guidance, the project `AGENTS.md`, and any nested `AGENTS.md` files that govern the target area.
 5. Preserve user-authored rules unless they are contradicted by current project evidence or the user authorizes their replacement.
 
+### Gate root scope before drafting
+
+Before creating or substantially rewriting a root `AGENTS.md`:
+
+1. Inventory the project's main top-level directories, durable workstreams, and existing guidance closely enough to understand what the project contains.
+2. Distinguish the whole-project purpose from the module or topic currently being discussed. A conversation about one knowledge base, document set, application, or workflow does not make that component the purpose of the entire project.
+3. Put a rule in the root only when it applies across the project. Put stable module-specific rules in the nearest relevant nested `AGENTS.md` when that location is justified.
+4. If the available evidence cannot establish whether the requested guidance is project-wide or module-specific, stop at a proposed scope and ask the user before writing.
+
+Do not create a root guide from the current conversation alone when the project visibly contains other long-running modules or deliverable types.
+
 ## Build the evidence set
 
 Read only the sources needed to establish durable project behavior:
@@ -83,6 +94,7 @@ Check every item:
 
 - **Truth:** mentioned paths, commands, source files, and workflows exist or are explicitly marked conditional.
 - **Scope:** each rule applies where it is placed; local exceptions do not leak into the whole project.
+- **Root coverage:** the root guide reflects all durable project workstreams at the appropriate level and is not centered on only the module discussed most recently.
 - **Conflict:** no rule contradicts a higher-priority instruction or another active project rule.
 - **Duplication:** global guidance and specialist procedures are not repeated without a project-specific reason.
 - **Durability:** the file contains stable operating guidance, not temporary plans or conversation state.
