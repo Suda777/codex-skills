@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analyze Video Content"
+  short_description: "Transcribe and analyze videos with traceable timestamps"
+  default_prompt: "Use $analyze-video-content to transcribe this video, identify speakers, extract the questions and answers, and summarize the main ideas with timestamps."
