@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="T02 企业运营中台组件风格目录">
+  <title>T02 组件风格目录</title>
+  <link rel="stylesheet" href="tokens.css">
+</head>
+<body>
+  <main class="component-page">
+    <header class="page-heading">
+      <div><p class="eyebrow">Template T02</p><h1>企业运营中台组件目录</h1><p class="page-description">纯展示页不放置假交互控件；按钮、弹窗、抽屉与数据联动请在完整示例中体验。</p></div>
+      <a class="button button-primary" href="starter.html">打开完整示例</a>
+    </header>
+
+    <section class="card" aria-labelledby="paletteTitle">
+      <div class="card-header"><div><h2 id="paletteTitle">核心色板</h2><p class="card-subtitle">成熟企业后台视觉语言的独立实现</p></div></div>
+      <div class="card-body swatches">
+        <div class="swatch"><span class="swatch-color" style="--swatch:#5856d6"></span><span class="swatch-label">Primary · #5856D6</span></div>
+        <div class="swatch"><span class="swatch-color" style="--swatch:#212631"></span><span class="swatch-label">Sidebar · #212631</span></div>
+        <div class="swatch"><span class="swatch-color" style="--swatch:#f3f4f7"></span><span class="swatch-label">Page · #F3F4F7</span></div>
+        <div class="swatch"><span class="swatch-color" style="--swatch:#6b7785"></span><span class="swatch-label">Secondary · #6B7785</span></div>
+        <div class="swatch"><span class="swatch-color" style="--swatch:#1b9e3e"></span><span class="swatch-label">Success · #1B9E3E</span></div>
+        <div class="swatch"><span class="swatch-color" style="--swatch:#3399ff"></span><span class="swatch-label">Info · #3399FF</span></div>
+        <div class="swatch"><span class="swatch-color" style="--swatch:#f9b115"></span><span class="swatch-label">Warning · #F9B115</span></div>
+        <div class="swatch"><span class="swatch-color" style="--swatch:#e55353"></span><span class="swatch-label">Danger · #E55353</span></div>
+      </div>
+    </section>
+
+    <div class="component-grid">
+      <section class="card" aria-labelledby="navigationTitle">
+        <div class="card-header"><div><h2 id="navigationTitle">深色侧边导航</h2><p class="card-subtitle">当前页使用紫色实心底</p></div></div>
+        <div class="card-body"><div class="static-sidebar-sample"><div class="static-nav-item is-current"><span aria-hidden="true">■</span><strong>运营总览</strong></div><div class="static-nav-item"><span aria-hidden="true">□</span><span>订单中心</span></div><div class="static-nav-item"><span aria-hidden="true">□</span><span>客户洞察</span></div></div></div>
+      </section>
+
+      <section class="card" aria-labelledby="buttonTitle">
+        <div class="card-header"><div><h2 id="buttonTitle">操作外观</h2><p class="card-subtitle">以非交互元素展示按钮状态</p></div></div>
+        <div class="card-body component-stack">
+          <span class="button button-primary static-control" aria-hidden="true">主要操作</span>
+          <span class="button button-secondary static-control" aria-hidden="true">次要操作</span>
+          <span class="button button-danger static-control" aria-hidden="true">风险操作</span>
+          <span class="button button-ghost static-control" aria-hidden="true">文字操作</span>
+          <span class="button button-primary static-control" style="opacity:.56" aria-hidden="true">不可用</span>
+        </div>
+      </section>
+    </div>
+
+    <section class="card" aria-labelledby="metricTitle">
+      <div class="card-header"><div><h2 id="metricTitle">多彩经营指标卡</h2><p class="card-subtitle">彩色底、白色数字与低对比趋势线</p></div></div>
+      <div class="card-body">
+        <div class="metric-grid" style="margin-bottom:0">
+          <article class="metric-card primary"><span class="metric-label">统计期订单</span><strong class="metric-value">24</strong><span class="metric-meta">较上期 +8.4%</span><svg class="metric-sparkline" viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,46 48,32 92,39 140,22 188,29 240,13 300,21"/></svg></article>
+          <article class="metric-card info"><span class="metric-label">成交金额</span><strong class="metric-value">¥136 万</strong><span class="metric-meta">30 天累计成交</span><svg class="metric-sparkline" viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,34 50,42 100,22 150,30 200,13 250,24 300,9"/></svg></article>
+          <article class="metric-card warning"><span class="metric-label">待处理订单</span><strong class="metric-value">5</strong><span class="metric-meta">待审核与待付款</span></article>
+          <article class="metric-card danger"><span class="metric-label">风险交付</span><strong class="metric-value">2</strong><span class="metric-meta">需要人工跟进</span></article>
+        </div>
+      </div>
+    </section>
+
+    <div class="component-grid">
+      <section class="card" aria-labelledby="badgeTitle">
+        <div class="card-header"><h2 id="badgeTitle">状态标签</h2></div>
+        <div class="card-body component-stack"><span class="badge badge-paid">已完成</span><span class="badge badge-pending">待付款</span><span class="badge badge-review">待审核</span><span class="badge badge-risk">有风险</span><span class="badge badge-neutral">待加入</span></div>
+      </section>
+
+      <section class="card" aria-labelledby="formTitle">
+        <div class="card-header"><div><h2 id="formTitle">表单控件</h2><p class="card-subtitle">仅展示外观，非实际输入框</p></div></div>
+        <div class="card-body settings-fields" aria-hidden="true">
+          <div class="field"><span style="display:block;margin-bottom:6px;font-size:12px;font-weight:700">订单搜索</span><div class="input" style="display:flex;align-items:center;color:var(--muted)">输入订单号或客户名称</div></div>
+          <div class="field"><span style="display:block;margin-bottom:6px;font-size:12px;font-weight:700">订单状态</span><div class="select" style="display:flex;align-items:center;color:var(--muted)">全部状态</div></div>
+          <div class="switch-row"><span><strong>风险订单提醒</strong><small>独立的描述文字</small></span><span class="switch-control static-control"><i style="background:var(--primary)"></i></span></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="card" aria-labelledby="tableTitle">
+      <div class="card-header"><div><h2 id="tableTitle">经营数据表格</h2><p class="card-subtitle">浅灰表头、清晰分隔线与紧凑数据行</p></div><span class="badge badge-neutral">3 笔</span></div>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">订单 / 客户</th><th scope="col">渠道</th><th scope="col">金额</th><th scope="col">状态</th><th scope="col">操作外观</th></tr></thead><tbody><tr><td><span class="record-title">OD-260819-01</span><span class="record-code">星河智造</span></td><td>直销</td><td>¥32.8 万</td><td><span class="badge badge-paid">已完成</span></td><td><span class="button button-ghost button-small static-control" aria-hidden="true">查看详情</span></td></tr><tr><td><span class="record-title">OD-260818-02</span><span class="record-code">云岭零售</span></td><td>生态合作</td><td>¥18.6 万</td><td><span class="badge badge-review">待审核</span></td><td><span class="button button-ghost button-small static-control" aria-hidden="true">查看详情</span></td></tr></tbody></table></div>
+    </section>
+
+    <div class="component-grid">
+      <section class="card" aria-labelledby="drawerTitleSample">
+        <div class="card-header"><div><h2 id="drawerTitleSample">右侧详情抽屉</h2><p class="card-subtitle">保留列表上下文</p></div></div>
+        <div class="card-body"><div class="static-overlay-stage"><div class="static-drawer"><p class="eyebrow">Order Detail</p><h2>云岭零售</h2><div class="detail-grid"><div class="detail-item"><dt>当前状态</dt><dd><span class="badge badge-review">待审核</span></dd></div><div class="detail-item"><dt>订单金额</dt><dd>¥18.6 万</dd></div></div><p class="muted">底部操作区在完整示例中具备真实更新逻辑。</p></div></div></div>
+      </section>
+
+      <section class="card" aria-labelledby="modalTitleSample">
+        <div class="card-header"><div><h2 id="modalTitleSample">状态确认弹窗</h2><p class="card-subtitle">状态变更前显式确认</p></div></div>
+        <div class="card-body"><div class="static-overlay-stage"><div class="static-modal"><div class="modal-header"><h2>确认完成订单</h2></div><div class="static-modal-copy"><p>确认后，列表、详情与统计数据将同步更新。</p><div class="component-stack"><span class="button button-secondary static-control" aria-hidden="true">取消</span><span class="button button-primary static-control" aria-hidden="true">确认更新</span></div></div></div></div></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!doctype html>
+        <html lang="zh-CN">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>HTML Demo 模板展厅</title>
+          <style>
+            :root {
+              color-scheme: light;
+              font-family: "PingFang SC","Microsoft YaHei",sans-serif;
+              color: #172033;
+              background: #f4f6f9;
+            }
+            * { box-sizing: border-box; }
+            body { margin: 0; min-height: 100vh; background:
+              radial-gradient(circle at top right, rgba(59,130,246,.12) 0, transparent 32%),
+              linear-gradient(180deg, #f8fafc, #eef2f7); }
+            main { width: min(1280px, calc(100% - 40px)); margin: 0 auto; padding: 42px 0 72px; }
+            header { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+            h1 { margin: 0 0 10px; font-size: clamp(30px, 4vw, 44px); }
+            p { margin: 0; color: #64748b; line-height: 1.7; }
+            .progress { flex: none; padding: 10px 14px; border: 1px solid #d7dee7; border-radius: 999px; background: #fff; font-size: 14px; color: #475569; }
+            .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+            .card { overflow: hidden; border: 1px solid #dfe5ec; border-radius: 18px; background: #fff; box-shadow: 0 16px 36px rgba(15,23,42,.08); }
+            .preview { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: #e8edf3; }
+            .preview img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .2s ease; }
+            .preview:hover img { transform: scale(1.016); }
+            .body { padding: 20px; }
+            .title-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+            .id { padding: 4px 8px; border-radius: 6px; background: #1d4ed8; color: #fff; font-weight: 700; font-size: 13px; }
+            h2 { margin: 0; font-size: 22px; }
+            .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 18px; }
+            .tag { padding: 5px 9px; border-radius: 999px; background: #eff6ff; color: #1d4ed8; font-size: 13px; }
+            .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+            .button { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 15px; border-radius: 8px; border: 1px solid #cbd5e1; color: #334155; text-decoration: none; font-weight: 650; }
+            .button.primary { border-color: #1d4ed8; background: #1d4ed8; color: #fff; }
+            .note { margin-top: 28px; padding: 18px 20px; border-left: 4px solid #1d4ed8; background: #fff; border-radius: 12px; }
+            @media (max-width: 640px) { header { align-items: start; flex-direction: column; } main { width: min(100% - 24px, 1280px); padding-top: 28px; } }
+            @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+          </style>
+        </head>
+        <body>
+          <main>
+            <header>
+              <div>
+                <h1>HTML Demo 模板展厅</h1>
+                <p>先看网页风格并选择模板。业务页面、字段和交互仍以开发文档为准，模板只负责视觉语言和组件气质。</p>
+              </div>
+              <span class="progress">已完成 10 / 10 套模板</span>
+            </header>
+            <section class="grid" aria-label="可选模板">
+              <article class="card">
+  <a class="preview" href="templates/T01/starter.html" aria-label="打开 T01 政企业务网页 完整预览">
+    <img src="templates/T01/preview.png" alt="T01 政企业务网页 预览">
+  </a>
+  <div class="body">
+    <div class="title-row"><span class="id">T01</span><h2>政企业务网页</h2></div>
+    <p>深色侧栏、紧凑指标卡、筛选表格、详情抽屉与状态确认，适合事项、台账、审批和运营管理类 Demo。</p>
+    <div class="tags" aria-label="适用场景"><span class='tag'>事项办理</span><span class='tag'>项目台账</span><span class='tag'>审批管理</span><span class='tag'>运营管理</span></div>
+    <div class="actions">
+      <a class="button primary" href="templates/T01/starter.html">查看完整预览</a>
+      <a class="button" href="templates/T01/components.html">查看组件</a>
+    </div>
+  </div>
+</article> <article class="card">
+  <a class="preview" href="templates/T02/starter.html" aria-label="打开 T02 企业运营中台 完整预览">
+    <img src="templates/T02/preview.png" alt="T02 企业运营中台 预览">
+  </a>
+  <div class="body">
+    <div class="title-row"><span class="id">T02</span><h2>企业运营中台</h2></div>
+    <p>深灰侧栏、白色顶栏、多彩经营指标、扁平卡片与紧凑表格，适合经营驾驶舱、订单、客户和团队协作类 Demo。</p>
+    <div class="tags" aria-label="适用场景"><span class='tag'>经营分析</span><span class='tag'>订单管理</span><span class='tag'>客户运营</span><span class='tag'>团队协作</span></div>
+    <div class="actions">
+      <a class="button primary" href="templates/T02/starter.html">查看完整预览</a>
+      <a class="button" href="templates/T02/components.html">查看组件</a>
+    </div>
+  </div>
+</article> <article class="card">
+  <a class="preview" href="templates/T03/starter.html" aria-label="打开 T03 流程协同后台 完整预览">
+    <img src="templates/T03/preview.png" alt="T03 流程协同后台 预览">
+  </a>
+  <div class="body">
+    <div class="title-row"><span class="id">T03</span><h2>流程协同后台</h2></div>
+    <p>适合流程跟踪、事项流转、节点办理和进度协同类网页 Demo</p>
+    <div class="tags" aria-label="适用场景"><span class='tag'>事项流转</span><span class='tag'>项目节点办理</span><span class='tag'>流程督办</span><span class='tag'>跨团队协同</span></div>
+    <div class="actions">
+      <a class="button primary" href="templates/T03/starter.html">查看完整预览</a>
+      <a class="button" href="templates/T03/components.html">查看组件</a>
+    </div>
+  </div>
+</article> <article class="card">
+  <a class="preview" href="templates/T04/starter.html" aria-label="打开 T04 清爽任务中台 完整预览">
+    <img src="templates/T04/preview.png" alt="T04 清爽任务中台 预览">
+  </a>
+  <div class="body">
+    <div class="title-row"><span class="id">T04</span><h2>清爽任务中台</h2></div>
+    <p>适合任务分派、项目清单、执行协同和区域运营类网页 Demo</p>
+    <div class="tags" aria-label="适用场景"><span class='tag'>任务管理</span><span class='tag'>区域运营</span><span class='tag'>项目清单</span><span class='tag'>执行看板</span></div>
+    <div class="actions">
+      <a class="button primary" href="templates/T04/starter.html">查看完整预览</a>
+      <a class="button" href="templates/T04/components.html">查看组件</a>
+    </div>
+  </div>
+</article> <article class="card">
+  <a class="preview" href="templates/T05/starter.html" aria-label="打开 T05 精致 SaaS 工作台 完整预览">
+    <img src="templates/T05/preview.png" alt="T05 精致 SaaS 工作台 预览">
+  </a>
+  <div class="body">
+    <div class="title-row"><span class="id">T05</span><h2>精致 SaaS 工作台</h2></div>
+    <p>适合客户运营、项目管理、SaaS 工作台和轻商务后台类网页 Demo</p>
+    <div class="tags" aria-label="适用场景"><span class='tag'>客户运营</span><span class='tag'>项目追踪</span><span class='tag'>业务工作台</span><span class='tag'>SaaS 管理后台</span></div>
+    <div class="actions">
+      <a class="button primary" href="templates/T05/starter.html">查看完整预览</a>
+      <a class="button" href="templates/T05/components.html">查看组件</a>
+    </div>
+  </div>
+</article> <article class="card">
+  <a class="preview" href="templates/T06/starter.html" aria-label="打开 T06 数智服务运营台 完整预览">
+    <img src="templates/T06/preview.png" alt="T06 数智服务运营台 预览">
+  </a>
+  <div class="body">
+    <div class="title-row"><span class="id">T06</span><h2>数智服务运营台</h2></div>
+    <p>适合区域服务监测、服务工单协同和服务目录运营类网页 Demo</p>
+    <div class="tags" aria-label="适用场景"><span class='tag'>服务运营</span><span class='tag'>区域服务</span><span class='tag'>发布中心</span><span class='tag'>服务工单</span></div>
+    <div class="actions">
+      <a class="button primary" href="templates/T06/starter.html">查看完整预览</a>
+      <a class="button" href="templates/T06/components.html">查看组件</a>
+    </div>
+  </div>
+</article> <article class="card">
+  <a class="preview" href="templates/T07/starter.html" aria-label="打开 T07 AI 数据中台 完整预览">
+    <img src="templates/T07/preview.png" alt="T07 AI 数据中台 预览">
+  </a>
+  <div class="body">
+    <div class="title-row"><span class="id">T07</span><h2>AI 数据中台</h2></div>
+    <p>适合模型任务、数据资产、质量监测和团队协作类网页 Demo</p>
+    <div class="tags" aria-label="适用场景"><span class='tag'>指标总览</span><span class='tag'>审批中心</span><span class='tag'>配置中心</span><span class='tag'>工程运营</span></div>
+    <div class="actions">
+      <a class="button primary" href="templates/T07/starter.html">查看完整预览</a>
+      <a class="button" href="templates/T07/components.html">查看组件</a>
+    </div>
+  </div>
+</article> <article class="card">
+  <a class="preview" href="templates/T08/starter.html" aria-label="打开 T08 组件化运营中台 完整预览">
+    <img src="templates/T08/preview.png" alt="T08 组件化运营中台 预览">
+  </a>
+  <div class="body">
+    <div class="title-row"><span class="id">T08</span><h2>组件化运营中台</h2></div>
+    <p>适合项目运营、客户协作、阶段推进和任务看板类网页 Demo</p>
+    <div class="tags" aria-label="适用场景"><span class='tag'>综合概览</span><span class='tag'>事项台账</span><span class='tag'>风险看板</span><span class='tag'>参数配置</span></div>
+    <div class="actions">
+      <a class="button primary" href="templates/T08/starter.html">查看完整预览</a>
+      <a class="button" href="templates/T08/components.html">查看组件</a>
+    </div>
+  </div>
+</article> <article class="card">
+  <a class="preview" href="templates/T09/starter.html" aria-label="打开 T09 极简分析台 完整预览">
+    <img src="templates/T09/preview.png" alt="T09 极简分析台 预览">
+  </a>
+  <div class="body">
+    <div class="title-row"><span class="id">T09</span><h2>极简分析台</h2></div>
+    <p>适合 AI 分析、实验管理、信号观察和极简分析工作台类网页 Demo</p>
+    <div class="tags" aria-label="适用场景"><span class='tag'>实验管理</span><span class='tag'>分析台</span><span class='tag'>Prompt 工作流</span><span class='tag'>AI 评测</span></div>
+    <div class="actions">
+      <a class="button primary" href="templates/T09/starter.html">查看完整预览</a>
+      <a class="button" href="templates/T09/components.html">查看组件</a>
+    </div>
+  </div>
+</article> <article class="card">
+  <a class="preview" href="templates/T10/starter.html" aria-label="打开 T10 AI 交互工作台 完整预览">
+    <img src="templates/T10/preview.png" alt="T10 AI 交互工作台 预览">
+  </a>
+  <div class="body">
+    <div class="title-row"><span class="id">T10</span><h2>AI 交互工作台</h2></div>
+    <p>适合会话实验、情绪观察、声音角色配置和 AI 协作工作台类网页 Demo</p>
+    <div class="tags" aria-label="适用场景"><span class='tag'>会话实验</span><span class='tag'>AI 交互工作台</span><span class='tag'>情绪观察</span><span class='tag'>声音角色</span></div>
+    <div class="actions">
+      <a class="button primary" href="templates/T10/starter.html">查看完整预览</a>
+      <a class="button" href="templates/T10/components.html">查看组件</a>
+    </div>
+  </div>
+</article>
+            </section>
+            <p class="note">10 套模板现在都能打开完整网页预览。每套都保留独立侧边栏页面、可见按钮逻辑、抽屉、弹窗、导出和设置保存流程；T09 与 T10 为 reference-only 风格，不复制原产品品牌、文案、截图或代码。</p>
+          </main>
+        </body>
+        </html>

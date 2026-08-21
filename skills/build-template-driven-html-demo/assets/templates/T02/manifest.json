@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0",
+  "template_id": "T02",
+  "name": "企业运营中台",
+  "status": "ready",
+  "positioning": "适合经营驾驶舱、客户运营、订单管理和团队协作类网页 Demo",
+  "visual_reference": "CoreUI Free Bootstrap Admin Template",
+  "runtime": {
+    "platform": "modern web browsers with responsive wide and narrow layouts",
+    "external_dependencies": [],
+    "network_required": false,
+    "build_required": false,
+    "entry_file": "starter.html"
+  },
+  "files": {
+    "starter": "starter.html",
+    "tokens": "tokens.css",
+    "components": "components.html",
+    "interactions": "interactions.js",
+    "preview": "preview.png",
+    "provenance": "source.md"
+  },
+  "design_tokens": {
+    "font_family": "system sans-serif with Chinese platform fonts",
+    "primary": "#5856d6",
+    "navigation": "#212631",
+    "page_background": "#f3f4f7",
+    "surface": "#ffffff",
+    "border": "#d8dbe0",
+    "text": "#323a49",
+    "muted_text": "#6b7785",
+    "success": "#1b9e3e",
+    "info": "#3399ff",
+    "warning": "#f9b115",
+    "danger": "#e55353",
+    "radius": {
+      "control": "6px",
+      "card": "7px",
+      "modal": "8px"
+    },
+    "density": "medium",
+    "shadow_style": "flat bordered cards with restrained overlays"
+  },
+  "layout_rules": [
+    "Use a dark charcoal left sidebar on wide web layouts and an off-canvas sidebar below 900px.",
+    "Map every visible sidebar item to one complete top-level page view; show exactly one page at a time and never scroll between sidebar pages.",
+    "Use a white top bar with breadcrumb context above a cool gray page canvas.",
+    "Use four colorful KPI cards for the first-row operational summary.",
+    "Keep content within 1480px and use 24px desktop page padding.",
+    "Use flat white cards, light borders, compact controls, and restrained shadows.",
+    "Place order filters above a dense table and keep explicit visible field labels.",
+    "Open order details in a right-side drawer so the list context remains visible.",
+    "Confirm state-changing order actions in a modal before mutating mock data."
+  ],
+  "component_inventory": [
+    {
+      "name": "primary_navigation",
+      "selectors": [".sidebar", ".sidebar-nav", ".nav-link"],
+      "use_for": "five top-level web modules with mutually exclusive page views"
+    },
+    {
+      "name": "page_view",
+      "selectors": ["[data-page-view]", ".page-heading", ".breadcrumb"],
+      "use_for": "complete pages and current location context"
+    },
+    {
+      "name": "metric_card",
+      "selectors": [".metric-grid", ".metric-card", ".metric-value", ".metric-sparkline"],
+      "use_for": "color-coded operational indicators derived from current mock state"
+    },
+    {
+      "name": "segmented_control",
+      "selectors": [".segmented-control", "[data-period]", ".segment-button"],
+      "use_for": "switching the dashboard reporting period"
+    },
+    {
+      "name": "business_card",
+      "selectors": [".card", ".card-header", ".card-body"],
+      "use_for": "charts, ranked lists, forms, teams, and settings"
+    },
+    {
+      "name": "filter_form",
+      "selectors": [".filter-form", ".field", ".input", ".select", ".form-actions"],
+      "use_for": "order and customer query conditions"
+    },
+    {
+      "name": "data_table",
+      "selectors": [".table-wrap", ".data-table", ".table-toolbar", ".empty-state"],
+      "use_for": "orders, customers, and members with visible result counts"
+    },
+    {
+      "name": "status_badge",
+      "selectors": [".badge", ".badge-paid", ".badge-pending", ".badge-review", ".badge-complete", ".badge-risk"],
+      "use_for": "short mutually exclusive business states"
+    },
+    {
+      "name": "notification_panel",
+      "selectors": [".notification-panel", ".notification-list", ".notification-item"],
+      "use_for": "operational notices opened from the top bar"
+    },
+    {
+      "name": "detail_drawer",
+      "selectors": [".drawer-shell", ".drawer", ".detail-grid", ".drawer-footer"],
+      "use_for": "order inspection and contextual state updates"
+    },
+    {
+      "name": "modal_dialog",
+      "selectors": [".modal", ".modal-header", ".modal-body", ".modal-footer"],
+      "use_for": "order status confirmation and member invitation"
+    },
+    {
+      "name": "settings_switch",
+      "selectors": [".switch-row", ".switch-control"],
+      "use_for": "boolean preferences with explicit labels and descriptions"
+    }
+  ],
+  "interaction_contracts": [
+    "Every visible enabled control must have an observable result; omit unfinished controls or expose them as truly disabled with a reason.",
+    "All controls must be reachable and operable by keyboard.",
+    "The mobile sidebar toggle must synchronize aria-controls and aria-expanded.",
+    "Page navigation must synchronize aria-current, breadcrumb text, document title, and URL hash, reset content scroll, and preserve each page's local state.",
+    "Period switching must recalculate dashboard metrics and chart marks from one mock state.",
+    "Filtering must update the result count and an explicit empty state.",
+    "CSV export must create a nonempty file representing the current filtered mock state.",
+    "The drawer and dialogs must support Escape, cancel without mutation, focus containment, and focus restoration.",
+    "Order state changes must update the order row, drawer, overview metrics, and related summaries.",
+    "Settings save and reset must show the current persisted demo preference state.",
+    "Honor prefers-reduced-motion."
+  ],
+  "adaptation_rules": {
+    "preserve": [
+      "dark charcoal sidebar plus light gray content canvas",
+      "violet primary actions and CoreUI-like semantic colors",
+      "flat bordered cards with compact controls and modest radii",
+      "colorful KPI cards with small inline trend graphics",
+      "breadcrumb plus page heading hierarchy",
+      "responsive web off-canvas sidebar",
+      "filter plus table plus detail drawer workflow",
+      "confirmation before business state changes"
+    ],
+    "replace_from_development_document": [
+      "product name and navigation labels",
+      "page hierarchy and business sections",
+      "metric definitions and chart series",
+      "filter fields and table columns",
+      "mock orders, customers, members, notifications, and settings",
+      "status vocabulary and permitted transitions",
+      "drawer fields, dialog forms, and feedback copy"
+    ],
+    "avoid": [
+      "CoreUI logos, brand names, screenshots, product copy, images, or upstream source code",
+      "CoreUI PRO components or any unverified commercial assets",
+      "external CSS, JavaScript, icon, font, image, or analytics dependencies",
+      "native desktop window chrome or operating-system app conventions",
+      "oversized gradients, glassmorphism, or highly rounded consumer-app cards",
+      "using color alone to communicate state",
+      "fake enabled controls or success messages without real state changes"
+    ]
+  },
+  "single_file_compilation": {
+    "style_source": "inline the complete contents of tokens.css into a style element",
+    "script_source": "inline the complete contents of interactions.js before the closing body tag",
+    "asset_policy": "use inline SVG and CSS shapes only; do not introduce external URLs"
+  }
+}

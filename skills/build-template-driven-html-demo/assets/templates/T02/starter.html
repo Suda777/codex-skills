@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="企业运营中台网页模板 T02">
+  <title>企业运营中台</title>
+  <link rel="stylesheet" href="tokens.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">跳到主要内容</a>
+
+  <div class="app-shell" id="appShell">
+    <aside class="sidebar" id="sidebar" aria-label="主导航">
+      <div class="sidebar-brand">
+        <span class="brand-mark" aria-hidden="true">运</span>
+        <span class="brand-copy"><strong>企业运营中台</strong><span>WEB DEMO · T02</span></span>
+      </div>
+      <p class="sidebar-section-label">运营工作台</p>
+      <nav class="sidebar-nav">
+        <a class="nav-link" href="#overview" data-nav-item aria-current="page">
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z"/></svg></span>
+          运营总览
+        </a>
+        <a class="nav-link" href="#orders" data-nav-item>
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h12l2 4v14H4V7l2-4Zm-2 4h16M9 11h6"/></svg></span>
+          订单中心
+        </a>
+        <a class="nav-link" href="#customers" data-nav-item>
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm13 10v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          客户洞察
+        </a>
+        <a class="nav-link" href="#team" data-nav-item>
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm14 10v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          团队协作
+        </a>
+      </nav>
+      <p class="sidebar-section-label">系统</p>
+      <nav class="sidebar-nav" aria-label="系统设置">
+        <a class="nav-link" href="#settings" data-nav-item>
+          <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"/></svg></span>
+          偏好设置
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-user"><span class="avatar" aria-hidden="true">陈</span><span><strong>陈屿 · 运营负责人</strong><span>华东业务中心</span></span></div>
+      </div>
+    </aside>
+
+    <button class="sidebar-backdrop" id="sidebarBackdrop" type="button" aria-label="收起导航" hidden></button>
+
+    <div class="main-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button sidebar-toggle" id="sidebarToggle" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="展开导航">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <nav class="breadcrumb" aria-label="面包屑"><span>运营工作台</span><span aria-hidden="true">/</span><strong id="breadcrumbCurrent">运营总览</strong></nav>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button" id="notificationButton" type="button" aria-controls="notificationPanel" aria-expanded="false" aria-label="查看通知，当前有 3 条未读">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+            <span class="notification-badge" id="notificationBadge" aria-hidden="true">3</span>
+          </button>
+          <button class="button button-primary" type="button" data-export-orders aria-label="导出当前筛选订单 CSV">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+            <span>导出订单</span>
+          </button>
+        </div>
+      </header>
+
+      <aside class="notification-panel" id="notificationPanel" aria-labelledby="notificationTitle" tabindex="-1" hidden>
+        <div class="notification-head">
+          <h2 id="notificationTitle">运营通知</h2>
+          <button class="icon-button" type="button" data-close-notifications aria-label="关闭通知面板"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+        </div>
+        <ul class="notification-list" id="notificationList"></ul>
+        <div class="modal-footer"><button class="button button-secondary button-small" id="markAllRead" type="button">全部标为已读</button></div>
+      </aside>
+
+      <main class="content" id="mainContent" tabindex="-1">
+        <section class="page-view" id="overview" data-page-view data-page-title="运营总览" aria-labelledby="overviewTitle">
+          <div class="page-heading">
+            <div><p class="eyebrow">Operations Cockpit</p><h1 id="overviewTitle">运营总览</h1><p class="page-description">从同一份 Mock 订单状态生成成交、客户和交付指标。</p></div>
+            <div class="segmented-control" aria-label="统计周期">
+              <button class="segment-button" type="button" data-period="7" aria-pressed="false">7 天</button>
+              <button class="segment-button" type="button" data-period="30" aria-pressed="true">30 天</button>
+              <button class="segment-button" type="button" data-period="90" aria-pressed="false">90 天</button>
+            </div>
+          </div>
+
+          <div class="metric-grid" aria-label="核心经营指标">
+            <article class="metric-card primary"><span class="metric-label">统计期订单</span><strong class="metric-value" id="metricOrders">0</strong><span class="metric-meta" id="metricOrdersMeta">全部 Mock 订单</span><svg class="metric-sparkline" viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true"><path class="fill" d="M0 54 L0 46 L48 32 L92 39 L140 22 L188 29 L240 13 L300 21 L300 62 Z"/><polyline points="0,46 48,32 92,39 140,22 188,29 240,13 300,21"/></svg></article>
+            <article class="metric-card info"><span class="metric-label">成交金额</span><strong class="metric-value" id="metricRevenue">¥0</strong><span class="metric-meta" id="metricRevenueMeta">按当前周期汇总</span><svg class="metric-sparkline" viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true"><path class="fill" d="M0 62 L0 34 L50 42 L100 22 L150 30 L200 13 L250 24 L300 9 L300 62 Z"/><polyline points="0,34 50,42 100,22 150,30 200,13 250,24 300,9"/></svg></article>
+            <article class="metric-card warning"><span class="metric-label">待处理订单</span><strong class="metric-value" id="metricPending">0</strong><span class="metric-meta">待审核与待付款</span><svg class="metric-sparkline" viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true"><path class="fill" d="M0 62 L0 42 L60 28 L110 38 L170 24 L230 31 L300 18 L300 62 Z"/><polyline points="0,42 60,28 110,38 170,24 230,31 300,18"/></svg></article>
+            <article class="metric-card danger"><span class="metric-label">风险交付</span><strong class="metric-value" id="metricRisk">0</strong><span class="metric-meta">需要人工跟进</span><svg class="metric-sparkline" viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true"><path class="fill" d="M0 62 L0 45 L60 46 L110 34 L160 42 L220 25 L260 31 L300 16 L300 62 Z"/><polyline points="0,45 60,46 110,34 160,42 220,25 260,31 300,16"/></svg></article>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="card" aria-labelledby="trendTitle">
+              <div class="card-header"><div><h2 id="trendTitle">近期成交趋势</h2><p class="card-subtitle" id="trendSubtitle">30 天订单金额分布</p></div><span class="badge badge-review" id="trendBadge">30 天</span></div>
+              <div class="card-body chart-shell"><div class="bar-chart" id="revenueChart" aria-label="成交趋势柱状图"></div></div>
+            </section>
+            <section class="card" aria-labelledby="customerRankTitle">
+              <div class="card-header"><div><h2 id="customerRankTitle">客户贡献排名</h2><p class="card-subtitle">当前周期订单金额 Top 5</p></div><button class="button button-ghost button-small" type="button" data-go-page="customers">查看客户洞察</button></div>
+              <div class="card-body rank-list" id="customerRank"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page-view" id="orders" data-page-view data-page-title="订单中心" aria-labelledby="ordersTitle" hidden>
+          <div class="page-heading"><div><p class="eyebrow">Order Operations</p><h1 id="ordersTitle" tabindex="-1">订单中心</h1><p class="page-description">查询、筛选、导出并跟进每笔订单的当前状态。</p></div><button class="button button-primary" type="button" data-export-orders>导出当前结果</button></div>
+          <section class="card filter-card" aria-labelledby="orderFilterTitle">
+            <div class="card-header"><div><h2 id="orderFilterTitle">订单查询</h2><p class="card-subtitle">支持订单号、客户名称和状态联合筛选</p></div></div>
+            <div class="card-body">
+              <form class="filter-form" id="orderFilterForm">
+                <div class="field"><label for="orderKeyword">搜索订单</label><input class="input" id="orderKeyword" name="keyword" type="search" placeholder="输入订单号或客户名称"></div>
+                <div class="field"><label for="orderStatusFilter">订单状态</label><select class="select" id="orderStatusFilter" name="status"><option value="">全部状态</option><option>待审核</option><option>待付款</option><option>履约中</option><option>已完成</option><option>有风险</option></select></div>
+                <div class="form-actions"><button class="button button-primary" type="submit">查询</button><button class="button button-secondary" type="reset">重置</button></div>
+              </form>
+            </div>
+          </section>
+          <section class="card" aria-labelledby="orderTableTitle">
+            <div class="card-header"><div><h2 id="orderTableTitle">订单列表</h2><p class="card-subtitle" id="orderMockNotice">数据为演示 Mock，不代表真实交易</p></div><span class="badge badge-neutral" id="orderCountBadge">0 笔</span></div>
+            <div class="table-toolbar"><span id="orderResultSummary" aria-live="polite">共 0 笔订单</span><span>金额单位：人民币</span></div>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">订单 / 客户</th><th scope="col">渠道</th><th scope="col">金额</th><th scope="col">业务负责人</th><th scope="col">状态</th><th scope="col">签约日期</th><th scope="col">操作</th></tr></thead><tbody id="orderTableBody"></tbody></table></div>
+          </section>
+        </section>
+
+        <section class="page-view" id="customers" data-page-view data-page-title="客户洞察" aria-labelledby="customersTitle" hidden>
+          <div class="page-heading"><div><p class="eyebrow">Customer Intelligence</p><h1 id="customersTitle" tabindex="-1">客户洞察</h1><p class="page-description">按客户分群查看贡献、活跃度与服务重点。</p></div></div>
+          <div class="segment-summary" aria-label="客户概览">
+            <article class="segment-card"><span>高价值客户</span><strong id="highValueCount">0</strong><span>累计成交额高于 20 万元</span></article>
+            <article class="segment-card info"><span>成长客户</span><strong id="growthCount">0</strong><span>近 30 天仍有活跃订单</span></article>
+            <article class="segment-card warning"><span>需要跟进</span><strong id="attentionCount">0</strong><span>存在待处理或风险订单</span></article>
+          </div>
+          <section class="card filter-card" aria-labelledby="customerFilterTitle">
+            <div class="card-header"><div><h2 id="customerFilterTitle">客户分群</h2><p class="card-subtitle">切换分群后立即重算客户列表</p></div></div>
+            <div class="card-body">
+              <form class="filter-form customer-filter-form" id="customerFilterForm">
+                <div class="field"><label for="customerKeyword">客户搜索</label><input class="input" id="customerKeyword" name="keyword" type="search" placeholder="输入客户名称或行业"></div>
+                <div class="field"><label for="customerSegment">客户分群</label><select class="select" id="customerSegment" name="segment"><option value="">全部客户</option><option value="high">高价值</option><option value="growth">成长中</option><option value="attention">需跟进</option></select></div>
+                <div class="form-actions"><button class="button button-primary" type="submit">应用分群</button><button class="button button-secondary" type="reset">重置</button></div>
+              </form>
+            </div>
+          </section>
+          <section class="card" aria-labelledby="customerTableTitle">
+            <div class="card-header"><div><h2 id="customerTableTitle">客户清单</h2><p class="card-subtitle" id="customerResultSummary" aria-live="polite">共 0 家客户</p></div></div>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">客户</th><th scope="col">行业</th><th scope="col">客户分群</th><th scope="col">订单数</th><th scope="col">累计成交</th><th scope="col">最近业务</th></tr></thead><tbody id="customerTableBody"></tbody></table></div>
+          </section>
+        </section>
+
+        <section class="page-view" id="team" data-page-view data-page-title="团队协作" aria-labelledby="teamTitle" hidden>
+          <div class="page-heading"><div><p class="eyebrow">Team Workspace</p><h1 id="teamTitle" tabindex="-1">团队协作</h1><p class="page-description">查看成员分工与订单负载，新邀请的成员会立即加入清单。</p></div><button class="button button-primary" type="button" data-open-invite>邀请成员</button></div>
+          <div class="team-summary">
+            <article class="summary-tile"><span>在册成员</span><strong id="teamMemberCount">0</strong></article>
+            <article class="summary-tile"><span>当前负责订单</span><strong id="teamOrderCount">0</strong></article>
+            <article class="summary-tile"><span>超载成员</span><strong id="teamOverloadCount">0</strong></article>
+          </div>
+          <section class="card" aria-labelledby="memberTableTitle">
+            <div class="card-header"><div><h2 id="memberTableTitle">成员工作台</h2><p class="card-subtitle">当前 Demo 会话内数据</p></div></div>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">成员</th><th scope="col">角色</th><th scope="col">负责区域</th><th scope="col">当前订单</th><th scope="col">工作状态</th></tr></thead><tbody id="memberTableBody"></tbody></table></div>
+          </section>
+        </section>
+
+        <section class="page-view" id="settings" data-page-view data-page-title="偏好设置" aria-labelledby="settingsTitle" hidden>
+          <div class="page-heading"><div><p class="eyebrow">Preferences</p><h1 id="settingsTitle" tabindex="-1">偏好设置</h1><p class="page-description">调整网页内的通知、展示和默认统计范围。</p></div></div>
+          <form id="settingsForm">
+            <div class="settings-grid">
+              <section class="card" aria-labelledby="noticeSettingsTitle">
+                <div class="card-header"><div><h2 id="noticeSettingsTitle">消息与提醒</h2><p class="card-subtitle">选择希望保留的站内通知</p></div></div>
+                <div class="card-body setting-list">
+                  <label class="switch-row"><span><strong>风险订单提醒</strong><small>订单进入“有风险”后显示站内通知</small></span><span class="switch-control"><input type="checkbox" name="riskAlerts" checked><i aria-hidden="true"></i></span></label>
+                  <label class="switch-row"><span><strong>新客户摘要</strong><small>每日汇总首次成交的客户</small></span><span class="switch-control"><input type="checkbox" name="customerDigest" checked><i aria-hidden="true"></i></span></label>
+                  <label class="switch-row"><span><strong>团队负载提醒</strong><small>成员负责订单超过 3 笔时提醒</small></span><span class="switch-control"><input type="checkbox" name="loadAlerts"><i aria-hidden="true"></i></span></label>
+                </div>
+              </section>
+              <section class="card" aria-labelledby="viewSettingsTitle">
+                <div class="card-header"><div><h2 id="viewSettingsTitle">展示与默认值</h2><p class="card-subtitle">保存后更新当前 Demo 会话</p></div></div>
+                <div class="card-body settings-fields">
+                  <div class="field"><label for="defaultPeriod">默认统计周期</label><select class="select" id="defaultPeriod" name="defaultPeriod"><option value="7">7 天</option><option value="30" selected>30 天</option><option value="90">90 天</option></select></div>
+                  <div class="field"><label for="currencyDisplay">金额展示</label><select class="select" id="currencyDisplay" name="currency"><option value="compact" selected>万元简写</option><option value="full">完整人民币金额</option></select></div>
+                  <label class="switch-row"><span><strong>显示 Mock 数据提示</strong><small>在订单列表标明数据为演示用</small></span><span class="switch-control"><input type="checkbox" name="mockNotice" checked><i aria-hidden="true"></i></span></label>
+                </div>
+              </section>
+            </div>
+            <div class="settings-actions"><p class="settings-status" id="settingsStatus" aria-live="polite">当前为已保存的 Demo 默认设置。</p><button class="button button-secondary" id="restoreSettings" type="button">恢复默认</button><button class="button button-primary" type="submit">保存设置</button></div>
+          </form>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="drawer-shell" id="orderDrawerShell" hidden>
+    <button class="drawer-backdrop" type="button" data-close-drawer aria-label="关闭订单详情"></button>
+    <aside class="drawer" id="orderDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-describedby="drawerDescription" tabindex="-1">
+      <header class="drawer-header"><div><p class="eyebrow">Order Detail</p><h2 id="drawerTitle">订单详情</h2></div><button class="icon-button" type="button" data-close-drawer aria-label="关闭订单详情"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></header>
+      <div class="drawer-body"><div class="detail-hero"><p><strong id="drawerCode">订单号</strong></p><p class="muted" id="drawerDescription">订单说明</p></div><dl class="detail-grid"><div class="detail-item"><dt>当前状态</dt><dd><span class="badge" id="drawerStatus">—</span></dd></div><div class="detail-item"><dt>订单金额</dt><dd id="drawerAmount">—</dd></div><div class="detail-item"><dt>客户名称</dt><dd id="drawerCustomer">—</dd></div><div class="detail-item"><dt>销售渠道</dt><dd id="drawerChannel">—</dd></div><div class="detail-item"><dt>业务负责人</dt><dd id="drawerOwner">—</dd></div><div class="detail-item"><dt>签约日期</dt><dd id="drawerDate">—</dd></div></dl><h3>交付说明</h3><p class="muted" id="drawerDelivery">—</p></div>
+      <footer class="drawer-footer"><button class="button button-secondary" type="button" data-close-drawer>返回列表</button><button class="button button-primary" id="requestStatusUpdate" type="button">更新为已完成</button></footer>
+    </aside>
+  </div>
+
+  <dialog class="modal" id="statusDialog" aria-labelledby="statusDialogTitle" aria-describedby="statusDialogDescription">
+    <div class="modal-header"><h2 id="statusDialogTitle">确认完成订单</h2><button class="icon-button" type="button" data-close-dialog aria-label="关闭状态确认弹窗"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <div class="modal-body"><p id="statusDialogDescription">确认后，订单状态、总览指标和客户汇总将同步更新。</p></div>
+    <div class="modal-footer"><button class="button button-secondary" type="button" data-close-dialog>取消</button><button class="button button-primary" id="confirmStatusUpdate" type="button">确认更新</button></div>
+  </dialog>
+
+  <dialog class="modal" id="inviteDialog" aria-labelledby="inviteDialogTitle" aria-describedby="inviteDialogDescription">
+    <form id="inviteForm" novalidate>
+      <div class="modal-header"><div><p class="eyebrow">Team Invite</p><h2 id="inviteDialogTitle">邀请团队成员</h2></div><button class="icon-button" type="button" data-close-dialog aria-label="关闭邀请成员弹窗"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+      <div class="modal-body form-grid"><p class="form-note field-full" id="inviteDialogDescription">成员将被添加到当前 Demo 团队清单。</p><div class="field"><label for="inviteName">成员姓名</label><input class="input" id="inviteName" name="name" type="text" autocomplete="off" aria-describedby="inviteNameError"><span class="field-error" id="inviteNameError"></span></div><div class="field"><label for="inviteRole">团队角色</label><select class="select" id="inviteRole" name="role" aria-describedby="inviteRoleError"><option value="">请选择角色</option><option>客户运营</option><option>订单管理</option><option>交付协同</option><option>数据分析</option></select><span class="field-error" id="inviteRoleError"></span></div><div class="field field-full"><label for="inviteRegion">负责区域</label><select class="select" id="inviteRegion" name="region" aria-describedby="inviteRegionError"><option value="">请选择区域</option><option>华东</option><option>华南</option><option>华北</option><option>全国协同</option></select><span class="field-error" id="inviteRegionError"></span></div></div>
+      <div class="modal-footer"><button class="button button-secondary" type="button" data-close-dialog>取消</button><button class="button button-primary" type="submit">确认邀请</button></div>
+    </form>
+  </dialog>
+
+  <div class="toast-region" id="toastRegion" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script src="interactions.js"></script>
+</body>
+</html>

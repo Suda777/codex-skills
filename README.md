@@ -6,7 +6,9 @@
 
 | Skill | 用途 |
 | --- | --- |
+| `analyze-video-content` | 转写并分析本地视频，保留时间戳、画面文字和说话人证据 |
 | `build-telecom-leadership-ppt` | 先生成预览图片，再制作领导汇报、工作总结和电信业务 PPT |
+| `build-template-driven-html-demo` | 通过需求对话和可选网页模板，生成可直接打开的单文件交互 Demo |
 | `discuss-and-align` | 在执行前讨论问题、检验假设并形成明确共识 |
 | `download-video-from-link` | 只需提供链接，自动下载、验证并按项目归档多平台公开视频 |
 | `drawio-skill` | 基于 Agents365-ai（MIT）改造的个人 Draw.io 制图 Skill，增加图形路由、流程图硬规则和全图审查 |

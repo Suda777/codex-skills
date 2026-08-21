@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0",
+  "template_id": "T09",
+  "name": "极简分析台",
+  "status": "ready",
+  "positioning": "适合 AI 分析、实验管理、信号观察和极简分析工作台类网页 Demo",
+  "visual_reference": "Latitude (reference-only visual source)",
+  "runtime": {
+    "platform": "modern web browsers with responsive wide and narrow layouts",
+    "external_dependencies": [],
+    "network_required": false,
+    "build_required": false,
+    "entry_file": "starter.html"
+  },
+  "files": {
+    "starter": "starter.html",
+    "tokens": "tokens.css",
+    "components": "components.html",
+    "interactions": "interactions.js",
+    "preview": "preview.png",
+    "provenance": "source.md"
+  },
+  "design_tokens": {
+    "font_family": "Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,\"Segoe UI\",\"PingFang SC\",sans-serif",
+    "primary": "#315cff",
+    "navigation": "#fafaf7",
+    "page_background": "#f5f5f1",
+    "surface": "#ffffff",
+    "border": "#dedfd9",
+    "text": "#111210",
+    "muted_text": "#73756f",
+    "success": "#14845f",
+    "warning": "#a76108",
+    "danger": "#bd3d3a",
+    "radius": {
+      "control": "4px",
+      "card": "0px",
+      "modal": "0px"
+    },
+    "density": "medium",
+    "shadow_style": "主要使用细边线建立层级，仅通知、弹窗和抽屉使用克制阴影。"
+  },
+  "layout_rules": [
+    "Map every visible sidebar item to one complete top-level page view; show exactly one page at a time and never scroll between sidebar pages.",
+    "Keep the demo self-contained in one HTML file plus local CSS and JavaScript assets; no build step and no network fetch at runtime.",
+    "Use a fixed or off-canvas sidebar only as a web navigation pattern, not as native desktop chrome.",
+    "Keep top actions limited to buttons that produce real observable results such as export, refresh, navigation, form filtering, drawer open, dialog confirmation, save or reset.",
+    "Preserve the selected template's visual language through color, spacing, card treatment, corner radius, and information rhythm."
+  ],
+  "component_inventory": [
+    {
+      "name": "primary_navigation",
+      "selectors": [
+        ".sidebar",
+        ".primary-nav",
+        "[data-nav-item]"
+      ],
+      "use_for": "top-level mutually exclusive page views"
+    },
+    {
+      "name": "page_view",
+      "selectors": [
+        "[data-page-view]"
+      ],
+      "use_for": "complete web pages inside a single HTML file"
+    },
+    {
+      "name": "metric_card",
+      "selectors": [
+        ".metric-line",
+        ".metric-line article"
+      ],
+      "use_for": "overview KPIs and small summaries"
+    },
+    {
+      "name": "filter_form",
+      "selectors": [
+        ".filter-rail",
+        ".search-field",
+        "select"
+      ],
+      "use_for": "ledger search and filtering"
+    },
+    {
+      "name": "data_table",
+      "selectors": [
+        ".table-scroll",
+        ".table-section table"
+      ],
+      "use_for": "dense record inspection"
+    },
+    {
+      "name": "detail_drawer",
+      "selectors": [
+        ".drawer-shell",
+        ".drawer"
+      ],
+      "use_for": "context-preserving detail inspection"
+    },
+    {
+      "name": "modal_dialog",
+      "selectors": [
+        "dialog",
+        ".dialog-head",
+        ".dialog-actions"
+      ],
+      "use_for": "state confirmation and member creation"
+    },
+    {
+      "name": "status_badge",
+      "selectors": [
+        ".status",
+        ".status-review",
+        ".status-running",
+        ".status-done",
+        ".status-risk"
+      ],
+      "use_for": "short state labeling"
+    }
+  ],
+  "interaction_contracts": [
+    "Every visible enabled control must have an observable result; omit unfinished controls or expose them as truly disabled with a reason.",
+    "Sidebar navigation must update aria-current, breadcrumb text, document title, URL hash, and visible page content.",
+    "Filtering must update result count and show an explicit empty state.",
+    "Export must generate a non-empty CSV file for the current filtered mock state.",
+    "Drawer and dialog flows must support Escape, cancel without mutation, focus restoration, and visible success feedback after confirmation.",
+    "Settings save and reset must mutate current demo state rather than showing fake success only.",
+    "Honor prefers-reduced-motion and keep controls keyboard reachable."
+  ],
+  "adaptation_rules": {
+    "preserve": [
+      "极简留白",
+      "黑白主调",
+      "细边线",
+      "分析感",
+      "AI 实验工作流",
+      "聚焦内容"
+    ],
+    "replace_from_development_document": [
+      "product name and navigation labels",
+      "page hierarchy and page descriptions",
+      "record noun, statuses, filters, table columns, mock records, and drawer fields",
+      "overview metrics, chart labels, insights grouping, workspace roles, and setting labels"
+    ],
+    "avoid": [
+      "third-party logos, brand names, screenshots, images, product copy, icons, or source code",
+      "native desktop window chrome, external dependencies, or placeholder buttons with no visible result",
+      "using color alone to communicate state"
+    ]
+  },
+  "single_file_compilation": {
+    "style_source": "inline the complete contents of tokens.css into a style element",
+    "script_source": "inline the complete contents of interactions.js before the closing body tag",
+    "asset_policy": "use inline SVG and CSS shapes only; do not introduce external URLs"
+  }
+}

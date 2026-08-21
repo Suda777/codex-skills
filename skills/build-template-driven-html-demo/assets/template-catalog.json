@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "templates": [
+    {
+      "id": "T01",
+      "name": "政企业务网页",
+      "status": "ready",
+      "source_basis": "AdminLTE",
+      "path": "templates/T01",
+      "preview": "templates/T01/preview.png",
+      "tags": [
+        "政企",
+        "业务后台",
+        "表格",
+        "审批",
+        "高信息密度"
+      ],
+      "recommended_for": [
+        "事项办理",
+        "项目台账",
+        "审批管理",
+        "运营管理"
+      ],
+      "avoid_for": [
+        "品牌营销官网",
+        "沉浸式内容展示"
+      ],
+      "implementation": "independent-local-web-template",
+      "summary": "深色侧栏、紧凑指标卡、筛选表格、详情抽屉与状态确认，适合事项、台账、审批和运营管理类 Demo。"
+    },
+    {
+      "id": "T02",
+      "name": "企业运营中台",
+      "status": "ready",
+      "source_basis": "CoreUI Free Bootstrap Admin Template",
+      "path": "templates/T02",
+      "preview": "templates/T02/preview.png",
+      "tags": [
+        "企业中台",
+        "经营驾驶舱",
+        "订单",
+        "客户运营",
+        "多彩指标"
+      ],
+      "recommended_for": [
+        "经营分析",
+        "订单管理",
+        "客户运营",
+        "团队协作"
+      ],
+      "avoid_for": [
+        "品牌营销官网",
+        "沉浸式内容展示",
+        "极简内容阅读"
+      ],
+      "implementation": "independent-local-web-template",
+      "summary": "深灰侧栏、白色顶栏、多彩经营指标、扁平卡片与紧凑表格，适合经营驾驶舱、订单、客户和团队协作类 Demo。"
+    },
+    {
+      "id": "T03",
+      "name": "流程协同后台",
+      "status": "ready",
+      "source_basis": "Gentelella by Colorlib",
+      "path": "templates/T03",
+      "preview": "templates/T03/preview.png",
+      "tags": [
+        "流程协同",
+        "事项流转",
+        "时间轴",
+        "进度跟踪",
+        "紧凑表格"
+      ],
+      "recommended_for": [
+        "事项流转",
+        "项目节点办理",
+        "流程督办",
+        "跨团队协同"
+      ],
+      "avoid_for": [
+        "品牌营销官网",
+        "沉浸式内容展示",
+        "极简内容阅读"
+      ],
+      "implementation": "independent-local-web-template",
+      "summary": "适合流程跟踪、事项流转、节点办理和进度协同类网页 Demo"
+    },
+    {
+      "id": "T04",
+      "name": "清爽任务中台",
+      "status": "ready",
+      "source_basis": "Mazer",
+      "path": "templates/T04",
+      "preview": "templates/T04/preview.png",
+      "tags": [
+        "清爽留白",
+        "任务清单",
+        "运营协同",
+        "卡片轻量",
+        "蓝色主色"
+      ],
+      "recommended_for": [
+        "任务管理",
+        "区域运营",
+        "项目清单",
+        "执行看板"
+      ],
+      "avoid_for": [
+        "传统政务重密度台账",
+        "高饱和品牌官网"
+      ],
+      "implementation": "independent-local-web-template",
+      "summary": "适合任务分派、项目清单、执行协同和区域运营类网页 Demo"
+    },
+    {
+      "id": "T05",
+      "name": "精致 SaaS 工作台",
+      "status": "ready",
+      "source_basis": "Sneat Free Bootstrap HTML Admin Template",
+      "path": "templates/T05",
+      "preview": "templates/T05/preview.png",
+      "tags": [
+        "SaaS",
+        "精致卡片",
+        "柔和阴影",
+        "轻商务",
+        "客户运营"
+      ],
+      "recommended_for": [
+        "客户运营",
+        "项目追踪",
+        "业务工作台",
+        "SaaS 管理后台"
+      ],
+      "avoid_for": [
+        "高压监管台账",
+        "复古政务视觉"
+      ],
+      "implementation": "independent-local-web-template",
+      "summary": "适合客户运营、项目管理、SaaS 工作台和轻商务后台类网页 Demo"
+    },
+    {
+      "id": "T06",
+      "name": "数智服务运营台",
+      "status": "ready",
+      "source_basis": "Hope UI",
+      "path": "templates/T06",
+      "preview": "templates/T06/preview.png",
+      "tags": [
+        "轻盈",
+        "服务运营",
+        "圆角卡片",
+        "明亮蓝系",
+        "发布管理"
+      ],
+      "recommended_for": [
+        "服务运营",
+        "区域服务",
+        "发布中心",
+        "服务工单"
+      ],
+      "avoid_for": [
+        "高压密度监管台账",
+        "重工业风驾驶舱"
+      ],
+      "implementation": "independent-local-web-template",
+      "summary": "适合区域服务监测、服务工单协同和服务目录运营类网页 Demo"
+    },
+    {
+      "id": "T07",
+      "name": "AI 数据中台",
+      "status": "ready",
+      "source_basis": "TailAdmin",
+      "path": "templates/T07",
+      "preview": "templates/T07/preview.png",
+      "tags": [
+        "实时指标",
+        "Tailwind 风格",
+        "深浅对比",
+        "审批中心",
+        "工程感"
+      ],
+      "recommended_for": [
+        "指标总览",
+        "审批中心",
+        "配置中心",
+        "工程运营"
+      ],
+      "avoid_for": [
+        "情绪化叙事页面",
+        "重品牌营销官网"
+      ],
+      "implementation": "independent-local-web-template",
+      "summary": "适合模型任务、数据资产、质量监测和团队协作类网页 Demo"
+    },
+    {
+      "id": "T08",
+      "name": "组件化运营中台",
+      "status": "ready",
+      "source_basis": "Material Dashboard",
+      "path": "templates/T08",
+      "preview": "templates/T08/preview.png",
+      "tags": [
+        "Material",
+        "彩色标题卡",
+        "柔和阴影",
+        "综合概览",
+        "风险看板"
+      ],
+      "recommended_for": [
+        "综合概览",
+        "事项台账",
+        "风险看板",
+        "参数配置"
+      ],
+      "avoid_for": [
+        "极简叙事页面",
+        "工业风高密度大屏"
+      ],
+      "implementation": "independent-local-web-template",
+      "summary": "适合项目运营、客户协作、阶段推进和任务看板类网页 Demo"
+    },
+    {
+      "id": "T09",
+      "name": "极简分析台",
+      "status": "ready",
+      "source_basis": "Latitude (reference-only visual source)",
+      "path": "templates/T09",
+      "preview": "templates/T09/preview.png",
+      "tags": [
+        "极简分析",
+        "AI 工作流",
+        "实验管理",
+        "Reference Only",
+        "白底黑字"
+      ],
+      "recommended_for": [
+        "实验管理",
+        "分析台",
+        "Prompt 工作流",
+        "AI 评测"
+      ],
+      "avoid_for": [
+        "传统事项审批",
+        "高饱和品牌营销页",
+        "政务蓝白监管页"
+      ],
+      "implementation": "independent-local-web-template",
+      "summary": "适合 AI 分析、实验管理、信号观察和极简分析工作台类网页 Demo"
+    },
+    {
+      "id": "T10",
+      "name": "AI 交互工作台",
+      "status": "ready",
+      "source_basis": "Hume AI (reference-only visual source)",
+      "path": "templates/T10",
+      "preview": "templates/T10/preview.png",
+      "tags": [
+        "AI 交互工作台",
+        "会话实验",
+        "情绪观察",
+        "Reference Only",
+        "暖色点缀"
+      ],
+      "recommended_for": [
+        "对话分析",
+        "AI 交互工作台",
+        "会话运营",
+        "策略配置"
+      ],
+      "avoid_for": [
+        "传统政务审批",
+        "高密度财务台账",
+        "静态品牌官网"
+      ],
+      "implementation": "independent-local-web-template",
+      "summary": "适合会话实验、情绪观察、声音角色配置和 AI 协作工作台类网页 Demo"
+    }
+  ]
+}

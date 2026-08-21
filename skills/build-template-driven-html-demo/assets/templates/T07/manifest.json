@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "template_id": "T07",
+  "name": "AI 数据中台",
+  "status": "ready",
+  "positioning": "适合模型任务、数据资产、质量监测和团队协作类网页 Demo",
+  "visual_reference": "TailAdmin free dashboard patterns",
+  "runtime": {"platform": "modern web browsers with responsive wide and narrow layouts", "external_dependencies": [], "network_required": false, "build_required": false, "entry_file": "starter.html"},
+  "files": {"starter": "starter.html", "tokens": "tokens.css", "components": "components.html", "interactions": "interactions.js", "preview": "preview.png", "provenance": "source.md"},
+  "design_tokens": {
+    "font_family": "system sans-serif with Chinese platform fonts",
+    "primary": "#465fff", "navigation": "#ffffff", "page_background": "#f7f8fa", "surface": "#ffffff", "border": "#e6e8ec", "text": "#1d2939", "muted_text": "#667085", "success": "#12b76a", "warning": "#f79009", "danger": "#f04438",
+    "radius": {"control": "8px", "card": "12px", "modal": "14px"},
+    "density": "medium-spacious",
+    "shadow_style": "mostly border-defined surfaces with very restrained neutral shadows"
+  },
+  "layout_rules": [
+    "Use a light narrow sidebar, white top bar, thin neutral dividers, and a cool near-white canvas.",
+    "Show exactly one of five top-level pages and keep inactive pages hidden from layout and scrolling.",
+    "Use crisp information hierarchy, restrained 8 to 12 pixel radii, generous whitespace, and minimal shadows.",
+    "Present overview metrics as monochrome cards with small colored icon containers rather than gradient KPI blocks.",
+    "Use line and bar charts built with inline SVG and CSS, with explicit labels and supporting values.",
+    "Inspect model tasks in a centered detail dialog and confirm completion in a second focused dialog.",
+    "Support a real light and dark web theme without adding Tailwind or any runtime dependency.",
+    "Use an off-canvas web sidebar below 900px and never imply a native desktop application."
+  ],
+  "component_inventory": [
+    {"name": "light_navigation", "selectors": [".data-sidebar", ".data-nav", ".data-nav-link"], "use_for": "five mutually exclusive AI data pages"},
+    {"name": "plain_metric", "selectors": [".stat-grid", ".stat-card", ".stat-icon"], "use_for": "state-derived model and data indicators"},
+    {"name": "chart_panel", "selectors": [".analytics-grid", ".line-panel", ".quality-bars"], "use_for": "period-dependent task throughput and data quality"},
+    {"name": "task_table", "selectors": [".query-panel", ".task-table", ".empty-cell"], "use_for": "filterable, exportable model tasks"},
+    {"name": "center_dialog", "selectors": [".data-modal", ".detail-layout", ".dialog-actions"], "use_for": "task inspection, confirmation, task creation, and invitations"},
+    {"name": "asset_view", "selectors": [".asset-toolbar", ".asset-grid", ".asset-row"], "use_for": "real grid and list presentation switching"},
+    {"name": "team_table", "selectors": [".team-roster", ".member-cell", ".load-meter"], "use_for": "team membership and task load"},
+    {"name": "theme_toggle", "selectors": ["[data-theme-toggle]", ".theme-swatch", ".dark-mode"], "use_for": "real light-dark web theme switching"},
+    {"name": "notification_menu", "selectors": [".alert-menu", ".alert-row", ".alert-dot"], "use_for": "task and asset notices"},
+    {"name": "settings_form", "selectors": [".settings-grid", ".switch-line", ".settings-bar"], "use_for": "saved and restored demo preferences"}
+  ],
+  "interaction_contracts": [
+    "Every visible enabled control produces navigation, filtering, download, state change, form validation, theme change, or visible data feedback.",
+    "Top-level navigation synchronizes visible page, aria-current, breadcrumb, document title, URL hash, scroll position, and narrow sidebar state.",
+    "Period switching recalculates model metrics and chart series from current mock tasks.",
+    "Task filtering exposes result count and empty state; reset restores the complete task list.",
+    "CSV export creates a nonempty file from current filtered tasks.",
+    "Task completion requires confirmation and updates task table, overview metrics, asset summaries, team load, and notifications.",
+    "Task creation and member invitation validate required input before mutating shared in-memory state.",
+    "Dialogs support cancel, explicit close, Escape, focus containment, and focus restoration.",
+    "Theme, notification, and default-period settings can be saved and restored.",
+    "Honor prefers-reduced-motion and retain keyboard-operable focus states."
+  ],
+  "adaptation_rules": {
+    "preserve": ["light narrow sidebar and white top bar", "crisp neutral borders and restrained blue primary", "small radii with generous whitespace", "monochrome metric cards with colored icon tiles", "minimal shadows and clear data tables", "real light-dark web theme", "responsive off-canvas navigation"],
+    "replace_from_development_document": ["workspace name and page labels", "AI task and data asset entities", "metrics, chart series, filters, table fields, statuses, and transitions", "members, roles, notifications, settings, and all mock records", "dialog contents, validation rules, and feedback copy"],
+    "avoid": ["TailAdmin logos, brand names, screenshots, icons, illustrations, product copy, fonts, or upstream source code", "TailAdmin PRO or commercial components and assets", "Tailwind, React, CDN, online fonts, APIs, analytics, or any build/runtime dependency", "native desktop window chrome", "fake controls, fake exports, or success feedback without data mutation", "using color as the only status signal"]
+  },
+  "single_file_compilation": {"style_source": "inline the complete contents of tokens.css into a style element", "script_source": "inline the complete contents of interactions.js before the closing body tag", "asset_policy": "use inline SVG and CSS shapes only; do not introduce external URLs"}
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "template_id": "T06",
+  "name": "数智服务运营台",
+  "status": "ready",
+  "positioning": "适合区域服务监测、服务工单协同和服务目录运营类网页 Demo",
+  "visual_reference": "Hope UI free edition",
+  "runtime": {"platform": "modern web browsers with responsive wide and narrow layouts", "external_dependencies": [], "network_required": false, "build_required": false, "entry_file": "starter.html"},
+  "files": {"starter": "starter.html", "tokens": "tokens.css", "components": "components.html", "interactions": "interactions.js", "preview": "preview.png", "provenance": "source.md"},
+  "design_tokens": {
+    "font_family": "system sans-serif with Chinese platform fonts",
+    "primary": "#3569f4", "secondary": "#7c4dff", "navigation": "#11235a", "page_background": "#f4f7ff", "surface": "#ffffff", "border": "#e3e9f8", "text": "#172044", "muted_text": "#7480a3", "success": "#20b486", "warning": "#f3a833", "danger": "#e7576f",
+    "radius": {"control": "12px", "card": "22px", "modal": "24px"},
+    "density": "medium-airy",
+    "shadow_style": "soft blue ambient shadows with restrained gradient highlights"
+  },
+  "layout_rules": [
+    "Use a deep blue gradient sidebar on wide web layouts and an off-canvas sidebar below 920px.",
+    "Show exactly one of five complete top-level pages and never reveal another page by scrolling.",
+    "Lead the overview with a strong blue gradient service hero followed by large rounded metric cards.",
+    "Use blue-violet gradient accents, soft blue shadows, broad radii, and generous card padding.",
+    "Represent regional service health with a ranked horizontal distribution rather than a dense generic table.",
+    "Keep work-order filters above the table and inspect one work order in a right-side drawer.",
+    "Confirm resolution before updating the work order, region health, overview counts, and notifications.",
+    "Treat narrow mode as a responsive web off-canvas layout, never as a native desktop app."
+  ],
+  "component_inventory": [
+    {"name": "gradient_navigation", "selectors": [".service-sidebar", ".service-nav", ".service-nav-link"], "use_for": "five mutually exclusive service pages"},
+    {"name": "service_hero", "selectors": [".service-hero", ".hero-copy", ".hero-pulse"], "use_for": "prominent service health summary and primary action"},
+    {"name": "rounded_metric", "selectors": [".metric-deck", ".metric-orb", ".metric-trend"], "use_for": "state-derived service indicators"},
+    {"name": "wave_chart", "selectors": [".wave-card", ".wave-chart", ".wave-line"], "use_for": "period-dependent response trend"},
+    {"name": "region_rank", "selectors": [".region-rank", ".region-row", ".health-track"], "use_for": "regional service comparisons"},
+    {"name": "work_order_table", "selectors": [".filter-surface", ".order-table", ".empty-row"], "use_for": "filterable and exportable service work orders"},
+    {"name": "detail_drawer", "selectors": [".drawer-shell", ".service-drawer", ".drawer-facts"], "use_for": "context-preserving work-order inspection"},
+    {"name": "modal_dialog", "selectors": [".service-modal", ".modal-head", ".modal-actions"], "use_for": "resolution confirmation and work-order creation"},
+    {"name": "service_catalog", "selectors": [".catalog-grid", ".catalog-card", ".service-chip"], "use_for": "service offer composition without fake actions"},
+    {"name": "notification_popover", "selectors": [".notice-panel", ".notice-list", ".notice-item"], "use_for": "state-linked operational notices"},
+    {"name": "settings_panel", "selectors": [".settings-layout", ".setting-row", ".toggle"], "use_for": "saved and restored demo preferences"}
+  ],
+  "interaction_contracts": [
+    "Every enabled control has an observable result; unfinished controls are omitted or disabled with a visible reason.",
+    "Navigation synchronizes the active page, aria-current, breadcrumb, document title, URL hash, scroll position, and narrow sidebar state.",
+    "Period controls recalculate response metrics and the trend chart from shared mock state.",
+    "Work-order filtering updates the current result count and a truthful empty state; reset restores all rows.",
+    "CSV export downloads a nonempty file containing the current filtered work orders.",
+    "Resolving a work order requires confirmation and updates table, drawer, overview metrics, region health, and notifications.",
+    "Creating a work order validates required fields before updating overview, region, table, and notification state.",
+    "Drawer and dialogs close with explicit controls and Escape, trap focus, and restore focus to the opener.",
+    "Settings save and restore mutate the current demo state and period controls.",
+    "Honor prefers-reduced-motion and keep all core flows keyboard operable."
+  ],
+  "adaptation_rules": {
+    "preserve": ["deep blue web sidebar and light blue-gray canvas", "blue-violet gradient hero and primary actions", "large rounded cards with soft blue ambient shadows", "wave-based trend treatment and rounded region health bars", "airier service-oriented copy and component rhythm", "responsive off-canvas web navigation", "filter-table-drawer-confirm service workflow"],
+    "replace_from_development_document": ["product name, navigation labels, and page hierarchy", "service metrics, period definitions, and chart values", "regions, work-order fields, statuses, owners, and allowed transitions", "filters, table columns, service catalog, notifications, and settings", "mock records and all user-facing business copy"],
+    "avoid": ["Hope UI logos, brand names, screenshots, illustrations, icons, fonts, product copy, or upstream source code", "commercial-only or PRO components and assets", "external libraries, CDNs, remote images, analytics, APIs, or build tools", "native desktop window chrome or operating-system app conventions", "fake enabled actions or success feedback without state change", "using color alone to communicate health or status"]
+  },
+  "single_file_compilation": {"style_source": "inline the complete contents of tokens.css into a style element", "script_source": "inline the complete contents of interactions.js before the closing body tag", "asset_policy": "use inline SVG and CSS shapes only; do not introduce external URLs"}
+}

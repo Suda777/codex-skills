@@ -1,0 +1,3 @@
+interface:
+  display_name: "开发可交互 HTML Demo"
+  short_description: "根据开发文档与选定网页模板生成单文件交互 Demo"

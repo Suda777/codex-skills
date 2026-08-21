@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="AI 交互工作台 T10：本地 Mock 网页模板">
+  <title>AI 交互工作台 · 情绪实验室</title>
+  <link rel="stylesheet" href="tokens.css">
+</head>
+<body>
+  <svg class="svg-defs" aria-hidden="true">
+    <symbol id="v-spark" viewBox="0 0 24 24"><path d="m12 2 1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z"/></symbol>
+    <symbol id="v-wave" viewBox="0 0 24 24"><path d="M3 12h2l2-7 4 14 3-11 3 8 2-4h2"/></symbol>
+    <symbol id="v-chat" viewBox="0 0 24 24"><path d="M5 5h14v11H9l-4 4V5Z"/></symbol>
+    <symbol id="v-voice" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></symbol>
+    <symbol id="v-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21v-2a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v2M17 4a4 4 0 0 1 0 8M18 14a6 6 0 0 1 4 5.7V21"/></symbol>
+    <symbol id="v-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/></symbol>
+    <symbol id="v-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+    <symbol id="v-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="v-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="v-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></symbol>
+    <symbol id="v-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="v-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+  </svg>
+  <a class="skip-link" href="#mainContent">跳到主要内容</a>
+  <div class="app-shell" id="appShell">
+    <aside class="sidebar" id="sidebar" aria-label="主导航">
+      <div class="brand"><span class="brand-orb"><svg><use href="#v-spark"/></svg></span><span><strong>共情实验台</strong><small>AI INTERACTION / MOCK</small></span></div>
+      <button class="project-switcher" id="projectButton" type="button" aria-controls="projectMenu" aria-expanded="false"><span><small>当前项目</small><strong id="projectName">热线体验优化</strong></span><span class="chevron" aria-hidden="true"></span></button>
+      <div class="project-menu" id="projectMenu" hidden><button type="button" data-project="热线体验优化">热线体验优化</button><button type="button" data-project="政务服务陪练">政务服务陪练</button><button type="button" data-project="关怀回访洞察">关怀回访洞察</button></div>
+      <nav class="sidebar-nav">
+        <a href="#studio" data-nav-item aria-current="page"><svg><use href="#v-wave"/></svg><span>情绪实验室</span></a>
+        <a href="#sessions" data-nav-item><svg><use href="#v-chat"/></svg><span>会话记录</span><span class="nav-count" id="sessionNavCount">0</span></a>
+        <a href="#voices" data-nav-item><svg><use href="#v-voice"/></svg><span>声音角色</span></a>
+        <a href="#team" data-nav-item><svg><use href="#v-users"/></svg><span>协作空间</span></a>
+        <a href="#settings" data-nav-item><svg><use href="#v-settings"/></svg><span>实验设置</span></a>
+      </nav>
+      <div class="privacy-note"><span class="privacy-icon"><svg><use href="#v-spark"/></svg></span><div><strong>演示数据说明</strong><p>不录音、不联网；波形与情绪分值均为本地模拟。</p></div></div>
+    </aside>
+    <button class="sidebar-overlay" id="sidebarOverlay" type="button" aria-label="关闭导航" hidden></button>
+    <div class="main-shell">
+      <header class="topbar">
+        <div class="topbar-left"><button class="icon-button menu-toggle" id="menuToggle" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="展开导航"><svg><use href="#v-menu"/></svg></button><div><span id="breadcrumbProject">热线体验优化</span><strong id="breadcrumbPage">情绪实验室</strong></div></div>
+        <div class="topbar-actions"><button class="soft-button" id="exportAllButton" type="button"><svg><use href="#v-download"/></svg>导出会话</button><button class="icon-button notification-button" id="notificationButton" type="button" aria-controls="notificationPanel" aria-expanded="false" aria-label="查看通知"><svg><use href="#v-bell"/></svg><span id="notificationBadge" class="notification-badge">0</span></button><button class="gradient-button" id="openSessionButton" type="button"><svg><use href="#v-spark"/></svg>新建模拟会话</button></div>
+      </header>
+      <aside class="notification-panel" id="notificationPanel" tabindex="-1" aria-labelledby="notificationTitle" hidden><div class="panel-head"><div><span class="eyebrow">ACTIVITY</span><h2 id="notificationTitle">实验动态</h2></div><button class="icon-button" id="closeNotifications" type="button" aria-label="关闭通知"><svg><use href="#v-close"/></svg></button></div><div id="notificationList" class="notification-list"></div><button class="soft-button full-width" id="markReadButton" type="button">全部标为已读</button></aside>
+      <main class="content" id="mainContent" tabindex="-1">
+        <section id="studio" class="page-view" data-page-view data-page-title="情绪实验室" aria-labelledby="studioTitle">
+          <header class="studio-heading"><div><span class="eyebrow">EMPATHY PLAYGROUND</span><h1 id="studioTitle">让一段对话，显露它的情绪节奏。</h1><p>选择模拟声音与模型后运行分析。这里不会访问麦克风，也不代表真实模型输出。</p></div><div class="session-pill"><span class="live-dot"></span><span>本地 Mock 会话</span></div></header>
+          <div class="studio-shell">
+            <section class="conversation-card" aria-labelledby="conversationTitle">
+              <div class="card-head"><div><span class="eyebrow">SAMPLE TRANSCRIPT</span><h2 id="conversationTitle">模拟对话片段</h2></div><div class="duration-tabs" aria-label="样本长度"><button type="button" data-duration="30">30 秒</button><button type="button" data-duration="120" aria-pressed="true">2 分钟</button><button type="button" data-duration="300">5 分钟</button></div></div>
+              <div class="transcript" id="transcript"><article class="speaker customer"><span>访客</span><p>我反复提交了几次，还是不知道现在处理到哪里。</p></article><article class="speaker agent"><span>助手</span><p>我理解你现在最关心的是明确进度。我先把当前节点和下一步一次讲清楚。</p></article><article class="speaker customer"><span>访客</span><p>好，我希望今天能知道由谁负责。</p></article></div>
+              <div class="wave-panel"><div class="wave-bars" id="waveBars" aria-label="模拟波形"></div><div class="wave-meta"><span id="waveCaption">样本 02:00 · 未分析</span><button class="play-button" id="analyzeButton" type="button"><svg><use href="#v-play"/></svg><span>运行 Mock 分析</span></button></div></div>
+            </section>
+            <aside class="control-card" aria-labelledby="controlTitle"><div class="card-head"><div><span class="eyebrow">CONFIGURATION</span><h2 id="controlTitle">分析配置</h2></div><span class="mock-chip">MOCK</span></div><label>情绪模型<select id="modelSelect"><option value="多维情绪观察器">多维情绪观察器</option><option value="服务体验观察器">服务体验观察器</option><option value="沟通节奏观察器">沟通节奏观察器</option></select></label><label>声音角色<select id="voiceSelect"></select></label><label>关注重点<select id="focusSelect"><option value="挫败感与安抚">挫败感与安抚</option><option value="信任变化">信任变化</option><option value="表达节奏">表达节奏</option></select></label><div class="config-summary"><span>当前状态</span><strong id="analysisStatus">等待运行</strong><p id="analysisSummary">选择配置后，点击“运行 Mock 分析”。</p></div><button class="soft-button full-width" id="resetAnalysisButton" type="button">重置分析</button></aside>
+          </div>
+          <div class="emotion-grid" aria-label="情绪观察结果"><article class="emotion-card lavender"><span>平静</span><strong id="emotionCalm">--</strong><div><i id="barCalm"></i></div><small>对话中的稳定表达</small></article><article class="emotion-card peach"><span>挫败</span><strong id="emotionFrustration">--</strong><div><i id="barFrustration"></i></div><small>阻塞与重复表达</small></article><article class="emotion-card mint"><span>信任</span><strong id="emotionTrust">--</strong><div><i id="barTrust"></i></div><small>对回应的接受程度</small></article><article class="emotion-card rose"><span>紧迫</span><strong id="emotionUrgency">--</strong><div><i id="barUrgency"></i></div><small>对时间与责任人的关注</small></article></div>
+        </section>
+        <section id="sessions" class="page-view" data-page-view data-page-title="会话记录" aria-labelledby="sessionsTitle" hidden>
+          <header class="page-heading"><div><span class="eyebrow">CONVERSATION LOG</span><h1 id="sessionsTitle" tabindex="-1">会话记录</h1><p>同一批 Mock 会话支持筛选、导出、查看详情与状态推进。</p></div><button class="soft-button" id="exportFilteredButton" type="button"><svg><use href="#v-download"/></svg>导出当前结果</button></header>
+          <form id="sessionFilterForm" class="filter-bar"><label class="search-box"><svg><use href="#v-search"/></svg><input id="sessionKeyword" type="search" placeholder="搜索编号、主题或角色"></label><label>状态<select id="sessionStatus"><option value="">全部状态</option><option value="待分析">待分析</option><option value="分析中">分析中</option><option value="待复核">待复核</option><option value="已完成">已完成</option></select></label><label>主导情绪<select id="sessionEmotion"><option value="">全部情绪</option><option value="平静">平静</option><option value="挫败">挫败</option><option value="信任">信任</option><option value="紧迫">紧迫</option></select></label><button class="gradient-button" type="submit">应用筛选</button><button class="soft-button" type="reset">重置</button></form>
+          <div class="session-summary"><span id="sessionResultText" aria-live="polite">共 0 条</span><span>所有分值均为演示数据</span></div><div id="sessionList" class="session-list"></div><div id="sessionEmpty" class="empty-card" hidden><strong>没有匹配会话</strong><p>减少筛选条件后再试一次。</p></div>
+        </section>
+        <section id="voices" class="page-view" data-page-view data-page-title="声音角色" aria-labelledby="voicesTitle" hidden>
+          <header class="page-heading"><div><span class="eyebrow">VOICE PROFILES</span><h1 id="voicesTitle" tabindex="-1">声音角色</h1><p>用抽象参数表达语速、温度与停顿，不模仿任何真人或品牌声音。</p></div><button class="gradient-button" id="openVoiceButton" type="button">新建声音角色</button></header>
+          <div class="voice-toolbar"><div><span>已选择</span><strong id="selectedVoiceName">稳健引导</strong></div><label>场景筛选<select id="voiceSceneFilter"><option value="">全部场景</option><option value="服务引导">服务引导</option><option value="关怀回访">关怀回访</option><option value="内部陪练">内部陪练</option></select></label></div><div id="voiceGrid" class="voice-grid"></div><div id="voiceEmpty" class="empty-card" hidden><strong>没有匹配角色</strong><p>请选择其他应用场景。</p></div>
+        </section>
+        <section id="team" class="page-view" data-page-view data-page-title="协作空间" aria-labelledby="teamTitle" hidden>
+          <header class="page-heading"><div><span class="eyebrow">WORKSPACE TEAM</span><h1 id="teamTitle" tabindex="-1">协作空间</h1><p>邀请成员参与脚本、体验和数据复核；仅在当前页面会话中生效。</p></div><button class="gradient-button" id="openInviteButton" type="button">邀请成员</button></header>
+          <div class="team-stat-row"><article><span>项目成员</span><strong id="teamCount">0</strong></article><article><span>待复核会话</span><strong id="teamReviewCount">0</strong></article><article><span>在线协作</span><strong id="teamOnlineCount">0</strong></article></div><div id="teamGrid" class="team-grid"></div>
+        </section>
+        <section id="settings" class="page-view" data-page-view data-page-title="实验设置" aria-labelledby="settingsTitle" hidden>
+          <header class="page-heading"><div><span class="eyebrow">LAB PREFERENCES</span><h1 id="settingsTitle" tabindex="-1">实验设置</h1><p>保存后的变化只作用于此演示，不上传声音、会话或身份信息。</p></div></header>
+          <form id="settingsForm" class="settings-card"><section><div><h2>分析呈现</h2><p>控制波形动效、Mock 标签与默认落点。</p></div><div class="setting-stack"><label class="switch-row"><span><strong>启用柔和波形动效</strong><small>关闭后仍保留静态结果</small></span><input id="animateWave" type="checkbox" checked></label><label class="switch-row"><span><strong>持续显示 Mock 标签</strong><small>避免把演示结果理解成真实计算</small></span><input id="showMock" type="checkbox" checked></label><label>默认页面<select id="defaultPage"><option value="studio">情绪实验室</option><option value="sessions">会话记录</option><option value="voices">声音角色</option></select></label></div></section><section><div><h2>默认分析配置</h2><p>下一次重置分析时使用。</p></div><div class="setting-stack"><label>默认样本长度<select id="defaultDuration"><option value="30">30 秒</option><option value="120" selected>2 分钟</option><option value="300">5 分钟</option></select></label><label>通知范围<select id="notificationScope"><option value="all">全部实验动态</option><option value="review">仅待复核</option><option value="none">关闭通知入口</option></select></label></div></section><div class="settings-actions"><span id="settingsStatus" aria-live="polite">尚未修改</span><button class="soft-button" id="resetSettingsButton" type="button">恢复默认</button><button class="gradient-button" type="submit">保存设置</button></div></form>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="detail-shell" id="sessionDrawer" hidden><button class="detail-backdrop" id="drawerBackdrop" type="button" aria-label="关闭会话详情"></button><aside class="detail-drawer" id="drawerPanel" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" tabindex="-1"><div class="drawer-head"><div><span class="eyebrow">SESSION DETAIL</span><h2 id="drawerTitle">会话详情</h2></div><button class="icon-button" id="closeDrawerButton" type="button" aria-label="关闭详情"><svg><use href="#v-close"/></svg></button></div><div class="drawer-body"><span class="session-code" id="drawerId"></span><h3 id="drawerTopic"></h3><p id="drawerSummary"></p><div class="mini-wave" id="drawerWave"></div><dl><div><dt>声音角色</dt><dd id="drawerVoice"></dd></div><div><dt>主导情绪</dt><dd id="drawerEmotion"></dd></div><div><dt>强度</dt><dd id="drawerIntensity"></dd></div><div><dt>状态</dt><dd id="drawerStatus"></dd></div></dl><div class="mock-notice">该详情及情绪分值全部为本地 Mock。</div></div><div class="drawer-actions"><button class="soft-button" id="drawerReturnButton" type="button">返回列表</button><button class="gradient-button" id="requestAdvanceButton" type="button">推进状态</button></div></aside></div>
+  <dialog id="sessionDialog"><form id="sessionForm" novalidate><div class="dialog-head"><div><span class="eyebrow">NEW MOCK SESSION</span><h2>新建模拟会话</h2></div><button class="icon-button" id="closeSessionDialog" type="button" aria-label="关闭"><svg><use href="#v-close"/></svg></button></div><div class="dialog-body"><label>会话主题<input id="sessionTopic" maxlength="28" aria-describedby="sessionTopicError"><span id="sessionTopicError" class="field-error"></span></label><label>声音角色<select id="sessionVoice"></select><span id="sessionVoiceError" class="field-error"></span></label><p class="mock-notice">创建会话不会调用麦克风、真实语音或外部模型。</p></div><div class="dialog-actions"><button class="soft-button" id="cancelSession" type="button">取消</button><button class="gradient-button" type="submit">创建会话</button></div></form></dialog>
+  <dialog id="voiceDialog"><form id="voiceForm" novalidate><div class="dialog-head"><div><span class="eyebrow">NEW VOICE PROFILE</span><h2>新建声音角色</h2></div><button class="icon-button" id="closeVoiceDialog" type="button" aria-label="关闭"><svg><use href="#v-close"/></svg></button></div><div class="dialog-body"><label>角色名称<input id="voiceName" maxlength="12" aria-describedby="voiceNameError"><span id="voiceNameError" class="field-error"></span></label><label>应用场景<select id="voiceScene"><option value="">请选择</option><option>服务引导</option><option>关怀回访</option><option>内部陪练</option></select><span id="voiceSceneError" class="field-error"></span></label></div><div class="dialog-actions"><button class="soft-button" id="cancelVoice" type="button">取消</button><button class="gradient-button" type="submit">创建角色</button></div></form></dialog>
+  <dialog id="inviteDialog"><form id="inviteForm" novalidate><div class="dialog-head"><div><span class="eyebrow">INVITE MEMBER</span><h2>邀请协作成员</h2></div><button class="icon-button" id="closeInviteDialog" type="button" aria-label="关闭"><svg><use href="#v-close"/></svg></button></div><div class="dialog-body"><label>成员姓名<input id="inviteName" maxlength="12" aria-describedby="inviteNameError"><span id="inviteNameError" class="field-error"></span></label><label>协作角色<select id="inviteRole"><option value="">请选择</option><option>体验设计</option><option>脚本编辑</option><option>数据复核</option></select><span id="inviteRoleError" class="field-error"></span></label></div><div class="dialog-actions"><button class="soft-button" id="cancelInvite" type="button">取消</button><button class="gradient-button" type="submit">确认邀请</button></div></form></dialog>
+  <dialog id="advanceDialog"><div class="dialog-head"><div><span class="eyebrow">CONFIRM STATUS</span><h2>确认推进会话</h2></div><button class="icon-button" id="closeAdvanceDialog" type="button" aria-label="关闭"><svg><use href="#v-close"/></svg></button></div><p id="advanceDescription" class="advance-description"></p><div class="dialog-actions"><button class="soft-button" id="cancelAdvance" type="button">取消</button><button class="gradient-button" id="confirmAdvance" type="button">确认推进</button></div></dialog>
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+  <script src="interactions.js"></script>
+</body>
+</html>

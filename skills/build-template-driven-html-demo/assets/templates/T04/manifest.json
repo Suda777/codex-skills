@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "template_id": "T04",
+  "name": "清爽任务中台",
+  "status": "ready",
+  "positioning": "适合任务管理、轻量项目推进、团队协作和进度复盘类网页 Demo",
+  "visual_reference": "Mazer Admin Dashboard",
+  "runtime": {
+    "platform": "modern web browsers with responsive wide and narrow layouts",
+    "external_dependencies": [],
+    "network_required": false,
+    "build_required": false,
+    "entry_file": "starter.html"
+  },
+  "files": { "starter": "starter.html", "tokens": "tokens.css", "components": "components.html", "interactions": "interactions.js", "preview": "preview.png", "provenance": "source.md" },
+  "design_tokens": {
+    "font_family": "system rounded sans-serif with Chinese platform fonts",
+    "primary": "#435ebe",
+    "primary_soft": "#edf0ff",
+    "navigation": "#ffffff",
+    "page_background": "#f6f7fb",
+    "surface": "#ffffff",
+    "border": "#e8eaf1",
+    "text": "#25396f",
+    "muted_text": "#7c8db5",
+    "success": "#39da8a",
+    "warning": "#ffb648",
+    "danger": "#ff6b7d",
+    "radius": { "control": "10px", "card": "18px", "modal": "22px" },
+    "density": "relaxed",
+    "shadow_style": "soft lifted cards with generous white space"
+  },
+  "layout_rules": [
+    "Use a wide light sidebar with a soft indigo active item and generous vertical rhythm.",
+    "Use a welcome panel with CSS illustration shapes, rounded metric cards, icon wells, and open white space.",
+    "Render task records as stacked cards rather than a dense operations table.",
+    "Use a centered detail dialog and friendly validation dialog styling.",
+    "Each sidebar item owns one complete mutually exclusive page view; narrow web layouts use an off-canvas sidebar."
+  ],
+  "component_inventory": [
+    { "name": "friendly_navigation", "selectors": [".light-sidebar", ".sidebar-link"], "use_for": "five complete page views" },
+    { "name": "welcome_banner", "selectors": [".welcome-card", ".welcome-art"], "use_for": "primary overview orientation" },
+    { "name": "icon_metric", "selectors": [".friendly-metrics", ".friendly-metric"], "use_for": "rounded task metrics" },
+    { "name": "task_cards", "selectors": [".task-list", ".task-row"], "use_for": "filterable task records" },
+    { "name": "progress_visuals", "selectors": [".soft-bars", ".ring-chart"], "use_for": "period progress analysis" },
+    { "name": "detail_dialog", "selectors": [".detail-dialog"], "use_for": "focused task detail" },
+    { "name": "member_cards", "selectors": [".people-grid", ".person-card"], "use_for": "team presence and workload" }
+  ],
+  "interaction_contracts": [
+    "Navigation synchronizes page visibility, aria-current, title, breadcrumb, hash, focus, and scroll position.",
+    "Period chips recalculate progress metrics and chart labels.",
+    "Task keyword, status, and owner filters plus reset update a truthful task-card list and empty state.",
+    "CSV export contains all current filtered records.",
+    "Detail dialogs bind to the correct task; confirmed progression updates task cards, overview metrics, insights, member load, and notifications.",
+    "Invite form validates name, role, and email before adding a collaborator.",
+    "Settings save and restore real in-memory display preferences.",
+    "Dialogs close by explicit controls or Escape and restore focus to the invoking control."
+  ],
+  "adaptation_rules": {
+    "preserve": ["light navigation", "indigo primary color", "generous spacing", "rounded cards", "soft icon tiles", "friendly CSS illustration", "card-list task browsing"],
+    "replace_from_development_document": ["product and page names", "task fields and statuses", "filters and actions", "metrics and charts", "members, notices, settings, and synthetic mock data"],
+    "avoid": ["Mazer logos, screenshots, copy, illustrations, source code, or brand assets", "external fonts or dependencies", "dark dense console styling", "native desktop chrome", "fake enabled controls"]
+  },
+  "single_file_compilation": { "style_source": "inline tokens.css", "script_source": "inline interactions.js", "asset_policy": "inline SVG and CSS shapes only; no external URLs" }
+}

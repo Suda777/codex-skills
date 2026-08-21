@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "template_id": "T01",
+  "name": "政企业务网页",
+  "status": "ready",
+  "positioning": "适合事项管理、项目台账、审批协同和运营监管类网页 Demo",
+  "visual_reference": "AdminLTE",
+  "runtime": {
+    "platform": "modern web browsers with responsive wide and narrow layouts",
+    "external_dependencies": [],
+    "network_required": false,
+    "build_required": false,
+    "entry_file": "starter.html"
+  },
+  "files": {
+    "starter": "starter.html",
+    "tokens": "tokens.css",
+    "components": "components.html",
+    "interactions": "interactions.js",
+    "preview": "preview.png",
+    "provenance": "source.md"
+  },
+  "design_tokens": {
+    "font_family": "system sans-serif with Chinese platform fonts",
+    "primary": "#1d4ed8",
+    "navigation": "#172033",
+    "page_background": "#f4f6f9",
+    "surface": "#ffffff",
+    "border": "#dfe5ec",
+    "text": "#1f2937",
+    "muted_text": "#64748b",
+    "success": "#15803d",
+    "warning": "#b45309",
+    "danger": "#b42318",
+    "radius": {
+      "control": "4px",
+      "card": "8px",
+      "modal": "12px"
+    },
+    "density": "medium-high",
+    "shadow_style": "subtle cards and strong overlays"
+  },
+  "layout_rules": [
+    "Use a fixed dark left navigation on wide screens and an off-canvas navigation below 820px.",
+    "Map every visible sidebar item to one complete top-level page view; display exactly one page view at a time and never use sidebar anchors to scroll between stacked pages.",
+    "Use a 64px white top bar and a light gray page canvas.",
+    "Keep page content within 1440px and use 24px desktop page padding.",
+    "Use four-column metric cards on wide screens, two columns on medium screens, and one column on narrow screens.",
+    "Place query filters above the primary table; preserve visible labels for every field.",
+    "Open record details in a right-side drawer when users need to retain list context.",
+    "Require a confirmation modal before irreversible or state-changing actions."
+  ],
+  "component_inventory": [
+    {
+      "name": "primary_navigation",
+      "selectors": [".sidebar", ".sidebar-nav", ".nav-item"],
+      "use_for": "top-level modules and system sections; every visible item opens one complete page view"
+    },
+    {
+      "name": "page_view",
+      "selectors": ["[data-page-view]"],
+      "use_for": "mutually exclusive top-level pages inside the single HTML file"
+    },
+    {
+      "name": "metric_card",
+      "selectors": [".stats-grid", ".stat-card", ".stat-value"],
+      "use_for": "two to six high-value summary indicators"
+    },
+    {
+      "name": "filter_form",
+      "selectors": [".filter-grid", ".field", ".input", ".select"],
+      "use_for": "search and structured list filters"
+    },
+    {
+      "name": "business_table",
+      "selectors": [".table-wrap", ".data-table", ".record-title", ".record-code"],
+      "use_for": "dense records with explicit row actions"
+    },
+    {
+      "name": "status_badge",
+      "selectors": [".status-badge", ".status-progress", ".status-review", ".status-done", ".status-risk"],
+      "use_for": "short mutually exclusive business states"
+    },
+    {
+      "name": "detail_drawer",
+      "selectors": [".drawer-shell", ".drawer", ".detail-grid", ".timeline"],
+      "use_for": "record inspection or light editing without leaving the list"
+    },
+    {
+      "name": "confirmation_modal",
+      "selectors": [".modal", ".modal-header", ".modal-footer"],
+      "use_for": "confirmation before state changes"
+    },
+    {
+      "name": "toast",
+      "selectors": [".toast-region", ".toast"],
+      "use_for": "brief success or informational feedback"
+    }
+  ],
+  "interaction_contracts": [
+    "All controls must be reachable and operable by keyboard.",
+    "The mobile navigation toggle must expose aria-controls and aria-expanded.",
+    "Page navigation must synchronize aria-current, breadcrumb text, and the document title, reset the content scroll position, and preserve each page's local control state.",
+    "The detail drawer must expose role=dialog, aria-modal, an accessible title, Escape close, focus containment, and focus restoration.",
+    "The confirmation prompt should use the native dialog element when available.",
+    "Filtering must update the visible result count and show an explicit empty state.",
+    "Every state-changing action must produce visible and aria-live feedback.",
+    "Honor prefers-reduced-motion."
+  ],
+  "adaptation_rules": {
+    "preserve": [
+      "dark left navigation plus light content canvas",
+      "blue as the single primary action color",
+      "compact square controls and restrained corner radii",
+      "clear borders and medium-high information density",
+      "filter plus table plus contextual detail workflow",
+      "semantic status colors and confirmation before state changes"
+    ],
+    "replace_from_development_document": [
+      "product name and navigation labels",
+      "page hierarchy and content sections",
+      "metric definitions",
+      "filter fields",
+      "table columns and mock records",
+      "status vocabulary and state transitions",
+      "drawer fields, timeline, buttons, and messages"
+    ],
+    "avoid": [
+      "third-party logos, brand names, screenshots, or original product copy",
+      "decorative gradients in the main content area",
+      "large rounded cards or pill buttons except semantic status badges",
+      "using color alone to communicate state",
+      "placeholder controls that have no visible response"
+    ]
+  },
+  "single_file_compilation": {
+    "style_source": "inline the complete contents of tokens.css into a style element",
+    "script_source": "inline the complete contents of interactions.js before the closing body tag",
+    "asset_policy": "use inline SVG or CSS shapes only; do not introduce external URLs"
+  }
+}

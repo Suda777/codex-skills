@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>T03 组件目录</title>
+  <link rel="stylesheet" href="tokens.css">
+</head>
+<body class="component-catalog">
+  <main class="catalog-wrap">
+    <header class="catalog-header">
+      <p class="eyebrow">T03 COMPONENTS</p>
+      <h1>流程协同后台组件目录</h1>
+      <p>静态样式目录。下方控件均不可操作；完整交互请查看 starter.html。</p>
+    </header>
+    <section class="catalog-grid" aria-label="组件样式">
+      <article class="ops-panel">
+        <header class="panel-title"><h2>状态与按钮</h2><span>Workflow</span></header>
+        <div class="panel-body component-stack">
+          <div class="badge-row"><span class="status status-wait">待受理</span><span class="status status-run">办理中</span><span class="status status-review">待复核</span><span class="status status-done">已办结</span><span class="status status-risk">有风险</span></div>
+          <p class="component-note">按钮仅用于展示组件形态。</p>
+          <div class="button-row"><button class="btn btn-primary" type="button" disabled title="静态组件预览，不提供交互">主操作</button><button class="btn btn-secondary" type="button" disabled title="静态组件预览，不提供交互">次操作</button></div>
+        </div>
+      </article>
+      <article class="ops-panel">
+        <header class="panel-title"><h2>指标条</h2><span>Metrics</span></header>
+        <div class="panel-body">
+          <div class="metric-strip compact-preview"><div class="metric-tile"><span>在办事项</span><strong>24</strong><small>较昨日 +3</small></div><div class="metric-tile"><span>风险节点</span><strong>4</strong><small>需人工跟进</small></div></div>
+        </div>
+      </article>
+      <article class="ops-panel span-two">
+        <header class="panel-title"><h2>台账行</h2><span>Dense ledger</span></header>
+        <div class="table-shell">
+          <table class="ledger-table"><thead><tr><th>编号</th><th>事项</th><th>节点</th><th>状态</th><th>更新时间</th></tr></thead><tbody><tr><td>LC-260821-01</td><td>跨部门资料复核</td><td>材料确认</td><td><span class="status status-review">待复核</span></td><td>10:24</td></tr></tbody></table>
+        </div>
+      </article>
+      <article class="ops-panel span-two">
+        <header class="panel-title"><h2>活动时间线</h2><span>Timeline</span></header>
+        <div class="panel-body activity-timeline"><div class="activity-entry"><span class="timeline-dot" aria-hidden="true"></span><div><strong>节点状态已更新</strong><p>跨部门资料复核进入待复核阶段。</p><small>今天 10:24 · 本地 Mock</small></div></div></div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

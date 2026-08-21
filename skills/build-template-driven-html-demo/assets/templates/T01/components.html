@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>T01 组件样式目录</title>
+  <link rel="stylesheet" href="tokens.css">
+</head>
+<body>
+  <main class="component-page">
+    <header class="page-heading">
+      <div>
+        <p class="eyebrow">Template T01</p>
+        <h1>政企业务网页组件目录</h1>
+        <p class="page-description">用于开发时快速查看本模板可复用的视觉组件；完整交互请打开 starter.html。</p>
+      </div>
+      <a class="button button-primary" href="starter.html">打开完整示例</a>
+    </header>
+
+    <section class="card" aria-labelledby="paletteTitle">
+      <div class="card-header"><h2 id="paletteTitle">核心颜色</h2></div>
+      <div class="card-body swatches">
+        <div class="swatch"><span class="swatch-color" style="--swatch:#1d4ed8"></span><span class="swatch-label">Primary · #1D4ED8</span></div>
+        <div class="swatch"><span class="swatch-color" style="--swatch:#172033"></span><span class="swatch-label">Navigation · #172033</span></div>
+        <div class="swatch"><span class="swatch-color" style="--swatch:#f4f6f9"></span><span class="swatch-label">Page · #F4F6F9</span></div>
+        <div class="swatch"><span class="swatch-color" style="--swatch:#ffffff"></span><span class="swatch-label">Surface · #FFFFFF</span></div>
+        <div class="swatch"><span class="swatch-color" style="--swatch:#15803d"></span><span class="swatch-label">Success · #15803D</span></div>
+        <div class="swatch"><span class="swatch-color" style="--swatch:#b45309"></span><span class="swatch-label">Warning · #B45309</span></div>
+        <div class="swatch"><span class="swatch-color" style="--swatch:#b42318"></span><span class="swatch-label">Danger · #B42318</span></div>
+        <div class="swatch"><span class="swatch-color" style="--swatch:#64748b"></span><span class="swatch-label">Muted · #64748B</span></div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="navigationPatternTitle">
+      <div class="card-header">
+        <div><h2 id="navigationPatternTitle">独立页面导航</h2><p class="card-subtitle">侧边栏一项对应一个完整页面</p></div>
+      </div>
+      <div class="card-body">
+        <p class="muted">单文件 Demo 在任何时刻只显示一个顶层页面视图。未选页面完全隐藏，不能通过上下滚动进入；当前页内容过长时可在本页内滚动。</p>
+        <div class="component-stack" aria-label="导航状态示意">
+          <span class="button button-primary" style="pointer-events:none;cursor:default">综合概览·当前页</span>
+          <span class="button button-secondary" style="pointer-events:none;cursor:default">事项台账·可切换</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="component-grid">
+      <section class="card" aria-labelledby="buttonTitle">
+        <div class="card-header"><h2 id="buttonTitle">按钮</h2></div>
+        <div class="card-body component-stack">
+          <span class="button button-primary" style="pointer-events:none;cursor:default">主要操作</span>
+          <span class="button button-secondary" style="pointer-events:none;cursor:default">次要操作</span>
+          <span class="button button-danger" style="pointer-events:none;cursor:default">危险操作</span>
+          <span class="button button-ghost" style="pointer-events:none;cursor:default">文字操作</span>
+          <span class="button button-primary" style="pointer-events:none;opacity:.55;cursor:not-allowed">不可用</span>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="statusTitle">
+        <div class="card-header"><h2 id="statusTitle">状态标签</h2></div>
+        <div class="card-body component-stack">
+          <span class="status-badge status-progress">推进中</span>
+          <span class="status-badge status-review">待审核</span>
+          <span class="status-badge status-done">已完成</span>
+          <span class="status-badge status-risk">有风险</span>
+          <span class="status-badge status-pending">待处理</span>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="formTitle">
+        <div class="card-header"><h2 id="formTitle">表单控件</h2></div>
+        <div class="card-body">
+          <div class="field">
+            <label for="sampleInput">事项名称</label>
+            <input class="input" id="sampleInput" type="text" placeholder="请输入事项名称">
+          </div>
+          <div class="field" style="margin-top:16px">
+            <label for="sampleSelect">办理状态</label>
+            <select class="select" id="sampleSelect"><option>请选择</option><option>推进中</option><option>已完成</option></select>
+          </div>
+          <div class="field" style="margin-top:16px">
+            <label for="sampleTextarea">办理说明</label>
+            <textarea class="textarea" id="sampleTextarea" placeholder="请输入办理说明"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="metricTitle">
+        <div class="card-header"><h2 id="metricTitle">指标卡</h2></div>
+        <div class="card-body">
+          <article class="stat-card success">
+            <span class="stat-label">按期推进</span>
+            <strong class="stat-value">93</strong>
+            <span class="stat-meta"><strong>+6.2%</strong> 较上月</span>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <section class="card" aria-labelledby="tableTitle">
+      <div class="card-header">
+        <div><h2 id="tableTitle">业务表格</h2><p class="card-subtitle">表头浅灰、行分隔清晰、操作固定在最后一列</p></div>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th scope="col">事项名称</th><th scope="col">责任单位</th><th scope="col">状态</th><th scope="col">操作</th></tr></thead>
+          <tbody>
+            <tr><td><span class="record-title">城市运行数据协同平台</span><span class="record-code">PX-2026-018</span></td><td>市数据局</td><td><span class="status-badge status-progress">推进中</span></td><td><span class="button button-ghost button-small" style="pointer-events:none;cursor:default">查看详情</span></td></tr>
+            <tr><td><span class="record-title">产业项目服务优化</span><span class="record-code">PX-2026-024</span></td><td>市发展改革委</td><td><span class="status-badge status-review">待审核</span></td><td><span class="button button-ghost button-small" style="pointer-events:none;cursor:default">查看详情</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="component-grid">
+      <section class="card" aria-labelledby="drawerPatternTitle">
+        <div class="card-header"><h2 id="drawerPatternTitle">详情抽屉规则</h2></div>
+        <div class="card-body">
+          <div class="detail-summary">
+            <p><strong>右侧覆盖式详情</strong></p>
+            <p class="muted">保留列表上下文；标题、摘要、核心字段、时间线和底部操作依次排列。</p>
+          </div>
+          <dl class="detail-grid">
+            <div class="detail-item"><dt>责任单位</dt><dd>市数据局</dd></div>
+            <div class="detail-item"><dt>当前进度</dt><dd>72%</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="feedbackTitle">
+        <div class="card-header"><h2 id="feedbackTitle">反馈与确认</h2></div>
+        <div class="card-body">
+          <div class="toast" style="position:static;box-shadow:var(--shadow-card)">
+            <span class="toast-icon" aria-hidden="true">✓</span>
+            <span><strong>操作成功</strong><span>状态已更新并同步到台账</span></span>
+          </div>
+          <p class="muted" style="margin:16px 0 0">普通成功反馈使用 Toast；会改变业务状态的操作先使用确认弹窗。</p>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

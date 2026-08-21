@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "template_id": "T08",
+  "name": "组件化运营中台",
+  "status": "ready",
+  "positioning": "适合项目运营、客户协作、阶段推进和任务看板类网页 Demo",
+  "visual_reference": "Material Dashboard free patterns",
+  "runtime": {"platform": "modern web browsers with responsive wide and narrow layouts", "external_dependencies": [], "network_required": false, "build_required": false, "entry_file": "starter.html"},
+  "files": {"starter": "starter.html", "tokens": "tokens.css", "components": "components.html", "interactions": "interactions.js", "preview": "preview.png", "provenance": "source.md"},
+  "design_tokens": {
+    "font_family": "system sans-serif with Chinese platform fonts",
+    "primary": "#e91e63", "navigation": "#24262b", "page_background": "#f0f2f5", "surface": "#ffffff", "border": "#e5e7eb", "text": "#344767", "muted_text": "#7b809a", "success": "#4caf50", "info": "#1a73e8", "warning": "#fb8c00", "danger": "#e53935",
+    "radius": {"control": "8px", "card": "12px", "modal": "16px"},
+    "density": "medium",
+    "shadow_style": "layered Material elevation with raised cards and overlapping colored header plates"
+  },
+  "layout_rules": [
+    "Use a charcoal navigation rail with a floating white-gray workspace and a simple white top bar.",
+    "Show exactly one of five complete pages; inactive pages remain hidden and never appear through scrolling.",
+    "Construct KPI cards with raised white surfaces and colored icon plates that overlap the top edge.",
+    "Use Material-like elevation, small to medium radii, colored panel headers, and pink primary actions.",
+    "Render project stage distribution as CSS columns and SVG charts instead of decorative unrelated graphics.",
+    "Inspect project detail in a wide web bottom sheet and confirm stage mutation in a focused dialog.",
+    "Update project table, dashboard, clients, and task board from one shared in-memory state.",
+    "Use an off-canvas web navigation below 940px; never add native desktop window chrome."
+  ],
+  "component_inventory": [
+    {"name": "material_navigation", "selectors": [".material-sidebar", ".material-nav", ".material-nav-link"], "use_for": "five mutually exclusive project-operations pages"},
+    {"name": "raised_metric", "selectors": [".material-metrics", ".material-metric", ".metric-plate"], "use_for": "project indicators with overlapping color blocks"},
+    {"name": "colored_panel", "selectors": [".material-card", ".colored-head", ".chart-card"], "use_for": "charts, clients, board, and settings"},
+    {"name": "project_table", "selectors": [".project-filter", ".project-table", ".empty-project"], "use_for": "filterable and exportable projects"},
+    {"name": "bottom_sheet", "selectors": [".material-sheet", ".sheet-hero", ".sheet-details"], "use_for": "wide project detail inspection"},
+    {"name": "confirm_dialog", "selectors": [".material-dialog", ".dialog-symbol", ".dialog-actions"], "use_for": "confirmed stage transition and project creation"},
+    {"name": "client_cards", "selectors": [".client-grid", ".client-card", ".client-avatar"], "use_for": "client contribution and risk summaries"},
+    {"name": "kanban_board", "selectors": [".kanban", ".kanban-column", ".project-ticket"], "use_for": "current projects grouped by stage"},
+    {"name": "notification_menu", "selectors": [".material-notices", ".notice-entry", ".notice-symbol"], "use_for": "project and client notices"},
+    {"name": "settings_form", "selectors": [".preference-grid", ".material-switch", ".settings-actions"], "use_for": "saved and restored demo preferences"}
+  ],
+  "interaction_contracts": [
+    "Every visible enabled control performs real navigation, filtering, download, state change, validation, or visible data refresh.",
+    "Navigation synchronizes active page, aria-current, page context, document title, URL hash, scroll position, and narrow sidebar state.",
+    "Period switching recalculates dashboard project metrics and chart series.",
+    "Project filters expose current result count and empty state; reset restores all records.",
+    "CSV export downloads a nonempty file representing the current filtered project state.",
+    "Advancing a project requires confirmation and updates table, bottom sheet, dashboard, client summary, board, and notifications.",
+    "Project creation validates required fields before updating all related views.",
+    "Bottom sheet and dialogs support explicit close, cancel, Escape, focus containment, and focus restoration.",
+    "Settings save and restore mutate current demo preferences and visible defaults.",
+    "Honor prefers-reduced-motion and keep all core controls keyboard reachable."
+  ],
+  "adaptation_rules": {
+    "preserve": ["charcoal sidebar and light gray workspace", "raised white cards with overlapping colored icon plates", "pink primary action with blue green orange semantic panels", "Material-like elevation hierarchy", "colored panel headers and compact project table", "bottom-sheet detail and focused confirmation", "responsive off-canvas web navigation"],
+    "replace_from_development_document": ["product name, page labels, and navigation hierarchy", "projects, stages, owners, customers, fields, metrics, and chart values", "filter options, table columns, task board groups, notifications, and settings", "project creation rules and permitted stage transitions", "all mock data and user-facing business copy"],
+    "avoid": ["Creative Tim or Material Dashboard logos, brand names, screenshots, fonts, icons, images, product copy, or upstream source code", "PRO or commercial-only components and assets", "Bootstrap, Material Icons, CDN, online fonts, analytics, remote APIs, or build dependencies", "native desktop chrome or desktop-only interaction patterns", "fake enabled actions or success messages without state mutation", "using color as the only status or risk signal"]
+  },
+  "single_file_compilation": {"style_source": "inline the complete contents of tokens.css into a style element", "script_source": "inline the complete contents of interactions.js before the closing body tag", "asset_policy": "use inline SVG and CSS shapes only; do not introduce external URLs"}
+}

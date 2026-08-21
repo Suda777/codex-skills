@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="极简分析台 T09：无依赖的网页 Demo 模板">
+  <title>极简分析台 · 分析概览</title>
+  <link rel="stylesheet" href="tokens.css">
+</head>
+<body>
+  <svg class="svg-defs" aria-hidden="true">
+    <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></symbol>
+    <symbol id="i-run" viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h5M8 16h7"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 19h16M7 16V9m5 7V5m5 11v-4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M9.5 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M17 11a3 3 0 1 0 0-6M21 20v-2a4 4 0 0 0-3-3.7"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a2 2 0 0 0 .4 2.2l.1.1-2.6 2.6-.1-.1a2 2 0 0 0-2.2-.4 2 2 0 0 0-1.2 1.8V21h-3.6v-.2A2 2 0 0 0 9 19a2 2 0 0 0-2.2.4l-.1.1-2.6-2.6.1-.1A2 2 0 0 0 4.6 15a2 2 0 0 0-1.8-1.2H2v-3.6h.8A2 2 0 0 0 4.6 9a2 2 0 0 0-.4-2.2l-.1-.1 2.6-2.6.1.1A2 2 0 0 0 9 4.6a2 2 0 0 0 1.2-1.8V2h3.6v.8A2 2 0 0 0 15 4.6a2 2 0 0 0 2.2-.4l.1-.1 2.6 2.6-.1.1A2 2 0 0 0 19.4 9a2 2 0 0 0 1.8 1.2h.8v3.6h-.8a2 2 0 0 0-1.8 1.2Z"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+  </svg>
+  <a class="skip-link" href="#mainContent">跳到主要内容</a>
+  <div class="app-shell" id="appShell">
+    <aside class="sidebar" id="sidebar" aria-label="主导航">
+      <div class="brand"><span class="brand-dot" aria-hidden="true"></span><span><strong>线索台</strong><small>ANALYSIS / 09</small></span></div>
+      <label class="workspace-picker" for="workspaceSelect"><span>当前工作区</span><select id="workspaceSelect"><option value="华东经营分析">华东经营分析</option><option value="政企机会洞察">政企机会洞察</option><option value="服务质量实验">服务质量实验</option></select></label>
+      <nav class="primary-nav">
+        <a href="#overview" data-nav-item aria-current="page"><svg><use href="#i-grid"/></svg><span>分析概览</span><kbd>1</kbd></a>
+        <a href="#runs" data-nav-item><svg><use href="#i-run"/></svg><span>实验运行</span><kbd>2</kbd></a>
+        <a href="#insights" data-nav-item><svg><use href="#i-chart"/></svg><span>洞察信号</span><kbd>3</kbd></a>
+        <a href="#team" data-nav-item><svg><use href="#i-users"/></svg><span>协作成员</span><kbd>4</kbd></a>
+        <a href="#settings" data-nav-item><svg><use href="#i-settings"/></svg><span>工作区设置</span><kbd>5</kbd></a>
+      </nav>
+      <div class="sidebar-note"><span class="status-pip"></span><div><strong>本地演示模式</strong><small>数据仅保留在本次页面会话</small></div></div>
+    </aside>
+    <button class="sidebar-scrim" id="sidebarScrim" type="button" aria-label="关闭导航" hidden></button>
+    <div class="main-shell">
+      <header class="topbar">
+        <div class="topbar-start"><button class="icon-button menu-button" id="menuButton" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="展开导航"><svg><use href="#i-menu"/></svg></button><div class="crumb"><span id="workspaceLabel">华东经营分析</span><span>/</span><strong id="pageLabel">分析概览</strong></div></div>
+        <div class="topbar-actions"><button class="quiet-button" id="globalExportButton" type="button"><svg><use href="#i-export"/></svg>导出运行记录</button><button class="icon-button notification-button" id="notificationButton" type="button" aria-controls="notificationPanel" aria-expanded="false" aria-label="查看通知"><svg><use href="#i-bell"/></svg><span id="notificationBadge" class="count-badge">0</span></button><button class="primary-button" id="openCreateButton" type="button">新建分析</button></div>
+      </header>
+      <aside class="notification-panel" id="notificationPanel" tabindex="-1" aria-labelledby="notificationTitle" hidden><div class="panel-head"><div><span class="overline">NOTIFICATIONS</span><h2 id="notificationTitle">工作区通知</h2></div><button class="icon-button" id="closeNotifications" type="button" aria-label="关闭通知"><svg><use href="#i-close"/></svg></button></div><div id="notificationList" class="notification-list"></div><button class="quiet-button full-button" id="markAllReadButton" type="button">全部标为已读</button></aside>
+      <main id="mainContent" class="content" tabindex="-1">
+        <section id="overview" class="page-view" data-page-view data-page-title="分析概览" aria-labelledby="overviewTitle">
+          <header class="page-heading plain-heading"><div><span class="overline">WORKSPACE SNAPSHOT</span><h1 id="overviewTitle">把复杂信息，压缩成可行动的信号。</h1><p>从实验运行、异常信号到协作状态，所有数字均为本地 Mock 数据。</p></div><div class="period-switch" aria-label="统计周期"><button type="button" data-period="7">7 天</button><button type="button" data-period="30" aria-pressed="true">30 天</button><button type="button" data-period="90">90 天</button></div></header>
+          <div class="metric-line" aria-label="关键指标"><article><span>运行总数</span><strong id="metricTotal">0</strong><small id="metricTotalMeta">近 30 天</small></article><article><span>完成率</span><strong id="metricRate">0%</strong><small>按当前工作区计算</small></article><article><span>平均置信度</span><strong id="metricScore">0</strong><small>仅用于演示排序</small></article><article><span>需关注</span><strong id="metricRisk">0</strong><small>风险或待复核运行</small></article></div>
+          <div class="analysis-grid">
+            <section class="line-card chart-card" aria-labelledby="velocityTitle"><div class="section-head"><div><span class="overline">RUN VELOCITY</span><h2 id="velocityTitle">运行节奏</h2></div><button class="text-button" type="button" data-go-page="runs">查看全部 <svg><use href="#i-arrow"/></svg></button></div><div id="velocityChart" class="velocity-chart" aria-label="运行节奏柱状图"></div><div class="chart-axis"><span>起点</span><span id="periodCaption">近 30 天</span><span>今天</span></div></section>
+            <section class="query-card" aria-labelledby="queryTitle"><div class="section-head"><div><span class="overline">QUICK QUERY</span><h2 id="queryTitle">问一个业务问题</h2></div><span class="mock-label">MOCK</span></div><label for="queryInput">分析问题</label><textarea id="queryInput" rows="4">哪些运行需要在本周优先复核？</textarea><div class="query-actions"><span id="queryStatus" aria-live="polite">将使用当前工作区的本地数据</span><button class="dark-button" id="runQueryButton" type="button">运行分析</button></div><div class="query-result" id="queryResult" hidden></div></section>
+          </div>
+          <section class="line-card" aria-labelledby="recentTitle"><div class="section-head"><div><span class="overline">RECENT RUNS</span><h2 id="recentTitle">最近运行</h2></div><button class="text-button" type="button" data-go-page="runs">打开实验运行 <svg><use href="#i-arrow"/></svg></button></div><div id="recentRuns" class="minimal-list"></div></section>
+        </section>
+        <section id="runs" class="page-view" data-page-view data-page-title="实验运行" aria-labelledby="runsTitle" hidden>
+          <header class="page-heading"><div><span class="overline">RUN LEDGER</span><h1 id="runsTitle" tabindex="-1">实验运行</h1><p>筛选、查看并推进一条真实可变更的 Mock 运行记录。</p></div><button class="quiet-button" id="pageExportButton" type="button"><svg><use href="#i-export"/></svg>导出当前结果</button></header>
+          <form class="filter-rail" id="filterForm"><label class="search-field" for="keywordInput"><svg><use href="#i-search"/></svg><input id="keywordInput" type="search" placeholder="搜索编号、标题或数据集"></label><label>状态<select id="statusFilter"><option value="">全部状态</option><option value="待运行">待运行</option><option value="运行中">运行中</option><option value="待复核">待复核</option><option value="已完成">已完成</option><option value="有风险">有风险</option></select></label><label>负责人<select id="ownerFilter"><option value="">全部负责人</option></select></label><button class="dark-button" type="submit">应用筛选</button><button class="quiet-button" type="reset">重置</button></form>
+          <section class="table-section" aria-labelledby="runTableTitle"><div class="table-meta"><div><h2 id="runTableTitle">运行记录</h2><p id="resultSummary" aria-live="polite">共 0 条</p></div><span id="lastUpdated">刚刚同步</span></div><div class="table-scroll"><table><thead><tr><th>运行</th><th>数据集</th><th>负责人</th><th>置信度</th><th>状态</th><th>更新时间</th><th aria-label="操作"></th></tr></thead><tbody id="runTableBody"></tbody></table><div class="empty-state" id="emptyState" hidden><strong>没有匹配的运行</strong><span>请减少筛选条件后重试。</span></div></div></section>
+        </section>
+        <section id="insights" class="page-view" data-page-view data-page-title="洞察信号" aria-labelledby="insightsTitle" hidden>
+          <header class="page-heading"><div><span class="overline">SIGNAL REVIEW</span><h1 id="insightsTitle" tabindex="-1">洞察信号</h1><p>用同一批运行记录观察分类、置信度和风险，不创造第二套口径。</p></div><label class="inline-select">排序依据<select id="insightSort"><option value="risk">风险优先</option><option value="score">置信度优先</option><option value="fresh">最近更新</option></select></label></header>
+          <div class="insight-layout"><section class="line-card" aria-labelledby="distributionTitle"><div class="section-head"><div><span class="overline">DISTRIBUTION</span><h2 id="distributionTitle">数据集分布</h2></div><button class="text-button" id="recalculateInsights" type="button">重新计算</button></div><div id="datasetDistribution" class="distribution-list"></div></section><section class="signal-column" aria-labelledby="signalsTitle"><div class="section-head"><div><span class="overline">PRIORITY QUEUE</span><h2 id="signalsTitle">优先信号</h2></div><span id="signalCount" class="mono-count">0</span></div><div id="signalList" class="signal-list"></div></section></div>
+        </section>
+        <section id="team" class="page-view" data-page-view data-page-title="协作成员" aria-labelledby="teamTitle" hidden>
+          <header class="page-heading"><div><span class="overline">COLLABORATORS</span><h1 id="teamTitle" tabindex="-1">协作成员</h1><p>展示工作区角色与负载，并支持新增一名本地演示成员。</p></div><button class="primary-button" id="openInviteButton" type="button">邀请成员</button></header>
+          <div class="team-toolbar"><div><span>成员总数</span><strong id="memberCount">0</strong></div><div><span>处理中</span><strong id="busyCount">0</strong></div><label>角色筛选<select id="roleFilter"><option value="">全部角色</option></select></label></div><div id="memberGrid" class="member-grid"></div><div id="memberEmpty" class="empty-state" hidden><strong>没有匹配成员</strong><span>请选择其他角色。</span></div>
+        </section>
+        <section id="settings" class="page-view" data-page-view data-page-title="工作区设置" aria-labelledby="settingsTitle" hidden>
+          <header class="page-heading"><div><span class="overline">PREFERENCES</span><h1 id="settingsTitle" tabindex="-1">工作区设置</h1><p>这些选项只改变当前浏览器会话中的演示呈现。</p></div></header>
+          <form id="settingsForm" class="settings-form"><section><div><h2>显示偏好</h2><p>改变表格密度与辅助说明。</p></div><div class="setting-controls"><label class="switch-row"><span><strong>紧凑运行表</strong><small>减少行高，适合高密度评审</small></span><input id="compactRows" type="checkbox"></label><label class="switch-row"><span><strong>显示 Mock 标识</strong><small>在分析结果中持续提示数据来源</small></span><input id="showMockLabels" type="checkbox" checked></label></div></section><section><div><h2>进入工作区</h2><p>选择刷新页面后的默认演示落点。</p></div><div class="setting-controls"><label>默认页面<select id="landingPage"><option value="overview">分析概览</option><option value="runs">实验运行</option><option value="insights">洞察信号</option></select></label><label>默认周期<select id="defaultPeriod"><option value="7">7 天</option><option value="30" selected>30 天</option><option value="90">90 天</option></select></label></div></section><div class="settings-actions"><span id="settingsStatus" aria-live="polite">尚未修改</span><button class="quiet-button" id="resetSettingsButton" type="button">恢复默认</button><button class="dark-button" type="submit">保存设置</button></div></form>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="drawer-shell" id="runDrawer" hidden><button class="drawer-backdrop" id="drawerBackdrop" type="button" aria-label="关闭详情"></button><aside class="drawer" id="drawerPanel" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" tabindex="-1"><div class="drawer-head"><div><span class="overline">RUN DETAIL</span><h2 id="drawerTitle">运行详情</h2></div><button class="icon-button" id="closeDrawerButton" type="button" aria-label="关闭详情"><svg><use href="#i-close"/></svg></button></div><div class="drawer-body"><div class="drawer-summary"><span id="drawerId"></span><strong id="drawerName"></strong><p id="drawerNote"></p></div><dl><div><dt>数据集</dt><dd id="drawerDataset"></dd></div><div><dt>负责人</dt><dd id="drawerOwner"></dd></div><div><dt>置信度</dt><dd id="drawerScore"></dd></div><div><dt>状态</dt><dd id="drawerStatus"></dd></div></dl><div class="trace-box"><span>本地追踪</span><div id="drawerTrace"></div></div></div><div class="drawer-actions"><button class="quiet-button" id="drawerBackButton" type="button">返回列表</button><button class="dark-button" id="requestStatusButton" type="button">推进到下一状态</button></div></aside></div>
+  <dialog id="createDialog"><form id="createForm" novalidate><div class="dialog-head"><div><span class="overline">NEW ANALYSIS</span><h2>新建分析</h2></div><button class="icon-button" id="closeCreateDialog" type="button" aria-label="关闭"><svg><use href="#i-close"/></svg></button></div><div class="dialog-body"><label>分析标题<input id="createTitle" maxlength="32" aria-describedby="createTitleError"><span class="field-error" id="createTitleError"></span></label><label>数据集<select id="createDataset"><option value="">请选择</option><option>经营机会池</option><option>服务质量明细</option><option>渠道触点日志</option></select><span class="field-error" id="createDatasetError"></span></label><p class="mock-callout">创建后会加入“实验运行”，不会连接真实数据源。</p></div><div class="dialog-actions"><button class="quiet-button" id="cancelCreate" type="button">取消</button><button class="dark-button" type="submit">创建并运行</button></div></form></dialog>
+  <dialog id="inviteDialog"><form id="inviteForm" novalidate><div class="dialog-head"><div><span class="overline">INVITE</span><h2>邀请成员</h2></div><button class="icon-button" id="closeInviteDialog" type="button" aria-label="关闭"><svg><use href="#i-close"/></svg></button></div><div class="dialog-body"><label>姓名<input id="inviteName" maxlength="12" aria-describedby="inviteNameError"><span class="field-error" id="inviteNameError"></span></label><label>角色<select id="inviteRole"><option value="">请选择</option><option>分析负责人</option><option>数据协作者</option><option>业务观察员</option></select><span class="field-error" id="inviteRoleError"></span></label></div><div class="dialog-actions"><button class="quiet-button" id="cancelInvite" type="button">取消</button><button class="dark-button" type="submit">确认邀请</button></div></form></dialog>
+  <dialog id="statusDialog"><div class="dialog-head"><div><span class="overline">CONFIRM CHANGE</span><h2>确认推进状态</h2></div><button class="icon-button" id="closeStatusDialog" type="button" aria-label="关闭"><svg><use href="#i-close"/></svg></button></div><p id="statusDescription" class="status-description"></p><div class="dialog-actions"><button class="quiet-button" id="cancelStatusButton" type="button">取消</button><button class="dark-button" id="confirmStatusButton" type="button">确认推进</button></div></dialog>
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+  <script src="interactions.js"></script>
+</body>
+</html>

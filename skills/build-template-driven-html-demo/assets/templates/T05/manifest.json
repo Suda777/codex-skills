@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "template_id": "T05",
+  "name": "精致 SaaS 工作台",
+  "status": "ready",
+  "positioning": "适合客户成功、订阅运营、续约管理和轻商务 SaaS 产品类网页 Demo",
+  "visual_reference": "Sneat Bootstrap HTML Admin Template Free",
+  "runtime": {
+    "platform": "modern web browsers with responsive wide and narrow layouts",
+    "external_dependencies": [],
+    "network_required": false,
+    "build_required": false,
+    "entry_file": "starter.html"
+  },
+  "files": { "starter": "starter.html", "tokens": "tokens.css", "components": "components.html", "interactions": "interactions.js", "preview": "preview.png", "provenance": "source.md" },
+  "design_tokens": {
+    "font_family": "system geometric sans-serif with Chinese platform fonts",
+    "primary": "#696cff",
+    "primary_soft": "#efefff",
+    "page_background": "#f5f5f9",
+    "navigation": "#ffffff",
+    "surface": "#ffffff",
+    "border": "#e7e7ee",
+    "text": "#566a7f",
+    "heading": "#384551",
+    "muted_text": "#a1acb8",
+    "success": "#71dd37",
+    "warning": "#ffab00",
+    "danger": "#ff3e1d",
+    "radius": { "control": "8px", "card": "14px", "modal": "16px" },
+    "density": "medium",
+    "shadow_style": "floating white cards with soft violet-gray shadows"
+  },
+  "layout_rules": [
+    "Place a floating white sidebar inside a pale lavender canvas with rounded outer edges.",
+    "Use polished white cards, 12–16px radii, subtle shadows, lavender chips, and small avatar groups.",
+    "Use a welcome banner with original CSS shapes and a renewal pipeline board as signature components.",
+    "Use a refined account table and a rounded right drawer for context-preserving account details.",
+    "Every sidebar item opens one complete mutually exclusive page; mobile uses a web off-canvas sidebar."
+  ],
+  "component_inventory": [
+    { "name": "floating_sidebar", "selectors": [".saas-sidebar", ".saas-nav-link"], "use_for": "five top-level SaaS pages" },
+    { "name": "welcome_banner", "selectors": [".saas-welcome", ".welcome-figure"], "use_for": "customer-success orientation and primary action" },
+    { "name": "polished_metric", "selectors": [".saas-metrics", ".saas-metric"], "use_for": "renewal and account KPIs" },
+    { "name": "account_table", "selectors": [".account-table", ".company-cell"], "use_for": "filterable customer accounts" },
+    { "name": "pipeline_board", "selectors": [".pipeline-board", ".pipeline-column"], "use_for": "renewal status composition" },
+    { "name": "rounded_drawer", "selectors": [".account-drawer"], "use_for": "account details and transition request" },
+    { "name": "avatar_group", "selectors": [".avatar-stack", ".team-card"], "use_for": "customer-success team context" }
+  ],
+  "interaction_contracts": [
+    "Navigation switches complete pages exclusively and updates aria-current, breadcrumb, title, hash, focus, and scroll position.",
+    "Horizon tabs recalculate the visible revenue forecast and trend chart.",
+    "Account keyword, status, and segment filters plus reset update table rows, counts, and a truthful empty state.",
+    "CSV export downloads the current filtered account state with nonempty headers and data rows.",
+    "The account drawer binds to the selected account; confirmed renewal progression updates metrics, table, pipeline, team load, and notifications.",
+    "Member invitation validates name, role, and work email before adding a team member.",
+    "Settings save in-memory preferences and restore the packaged defaults with visible state changes.",
+    "Drawer and dialogs support Escape, explicit cancel and close paths, focus containment, and focus restoration."
+  ],
+  "adaptation_rules": {
+    "preserve": ["pale lavender canvas", "floating white sidebar", "violet primary", "12–16px rounded cards", "soft shadows", "welcome banner", "chips, tabs, avatar groups, and pipeline board"],
+    "replace_from_development_document": ["product and page names", "account fields, statuses, and segmentation", "renewal state transitions and confirmation rules", "metrics, chart, table, pipeline, notifications, members, settings, and synthetic mock data"],
+    "avoid": ["Sneat logos, screenshots, brand copy, illustrations, fonts, source code, or premium-only components", "external assets or dependencies", "square dense operations-console styling", "native desktop chrome", "fake enabled controls"]
+  },
+  "single_file_compilation": { "style_source": "inline tokens.css", "script_source": "inline interactions.js", "asset_policy": "inline SVG and CSS shapes only; no external URLs" }
+}

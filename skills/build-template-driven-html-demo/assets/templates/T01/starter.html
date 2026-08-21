@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="政企业务管理网页模板 T01">
+  <title>重点事项管理平台</title>
+  <link rel="stylesheet" href="tokens.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">跳到主要内容</a>
+
+  <div class="app-shell" id="appShell">
+    <aside class="sidebar" id="sidebar" aria-label="主导航">
+      <div class="sidebar-brand">
+        <span class="brand-mark" aria-hidden="true">政</span>
+        <span class="brand-copy">
+          <strong>重点事项管理平台</strong>
+          <span>DEMO · T01</span>
+        </span>
+      </div>
+
+      <p class="sidebar-section-label">工作台</p>
+      <nav class="sidebar-nav">
+        <a class="nav-item" href="#overview" data-nav-item aria-current="page">
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z"/></svg>
+          </span>
+          综合概览
+        </a>
+        <a class="nav-item" href="#ledger" data-nav-item>
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+          </span>
+          事项台账
+        </a>
+        <a class="nav-item" href="#analysis" data-nav-item>
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 19V9m6 10V5m6 14v-7m4 7H2"/></svg>
+          </span>
+          分析研判
+        </a>
+        <a class="nav-item" href="#alerts" data-nav-item>
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+          </span>
+          风险预警
+        </a>
+      </nav>
+
+      <p class="sidebar-section-label">系统管理</p>
+      <nav class="sidebar-nav" aria-label="系统管理">
+        <a class="nav-item" href="#organizations" data-nav-item>
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 21h18M6 21V9h12v12M9 9V4h6v5M9 13h2m2 0h2m-6 4h2m2 0h2"/></svg>
+          </span>
+          组织管理
+        </a>
+        <a class="nav-item" href="#settings" data-nav-item>
+          <span class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"/></svg>
+          </span>
+          系统设置
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <span class="avatar" aria-hidden="true">林</span>
+          <span>
+            <strong>林晓 · 业务管理员</strong>
+            <span>市级协同管理中心</span>
+          </span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+    <div class="main-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button sidebar-toggle" id="sidebarToggle" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="展开导航">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <nav class="breadcrumb" aria-label="面包屑">
+            <span>业务管理</span>
+            <span aria-hidden="true">/</span>
+            <strong>综合概览</strong>
+          </nav>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button notification-button" id="notificationButton" type="button" data-view-notifications aria-label="查看通知，当前有 4 条未处置预警">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+            <span class="notification-badge" id="notificationBadge" aria-hidden="true">4</span>
+          </button>
+          <button class="button button-primary" type="button" data-export-report>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+            <span>导出报告</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="content" id="mainContent" tabindex="-1">
+        <section class="page-view" id="overview" data-page-view data-page-title="综合概览" data-page-group="业务管理" aria-labelledby="pageTitle">
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">业务运行监测</p>
+              <h1 id="pageTitle">重点事项综合概览</h1>
+              <p class="page-description">汇总重点项目进度、责任单位与风险情况，数据更新时间：<span id="dataUpdateTime">2026-08-20 09:30</span></p>
+            </div>
+            <button class="button button-secondary" type="button" data-refresh-data>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6v5h-5M4 18v-5h5M18.5 9A7 7 0 0 0 6.2 6.2L4 11m16 2-2.2 4.8A7 7 0 0 1 5.5 15"/></svg>
+              刷新数据
+            </button>
+          </div>
+
+          <div class="stats-grid" aria-label="核心指标">
+            <article class="stat-card">
+              <span class="stat-label">重点事项总数</span>
+              <strong class="stat-value" id="overviewTotal">6</strong>
+              <span class="stat-meta">当前演示台账全量</span>
+            </article>
+            <article class="stat-card success">
+              <span class="stat-label">按期推进</span>
+              <strong class="stat-value" id="overviewOnTrack">3</strong>
+              <span class="stat-meta">平均进度 <span id="overviewCompletionRate">74.8%</span></span>
+            </article>
+            <article class="stat-card warning">
+              <span class="stat-label">待审核</span>
+              <strong class="stat-value" id="overviewReview">2</strong>
+              <span class="stat-meta">包含待审核与待确认事项</span>
+            </article>
+            <article class="stat-card danger">
+              <span class="stat-label">风险预警</span>
+              <strong class="stat-value" id="overviewRisk">4</strong>
+              <span class="stat-meta">与预警处置清单实时同步</span>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="card dashboard-panel" aria-labelledby="overviewProgressTitle">
+              <div class="card-header">
+                <div>
+                  <h2 id="overviewProgressTitle">重点事项推进分布</h2>
+                  <p class="card-subtitle">按责任单位统计当前总体完成率</p>
+                </div>
+                <button class="button button-ghost button-small" type="button" data-go-page="analysis">进入分析研判</button>
+              </div>
+              <div class="card-body progress-list">
+                <div class="progress-row"><span>市发展改革委</span><span class="progress-track progress-track-wide"><span class="progress-value" style="width: 88%"></span></span><strong>88%</strong></div>
+                <div class="progress-row"><span>市数据局</span><span class="progress-track progress-track-wide"><span class="progress-value" style="width: 76%"></span></span><strong>76%</strong></div>
+                <div class="progress-row"><span>市住建局</span><span class="progress-track progress-track-wide"><span class="progress-value" style="width: 69%"></span></span><strong>69%</strong></div>
+                <div class="progress-row"><span>市交通局</span><span class="progress-track progress-track-wide"><span class="progress-value progress-value-danger" style="width: 54%"></span></span><strong>54%</strong></div>
+              </div>
+            </article>
+
+            <article class="card dashboard-panel" aria-labelledby="overviewFocusTitle">
+              <div class="card-header">
+                <div>
+                  <h2 id="overviewFocusTitle">今日重点关注</h2>
+                  <p class="card-subtitle">需要优先处理的业务节点</p>
+                </div>
+                <button class="button button-ghost button-small" type="button" data-go-page="alerts">查看全部预警</button>
+              </div>
+              <div class="card-body compact-list">
+                <button class="compact-list-item" type="button" data-go-page="alerts" data-focus-alert="PX-2026-031">
+                  <span class="priority-dot danger" aria-hidden="true"></span>
+                  <span><strong>交通枢纽综合治理提升</strong><small>设备交付延期，距截止日期 21 天</small></span>
+                  <span class="status-badge status-risk">高风险</span>
+                </button>
+                <button class="compact-list-item" type="button" data-go-page="ledger" data-open-record-after-nav="PX-2026-052">
+                  <span class="priority-dot warning" aria-hidden="true"></span>
+                  <span><strong>公共数据授权运营试点</strong><small>评估报告等待审核确认</small></span>
+                  <span class="status-badge status-review">待审核</span>
+                </button>
+                <button class="compact-list-item" type="button" data-go-page="ledger" data-open-record-after-nav="PX-2026-024">
+                  <span class="priority-dot info" aria-hidden="true"></span>
+                  <span><strong>产业项目全周期服务优化</strong><small>今日 16:00 召开终期评审会</small></span>
+                  <span class="status-badge status-progress">进行中</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page-view" id="ledger" data-page-view data-page-title="事项台账" data-page-group="业务管理" aria-labelledby="ledgerPageTitle" hidden>
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">全周期事项管理</p>
+              <h1 id="ledgerPageTitle" tabindex="-1">重点事项台账</h1>
+              <p class="page-description">集中查询事项清单、办理进度和责任归属，筛选状态在页面切换后继续保留。</p>
+            </div>
+            <button class="button button-primary" type="button" data-open-new-record>新增事项</button>
+          </div>
+
+        <section class="card" aria-labelledby="filterTitle">
+          <div class="card-header">
+            <div>
+              <h2 id="filterTitle">查询条件</h2>
+              <p class="card-subtitle">按事项名称、状态或责任单位筛选</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <form class="filter-grid" id="filterForm">
+              <div class="field">
+                <label for="keyword">事项关键词</label>
+                <input class="input" id="keyword" name="keyword" type="search" placeholder="输入事项名称或编号">
+              </div>
+              <div class="field">
+                <label for="statusFilter">办理状态</label>
+                <select class="select" id="statusFilter" name="status">
+                  <option value="">全部状态</option>
+                  <option value="推进中">推进中</option>
+                  <option value="待审核">待审核</option>
+                  <option value="待确认">待确认</option>
+                  <option value="已完成">已完成</option>
+                  <option value="有风险">有风险</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="departmentFilter">责任单位</label>
+                <select class="select" id="departmentFilter" name="department">
+                  <option value="">全部单位</option>
+                  <option value="市发展改革委">市发展改革委</option>
+                  <option value="市数据局">市数据局</option>
+                  <option value="市交通局">市交通局</option>
+                  <option value="市住建局">市住建局</option>
+                </select>
+              </div>
+              <div class="filter-actions">
+                <button class="button button-primary" type="submit">查询</button>
+                <button class="button button-secondary" type="reset">重置</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="card" id="project-list" aria-labelledby="listTitle">
+          <div class="card-header">
+            <div>
+              <h2 id="listTitle">重点事项台账</h2>
+              <p class="card-subtitle">展示当前年度重点事项的最新办理状态</p>
+            </div>
+            <span class="status-badge status-progress">2026 年度</span>
+          </div>
+          <div class="table-toolbar">
+            <span id="resultSummary" aria-live="polite">共 6 条记录</span>
+            <span>数据为演示 Mock，不代表真实业务</span>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">事项名称</th>
+                  <th scope="col">责任单位</th>
+                  <th scope="col">负责人</th>
+                  <th scope="col">当前进度</th>
+                  <th scope="col">办理状态</th>
+                  <th scope="col">截止日期</th>
+                  <th scope="col">操作</th>
+                </tr>
+              </thead>
+              <tbody id="recordBody">
+                <tr data-record-row data-record-id="PX-2026-018" data-search="城市运行数据协同平台一期 PX-2026-018" data-status="推进中" data-department="市数据局">
+                  <td><span class="record-title">城市运行数据协同平台一期</span><span class="record-code">PX-2026-018</span></td>
+                  <td>市数据局</td>
+                  <td>周明</td>
+                  <td><span class="progress-track"><span class="progress-value" style="width: 72%"></span></span><span class="progress-copy">72%</span></td>
+                  <td><span class="status-badge status-progress" data-row-status>推进中</span></td>
+                  <td>2026-09-30</td>
+                  <td><button class="button button-ghost button-small" type="button" data-open-drawer data-record-id="PX-2026-018">查看详情</button></td>
+                </tr>
+                <tr data-record-row data-record-id="PX-2026-024" data-search="产业项目全周期服务优化 PX-2026-024" data-status="待审核" data-department="市发展改革委">
+                  <td><span class="record-title">产业项目全周期服务优化</span><span class="record-code">PX-2026-024</span></td>
+                  <td>市发展改革委</td>
+                  <td>顾宁</td>
+                  <td><span class="progress-track"><span class="progress-value" style="width: 86%"></span></span><span class="progress-copy">86%</span></td>
+                  <td><span class="status-badge status-review" data-row-status>待审核</span></td>
+                  <td>2026-08-28</td>
+                  <td><button class="button button-ghost button-small" type="button" data-open-drawer data-record-id="PX-2026-024">查看详情</button></td>
+                </tr>
+                <tr data-record-row data-record-id="PX-2026-031" data-search="交通枢纽综合治理提升 PX-2026-031" data-status="有风险" data-department="市交通局">
+                  <td><span class="record-title">交通枢纽综合治理提升</span><span class="record-code">PX-2026-031</span></td>
+                  <td>市交通局</td>
+                  <td>郑峰</td>
+                  <td><span class="progress-track"><span class="progress-value" style="width: 48%"></span></span><span class="progress-copy">48%</span></td>
+                  <td><span class="status-badge status-risk" data-row-status>有风险</span></td>
+                  <td>2026-09-10</td>
+                  <td><button class="button button-ghost button-small" type="button" data-open-drawer data-record-id="PX-2026-031">查看详情</button></td>
+                </tr>
+                <tr data-record-row data-record-id="PX-2026-036" data-search="老旧小区公共空间改造 PX-2026-036" data-status="推进中" data-department="市住建局">
+                  <td><span class="record-title">老旧小区公共空间改造</span><span class="record-code">PX-2026-036</span></td>
+                  <td>市住建局</td>
+                  <td>陈羽</td>
+                  <td><span class="progress-track"><span class="progress-value" style="width: 63%"></span></span><span class="progress-copy">63%</span></td>
+                  <td><span class="status-badge status-progress" data-row-status>推进中</span></td>
+                  <td>2026-10-15</td>
+                  <td><button class="button button-ghost button-small" type="button" data-open-drawer data-record-id="PX-2026-036">查看详情</button></td>
+                </tr>
+                <tr data-record-row data-record-id="PX-2026-041" data-search="重点企业诉求闭环办理 PX-2026-041" data-status="已完成" data-department="市发展改革委">
+                  <td><span class="record-title">重点企业诉求闭环办理</span><span class="record-code">PX-2026-041</span></td>
+                  <td>市发展改革委</td>
+                  <td>林晓</td>
+                  <td><span class="progress-track"><span class="progress-value" style="width: 100%"></span></span><span class="progress-copy">100%</span></td>
+                  <td><span class="status-badge status-done" data-row-status>已完成</span></td>
+                  <td>2026-08-18</td>
+                  <td><button class="button button-ghost button-small" type="button" data-open-drawer data-record-id="PX-2026-041">查看详情</button></td>
+                </tr>
+                <tr data-record-row data-record-id="PX-2026-052" data-search="公共数据授权运营试点 PX-2026-052" data-status="待审核" data-department="市数据局">
+                  <td><span class="record-title">公共数据授权运营试点</span><span class="record-code">PX-2026-052</span></td>
+                  <td>市数据局</td>
+                  <td>孟清</td>
+                  <td><span class="progress-track"><span class="progress-value" style="width: 80%"></span></span><span class="progress-copy">80%</span></td>
+                  <td><span class="status-badge status-review" data-row-status>待审核</span></td>
+                  <td>2026-08-31</td>
+                  <td><button class="button button-ghost button-small" type="button" data-open-drawer data-record-id="PX-2026-052">查看详情</button></td>
+                </tr>
+                <tr id="emptyRow" hidden><td class="empty-state" colspan="7">没有找到符合当前条件的事项，请调整筛选条件。</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pagination">
+            <span>第 1 页，共 1 页</span>
+            <div class="pagination-buttons" aria-label="分页">
+              <button class="page-button" type="button" disabled aria-label="上一页">‹</button>
+              <button class="page-button" type="button" disabled aria-current="page" aria-label="当前为第 1 页">1</button>
+              <button class="page-button" type="button" disabled aria-label="下一页">›</button>
+            </div>
+          </div>
+        </section>
+        </section>
+
+        <section class="page-view" id="analysis" data-page-view data-page-title="分析研判" data-page-group="业务管理" aria-labelledby="analysisPageTitle" hidden>
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">趋势洞察与辅助决策</p>
+              <h1 id="analysisPageTitle" tabindex="-1">分析研判</h1>
+              <p class="page-description">从进度、风险与部门协同三个维度观察事项运行趋势。</p>
+            </div>
+            <div class="segmented-control" aria-label="分析周期">
+              <button type="button" data-analysis-period="month" aria-pressed="true">本月</button>
+              <button type="button" data-analysis-period="quarter" aria-pressed="false">本季度</button>
+              <button type="button" data-analysis-period="year" aria-pressed="false">本年度</button>
+            </div>
+          </div>
+
+          <div class="stats-grid analysis-stats" aria-label="分析指标">
+            <article class="stat-card success"><span class="stat-label">平均完成率</span><strong class="stat-value" id="analysisCompletion">74.8%</strong><span class="stat-meta" id="analysisCompletionMeta">由当前 6 项事项实时计算</span></article>
+            <article class="stat-card"><span class="stat-label">按期办结率</span><strong class="stat-value" id="analysisOnTime">91.4%</strong><span class="stat-meta" id="analysisOnTimeMeta">高于目标值 1.4 个百分点</span></article>
+            <article class="stat-card warning"><span class="stat-label">平均协同用时</span><strong class="stat-value" id="analysisDuration">2.6 天</strong><span class="stat-meta" id="analysisDurationMeta">较上期缩短 0.4 天</span></article>
+            <article class="stat-card danger"><span class="stat-label">风险预警率</span><strong class="stat-value" id="analysisRisk">66.7%</strong><span class="stat-meta" id="analysisRiskMeta">4 条预警待处置</span></article>
+          </div>
+
+          <div class="dashboard-grid analysis-grid">
+            <article class="card dashboard-panel" aria-labelledby="trendTitle">
+              <div class="card-header"><div><h2 id="trendTitle">事项完成趋势</h2><p class="card-subtitle">各周期新增与办结数量对比</p></div><span class="legend"><i class="legend-primary"></i>办结事项</span></div>
+              <div class="card-body">
+                <div class="bar-chart" id="analysisBars" aria-label="事项完成趋势柱状图">
+                  <div class="bar-column"><span class="bar" style="--bar-height: 42%"></span><small>第1周</small></div>
+                  <div class="bar-column"><span class="bar" style="--bar-height: 60%"></span><small>第2周</small></div>
+                  <div class="bar-column"><span class="bar" style="--bar-height: 52%"></span><small>第3周</small></div>
+                  <div class="bar-column"><span class="bar" style="--bar-height: 76%"></span><small>第4周</small></div>
+                  <div class="bar-column"><span class="bar" style="--bar-height: 88%"></span><small>本周</small></div>
+                </div>
+              </div>
+            </article>
+            <article class="card dashboard-panel" aria-labelledby="judgementTitle">
+              <div class="card-header"><div><h2 id="judgementTitle">智能研判摘要</h2><p class="card-subtitle">根据当前 Mock 数据自动归纳</p></div></div>
+              <div class="card-body judgement-panel">
+                <span class="insight-mark" aria-hidden="true">研</span>
+                <p id="analysisInsight">本月整体推进节奏稳定，市交通局事项平均进度低于全市均值 18.7 个百分点，建议优先协调设备交付与现场施工窗口。</p>
+                <ul class="insight-list">
+                  <li id="analysisPositive"><strong>积极信号：</strong>按期办结率连续三周提升</li>
+                  <li id="analysisConcern"><strong>主要风险：</strong>2 项跨部门事项等待前置材料</li>
+                  <li id="analysisAction"><strong>建议动作：</strong>本周内组织一次专项协调会</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page-view" id="alerts" data-page-view data-page-title="风险预警" data-page-group="业务管理" aria-labelledby="alertsPageTitle" hidden>
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">风险识别与闭环处置</p>
+              <h1 id="alertsPageTitle" tabindex="-1">风险预警</h1>
+              <p class="page-description">集中查看风险等级、触发原因和处置进展。最近扫描：<span id="alertScanTime">2026-08-20 09:30</span></p>
+            </div>
+            <button class="button button-secondary" type="button" data-rescan-alerts>重新扫描</button>
+          </div>
+
+          <div class="stats-grid" aria-label="预警指标">
+            <article class="stat-card danger"><span class="stat-label">高风险</span><strong class="stat-value" id="highRiskCount">2</strong><span class="stat-meta">需 24 小时内响应</span></article>
+            <article class="stat-card warning"><span class="stat-label">中风险</span><strong class="stat-value" id="mediumRiskCount">2</strong><span class="stat-meta">需持续跟踪</span></article>
+            <article class="stat-card success"><span class="stat-label">今日已处置</span><strong class="stat-value" id="resolvedAlertCount">3</strong><span class="stat-meta">平均处置用时 1.8 小时</span></article>
+            <article class="stat-card"><span class="stat-label">规则覆盖率</span><strong class="stat-value">96%</strong><span class="stat-meta">覆盖 12 类风险信号</span></article>
+          </div>
+
+          <section class="card" aria-labelledby="alertListTitle">
+            <div class="card-header">
+              <div><h2 id="alertListTitle">预警处置清单</h2><p class="card-subtitle" id="alertSummary" aria-live="polite">当前显示 4 条预警</p></div>
+              <div class="segmented-control compact" aria-label="风险等级筛选">
+                <button type="button" data-alert-filter="all" aria-pressed="true">全部</button>
+                <button type="button" data-alert-filter="high" aria-pressed="false">高风险</button>
+                <button type="button" data-alert-filter="medium" aria-pressed="false">中风险</button>
+              </div>
+            </div>
+            <div class="alert-list" id="alertList">
+              <article class="alert-item" data-alert-row data-alert-level="high" data-alert-record-id="PX-2026-031" tabindex="-1">
+                <span class="alert-level high">高</span><div><strong>交通枢纽综合治理提升</strong><p>关键设备计划交付时间晚于项目节点 8 天，可能影响联调。</p><small>规则：关键节点延期 · 触发于今天 08:40</small></div><span class="status-badge status-risk" data-alert-state>待处置</span><button class="button button-primary button-small" type="button" data-resolve-alert>确认处置</button>
+              </article>
+              <article class="alert-item" data-alert-row data-alert-level="high" data-alert-record-id="PX-2026-052" tabindex="-1">
+                <span class="alert-level high">高</span><div><strong>公共数据授权运营试点</strong><p>合规评估材料超过约定提交时间，后续审核窗口不足。</p><small>规则：材料逾期 · 触发于昨天 17:25</small></div><span class="status-badge status-risk" data-alert-state>待处置</span><button class="button button-primary button-small" type="button" data-resolve-alert>确认处置</button>
+              </article>
+              <article class="alert-item" data-alert-row data-alert-level="medium" data-alert-record-id="PX-2026-036" tabindex="-1">
+                <span class="alert-level medium">中</span><div><strong>老旧小区公共空间改造</strong><p>两个施工点位的居民确认率低于设定阈值。</p><small>规则：协同反馈不足 · 触发于昨天 14:10</small></div><span class="status-badge status-pending" data-alert-state>跟踪中</span><button class="button button-primary button-small" type="button" data-resolve-alert>确认处置</button>
+              </article>
+              <article class="alert-item" data-alert-row data-alert-level="medium" data-alert-record-id="PX-2026-024" tabindex="-1">
+                <span class="alert-level medium">中</span><div><strong>产业项目全周期服务优化</strong><p>终期评审材料存在 1 项补充说明，当前不影响总体进度。</p><small>规则：审核材料缺项 · 触发于 08-19 15:10</small></div><span class="status-badge status-pending" data-alert-state>跟踪中</span><button class="button button-primary button-small" type="button" data-resolve-alert>确认处置</button>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <section class="page-view" id="organizations" data-page-view data-page-title="组织管理" data-page-group="系统管理" aria-labelledby="organizationsPageTitle" hidden>
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">组织与协同关系</p>
+              <h1 id="organizationsPageTitle" tabindex="-1">组织管理</h1>
+              <p class="page-description">维护责任单位、联络人员和事项分工，点击单位查看当前配置。</p>
+            </div>
+            <button class="button button-primary" type="button" data-open-invite>邀请成员</button>
+          </div>
+
+          <div class="organization-layout">
+            <section class="card organization-list-card" aria-labelledby="organizationListTitle">
+              <div class="card-header"><div><h2 id="organizationListTitle">责任单位</h2><p class="card-subtitle">共 4 个协同单位</p></div></div>
+              <div class="organization-list" role="listbox" aria-label="责任单位">
+                <button class="organization-option is-selected" type="button" role="option" data-org-select="data" aria-selected="true"><span class="organization-mark">数</span><span><strong>市数据局</strong><small data-org-meta>32 名成员 · 27 项事项</small></span></button>
+                <button class="organization-option" type="button" role="option" data-org-select="development" aria-selected="false"><span class="organization-mark">发</span><span><strong>市发展改革委</strong><small data-org-meta>28 名成员 · 36 项事项</small></span></button>
+                <button class="organization-option" type="button" role="option" data-org-select="transport" aria-selected="false"><span class="organization-mark">交</span><span><strong>市交通局</strong><small data-org-meta>24 名成员 · 31 项事项</small></span></button>
+                <button class="organization-option" type="button" role="option" data-org-select="housing" aria-selected="false"><span class="organization-mark">建</span><span><strong>市住建局</strong><small data-org-meta>29 名成员 · 34 项事项</small></span></button>
+              </div>
+            </section>
+
+            <section class="card organization-detail" aria-labelledby="organizationDetailTitle">
+              <div class="card-header"><div><h2 id="organizationDetailTitle">市数据局</h2><p class="card-subtitle" id="organizationDetailMeta">数字政府建设与公共数据统筹责任单位</p></div><span class="status-badge status-done">协同正常</span></div>
+              <div class="card-body">
+                <dl class="detail-grid organization-metrics">
+                  <div class="detail-item"><dt>组织负责人</dt><dd id="organizationOwner">周明</dd></div>
+                  <div class="detail-item"><dt>业务联络岗</dt><dd id="organizationContact">综合协同岗</dd></div>
+                  <div class="detail-item"><dt>在办事项</dt><dd id="organizationProjects">27 项</dd></div>
+                  <div class="detail-item"><dt>平均完成率</dt><dd id="organizationProgress">76%</dd></div>
+                </dl>
+                <h3>权限与分工</h3>
+                <div class="permission-list" id="organizationPermissions">
+                  <span>事项创建与编辑</span><span>进度填报</span><span>数据查询</span><span>风险处置</span>
+                </div>
+                <div class="organization-actions"><button class="button button-secondary" type="button" data-open-org-editor>编辑组织信息</button><button class="button button-secondary" type="button" data-export-members>导出成员清单</button></div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page-view" id="settings" data-page-view data-page-title="系统设置" data-page-group="系统管理" aria-labelledby="settingsPageTitle" hidden>
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">平台运行配置</p>
+              <h1 id="settingsPageTitle" tabindex="-1">系统设置</h1>
+              <p class="page-description">配置消息提醒、数据刷新与展示偏好，切换页面后保留未保存的选择。</p>
+            </div>
+          </div>
+
+          <form id="settingsForm">
+            <div class="settings-grid">
+              <section class="card settings-card" aria-labelledby="notificationSettingsTitle">
+                <div class="card-header"><div><h2 id="notificationSettingsTitle">通知设置</h2><p class="card-subtitle">选择需要接收的业务消息</p></div></div>
+                <div class="card-body setting-list">
+                  <label class="switch-row"><span><strong>风险预警通知</strong><small>高风险事项触发后立即提醒</small></span><input type="checkbox" name="riskNotice" checked><i aria-hidden="true"></i></label>
+                  <label class="switch-row"><span><strong>事项到期提醒</strong><small>到期前 3 天推送待办消息</small></span><input type="checkbox" name="deadlineNotice" checked><i aria-hidden="true"></i></label>
+                  <label class="switch-row"><span><strong>每日运行摘要</strong><small>每天 18:00 汇总当日业务变化</small></span><input type="checkbox" name="dailySummary"><i aria-hidden="true"></i></label>
+                </div>
+              </section>
+
+              <section class="card settings-card" aria-labelledby="dataSettingsTitle">
+                <div class="card-header"><div><h2 id="dataSettingsTitle">数据与展示</h2><p class="card-subtitle">调整 Demo 的默认业务口径</p></div></div>
+                <div class="card-body settings-fields">
+                  <div class="field"><label for="refreshInterval">数据刷新频率</label><select class="select" id="refreshInterval" name="refreshInterval"><option value="5">每 5 分钟</option><option value="15" selected>每 15 分钟</option><option value="30">每 30 分钟</option><option value="manual">仅手动刷新</option></select></div>
+                  <div class="field"><label for="defaultScope">默认统计范围</label><select class="select" id="defaultScope" name="defaultScope"><option value="city" selected>全市重点事项</option><option value="department">当前责任单位</option><option value="mine">我负责的事项</option></select></div>
+                  <label class="switch-row"><span><strong>显示 Mock 数据标识</strong><small>在表格和报告中标注演示数据</small></span><input type="checkbox" name="mockLabel" checked><i aria-hidden="true"></i></label>
+                </div>
+              </section>
+            </div>
+            <div class="settings-actions">
+              <span class="settings-save-state" id="settingsSaveState" aria-live="polite">修改仅保留在当前演示会话，刷新页面后恢复默认。</span>
+              <button class="button button-secondary" id="resetSettings" type="reset">恢复默认</button>
+              <button class="button button-primary" type="submit">保存设置</button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="drawer-shell" id="detailDrawerShell" hidden>
+    <button class="drawer-backdrop" type="button" data-close-drawer aria-label="关闭事项详情"></button>
+    <aside class="drawer" id="detailDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-describedby="drawerSummary" tabindex="-1">
+      <header class="drawer-header">
+        <div>
+          <p class="eyebrow">事项详情</p>
+          <h2 id="drawerTitle">事项名称</h2>
+        </div>
+        <button class="icon-button" type="button" data-close-drawer aria-label="关闭详情">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
+      <div class="drawer-body">
+        <div class="detail-summary" id="drawerSummary">
+          <p><strong id="drawerCode">事项编号</strong></p>
+          <p class="muted" id="drawerDescription">事项说明</p>
+        </div>
+        <dl class="detail-grid">
+          <div class="detail-item"><dt>办理状态</dt><dd><span class="status-badge" id="drawerStatus">—</span></dd></div>
+          <div class="detail-item"><dt>当前进度</dt><dd id="drawerProgress">—</dd></div>
+          <div class="detail-item"><dt>责任单位</dt><dd id="drawerDepartment">—</dd></div>
+          <div class="detail-item"><dt>事项负责人</dt><dd id="drawerOwner">—</dd></div>
+          <div class="detail-item"><dt>计划开始</dt><dd id="drawerStart">—</dd></div>
+          <div class="detail-item"><dt>计划完成</dt><dd id="drawerDeadline">—</dd></div>
+        </dl>
+        <h3>最新办理动态</h3>
+        <ol class="timeline" id="drawerTimeline"></ol>
+      </div>
+      <footer class="drawer-footer">
+        <button class="button button-secondary" type="button" data-close-drawer>返回列表</button>
+        <button class="button button-secondary" id="updateProgressAction" type="button">更新进度</button>
+        <button class="button button-primary" id="completeAction" type="button">提交完成</button>
+      </footer>
+    </aside>
+  </div>
+
+  <dialog class="modal modal-wide" id="newRecordDialog" aria-labelledby="newRecordTitle">
+    <form id="newRecordForm" novalidate>
+      <div class="modal-header">
+        <div><p class="eyebrow">新增事项</p><h2 id="newRecordTitle">创建重点事项</h2></div>
+        <button class="icon-button" type="button" data-close-dialog aria-label="关闭新增事项弹窗">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body form-grid">
+        <div class="field field-full"><label for="newRecordName">事项名称</label><input class="input" id="newRecordName" name="title" type="text" autocomplete="off" aria-describedby="newRecordNameError"><span class="field-error" id="newRecordNameError" data-error-for="title"></span></div>
+        <div class="field"><label for="newRecordDepartment">责任单位</label><select class="select" id="newRecordDepartment" name="department" aria-describedby="newRecordDepartmentError"><option value="">请选择责任单位</option><option>市发展改革委</option><option>市数据局</option><option>市交通局</option><option>市住建局</option></select><span class="field-error" id="newRecordDepartmentError" data-error-for="department"></span></div>
+        <div class="field"><label for="newRecordOwner">负责人</label><input class="input" id="newRecordOwner" name="owner" type="text" autocomplete="off" aria-describedby="newRecordOwnerError"><span class="field-error" id="newRecordOwnerError" data-error-for="owner"></span></div>
+        <div class="field"><label for="newRecordDeadline">截止日期</label><input class="input" id="newRecordDeadline" name="deadline" type="date" aria-describedby="newRecordDeadlineError"><span class="field-error" id="newRecordDeadlineError" data-error-for="deadline"></span></div>
+        <div class="field field-full"><label for="newRecordDescription">事项说明</label><textarea class="textarea" id="newRecordDescription" name="description" aria-describedby="newRecordDescriptionError" placeholder="说明事项目标与主要工作内容"></textarea><span class="field-error" id="newRecordDescriptionError" data-error-for="description"></span></div>
+        <p class="form-note field-full">事项编号将在保存时自动生成；数据只保留在当前演示会话。</p>
+      </div>
+      <div class="modal-footer"><button class="button button-secondary" type="button" data-close-dialog>取消</button><button class="button button-primary" type="submit">保存事项</button></div>
+    </form>
+  </dialog>
+
+  <dialog class="modal" id="progressDialog" aria-labelledby="progressDialogTitle" aria-describedby="progressDialogDescription">
+    <form id="progressForm" novalidate>
+      <div class="modal-header">
+        <div><p class="eyebrow">进度填报</p><h2 id="progressDialogTitle">更新事项进度</h2></div>
+        <button class="icon-button" type="button" data-close-dialog aria-label="关闭更新进度弹窗">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body form-grid single-column">
+        <p class="form-note" id="progressDialogDescription">当前进度为 <strong id="currentProgressCopy">0%</strong>；新进度不能低于当前值。</p>
+        <div class="field"><label for="progressInput">新进度（%）</label><input class="input" id="progressInput" name="progress" type="number" min="0" max="100" step="1" inputmode="numeric" aria-describedby="progressInputError"><span class="field-error" id="progressInputError" data-error-for="progress"></span></div>
+        <div class="field"><label for="progressNote">进度说明</label><textarea class="textarea" id="progressNote" name="note" aria-describedby="progressNoteHelp progressNoteError" placeholder="说明本次完成的工作内容"></textarea><small class="field-help" id="progressNoteHelp">至少输入 6 个中文字符。</small><span class="field-error" id="progressNoteError" data-error-for="note"></span></div>
+      </div>
+      <div class="modal-footer"><button class="button button-secondary" type="button" data-close-dialog>取消</button><button class="button button-primary" type="submit">确认更新</button></div>
+    </form>
+  </dialog>
+
+  <dialog class="modal" id="inviteDialog" aria-labelledby="inviteDialogTitle" aria-describedby="inviteDialogDescription">
+    <form id="inviteForm" novalidate>
+      <div class="modal-header">
+        <div><p class="eyebrow">组织成员</p><h2 id="inviteDialogTitle">邀请成员</h2></div>
+        <button class="icon-button" type="button" data-close-dialog aria-label="关闭邀请成员弹窗"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div class="modal-body form-grid single-column">
+        <p class="form-note" id="inviteDialogDescription">成员将加入 <strong id="inviteOrganizationName">当前组织</strong>。</p>
+        <div class="field"><label for="inviteMemberName">成员姓名</label><input class="input" id="inviteMemberName" name="name" type="text" autocomplete="off" aria-describedby="inviteMemberNameError"><span class="field-error" id="inviteMemberNameError" data-error-for="name"></span></div>
+        <div class="field"><label for="inviteMemberRole">业务角色</label><select class="select" id="inviteMemberRole" name="role" aria-describedby="inviteMemberRoleError"><option value="">请选择业务角色</option><option>事项管理员</option><option>进度填报员</option><option>风险处置员</option><option>只读成员</option></select><span class="field-error" id="inviteMemberRoleError" data-error-for="role"></span></div>
+      </div>
+      <div class="modal-footer"><button class="button button-secondary" type="button" data-close-dialog>取消</button><button class="button button-primary" type="submit">确认邀请</button></div>
+    </form>
+  </dialog>
+
+  <dialog class="modal modal-wide" id="organizationEditorDialog" aria-labelledby="organizationEditorTitle">
+    <form id="organizationEditorForm" novalidate>
+      <div class="modal-header">
+        <div><p class="eyebrow">组织配置</p><h2 id="organizationEditorTitle">编辑组织信息</h2></div>
+        <button class="icon-button" type="button" data-close-dialog aria-label="关闭编辑组织弹窗"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div class="modal-body form-grid">
+        <div class="field field-full"><label for="organizationNameInput">组织名称</label><input class="input" id="organizationNameInput" name="title" type="text" aria-describedby="organizationNameError"><span class="field-error" id="organizationNameError" data-error-for="title"></span></div>
+        <div class="field"><label for="organizationOwnerInput">组织负责人</label><input class="input" id="organizationOwnerInput" name="owner" type="text" aria-describedby="organizationOwnerError"><span class="field-error" id="organizationOwnerError" data-error-for="owner"></span></div>
+        <div class="field"><label for="organizationContactInput">业务联络岗</label><input class="input" id="organizationContactInput" name="contact" type="text" aria-describedby="organizationContactError"><span class="field-error" id="organizationContactError" data-error-for="contact"></span></div>
+        <div class="field field-full"><label for="organizationMetaInput">职责说明</label><textarea class="textarea" id="organizationMetaInput" name="meta" aria-describedby="organizationMetaError"></textarea><span class="field-error" id="organizationMetaError" data-error-for="meta"></span></div>
+      </div>
+      <div class="modal-footer"><button class="button button-secondary" type="button" data-close-dialog>取消</button><button class="button button-primary" type="submit">保存组织信息</button></div>
+    </form>
+  </dialog>
+
+  <dialog class="modal" id="confirmDialog" aria-labelledby="confirmTitle" aria-describedby="confirmDescription">
+    <div class="modal-header">
+      <h2 id="confirmTitle">确认完成事项</h2>
+      <button class="icon-button" type="button" data-close-modal aria-label="关闭确认弹窗">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p id="confirmDescription">确认将当前事项标记为“已完成”吗？状态变更将在台账中即时呈现。</p>
+    </div>
+    <div class="modal-footer">
+      <button class="button button-secondary" type="button" data-close-modal>取消</button>
+      <button class="button button-primary" id="confirmComplete" type="button">确认完成</button>
+    </div>
+  </dialog>
+
+  <div class="toast-region" id="toastRegion" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="interactions.js"></script>
+</body>
+</html>

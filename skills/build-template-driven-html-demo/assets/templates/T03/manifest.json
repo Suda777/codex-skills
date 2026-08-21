@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "template_id": "T03",
+  "name": "流程协同后台",
+  "status": "ready",
+  "positioning": "适合事项流转、节点督办、风险处置和高密度运营台账类网页 Demo",
+  "visual_reference": "Gentelella by Colorlib",
+  "runtime": {
+    "platform": "modern web browsers with responsive wide and narrow layouts",
+    "external_dependencies": [],
+    "network_required": false,
+    "build_required": false,
+    "entry_file": "starter.html"
+  },
+  "files": {
+    "starter": "starter.html",
+    "tokens": "tokens.css",
+    "components": "components.html",
+    "interactions": "interactions.js",
+    "preview": "preview.png",
+    "provenance": "source.md"
+  },
+  "design_tokens": {
+    "font_family": "system sans-serif with Chinese platform fonts",
+    "primary": "#1abb9c",
+    "navigation": "#2a3f54",
+    "page_background": "#f5f7f9",
+    "surface": "#ffffff",
+    "border": "#d9dee4",
+    "text": "#34495e",
+    "muted_text": "#73879c",
+    "success": "#26b99a",
+    "warning": "#f39c12",
+    "danger": "#e74c3c",
+    "radius": { "control": "3px", "card": "2px", "modal": "4px" },
+    "density": "high",
+    "shadow_style": "flat compact panels with thin borders and almost no shadow"
+  },
+  "layout_rules": [
+    "Use a deep navy sidebar and a compact two-row top context bar on wide web layouts.",
+    "Use square, thin-bordered panels with teal title rules and dense operational tables.",
+    "Map each visible sidebar item to one complete mutually exclusive page view.",
+    "Use compact KPI tiles, a node-throughput chart, a timeline, and an activity stream rather than decorative hero art.",
+    "Open record details in a right drawer and confirm workflow progression before mutating state.",
+    "Below 900px, present the same web navigation as an off-canvas sidebar with a page overlay."
+  ],
+  "component_inventory": [
+    { "name": "operations_navigation", "selectors": [".ops-sidebar", ".ops-nav", ".ops-nav-link"], "use_for": "five mutually exclusive workflow pages" },
+    { "name": "compact_metric", "selectors": [".metric-strip", ".metric-tile"], "use_for": "live counts derived from workflow records" },
+    { "name": "node_chart", "selectors": [".throughput-chart", ".throughput-column"], "use_for": "period-dependent workflow throughput" },
+    { "name": "dense_table", "selectors": [".ledger-table", ".table-shell"], "use_for": "searchable operational ledger" },
+    { "name": "timeline", "selectors": [".activity-timeline", ".activity-entry"], "use_for": "state history and recent operations" },
+    { "name": "detail_drawer", "selectors": [".drawer-shell", ".ops-drawer"], "use_for": "context-preserving record inspection" },
+    { "name": "confirmation_dialog", "selectors": [".ops-dialog"], "use_for": "confirmed workflow mutation and member invitation" },
+    { "name": "notification_panel", "selectors": [".notice-panel"], "use_for": "unread operational alerts" }
+  ],
+  "interaction_contracts": [
+    "Navigation updates aria-current, breadcrumb, document title, hash, focus, and visible page while preserving page-local form state.",
+    "Period controls recalculate the displayed throughput values and labels from local mock state.",
+    "Ledger filters and reset update rows, totals, and a truthful empty state.",
+    "CSV export creates a nonempty file from the current filtered ledger.",
+    "Every record action opens the correct drawer; confirmed progression updates the ledger, overview, node board, notifications, and activity history.",
+    "Invite validates required fields before adding a member and recalculating team load.",
+    "Settings save current demo preferences and restore the packaged defaults.",
+    "Drawer and dialogs support explicit close, cancel, Escape, focus containment, and focus restoration.",
+    "All visible enabled controls have an observable result and all state labels include text."
+  ],
+  "adaptation_rules": {
+    "preserve": [
+      "deep navy navigation with teal active accents",
+      "high information density and compact 32px controls",
+      "square thin-bordered panels and teal title rules",
+      "operational tables, node counts, timelines, and activity streams",
+      "restrained shadows and gray-white work canvas"
+    ],
+    "replace_from_development_document": [
+      "product name, page names, record noun, fields, filters, and columns",
+      "workflow statuses, transitions, validation, permissions, and confirmation copy",
+      "metrics, chart data, notifications, activity entries, members, and settings",
+      "all synthetic mock data"
+    ],
+    "avoid": [
+      "Gentelella logos, screenshots, brand copy, images, icons, or upstream source code",
+      "commercial-only assets or external dependencies",
+      "consumer-style oversized cards, heavy gradients, or pill-shaped controls",
+      "native desktop chrome, scrolling between top-level pages, or fake enabled controls"
+    ]
+  },
+  "single_file_compilation": {
+    "style_source": "inline tokens.css into a style element",
+    "script_source": "inline interactions.js before the closing body tag",
+    "asset_policy": "inline SVG and CSS shapes only; no external URLs"
+  }
+}
